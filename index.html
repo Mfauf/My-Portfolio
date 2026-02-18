@@ -1,152 +1,427 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfolio Coming Soon - Computer Engineer">
-    <title>Coming Soon | Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
+    <meta name="description" content="Muhammad Auf - Computer Engineer Portfolio">
+    <title>Muhammad Auf | Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Playfair+Display:wght@700&family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            dark: '#0a1128',
+                            DEFAULT: '#001f54',
+                            light: '#034078',
+                        },
+                        accent: {
+                            blue: '#1282a2',
+                            gold: '#ffc857',
+                            'gold-light': '#ffd97d',
+                            'gold-dark': '#d4a017',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                        arabic: ['Cairo', 'sans-serif'],
+                        display: ['Playfair Display', 'serif'],
+                    },
+                    backdropBlur: {
+                        xs: '2px',
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-    <!-- Theme Toggle Button -->
-    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
-        <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <circle cx="12" cy="12" r="5"></circle>
-            <line x1="12" y1="1" x2="12" y2="3"></line>
-            <line x1="12" y1="21" x2="12" y2="23"></line>
-            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-            <line x1="1" y1="12" x2="3" y2="12"></line>
-            <line x1="21" y1="12" x2="23" y2="12"></line>
-            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-        </svg>
-        <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-        </svg>
-    </button>
+<body class="bg-primary-dark text-white font-sans overflow-x-hidden transition-colors duration-300">
+    <!-- Control Buttons -->
+    <div class="fixed top-8 right-8 flex gap-4 z-50 rtl:right-auto rtl:left-8">
+        <button id="themeToggle" 
+                class="w-12 h-12 rounded-full bg-white/5 backdrop-blur-xl border border-white/10 flex items-center justify-center hover:scale-110 transition-all duration-300 shadow-lg hover:bg-white/10"
+                aria-label="Toggle theme">
+            <svg class="sun-icon hidden w-6 h-6 text-accent-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="5"></circle>
+                <line x1="12" y1="1" x2="12" y2="3"></line>
+                <line x1="12" y1="21" x2="12" y2="23"></line>
+                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                <line x1="1" y1="12" x2="3" y2="12"></line>
+                <line x1="21" y1="12" x2="23" y2="12"></line>
+                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+            <svg class="moon-icon w-6 h-6 text-accent-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+        </button>
+        <button id="langToggle" 
+                class="w-12 h-12 rounded-full bg-white/5 backdrop-blur-xl border border-white/10 flex items-center justify-center hover:scale-110 transition-all duration-300 shadow-lg hover:bg-white/10"
+                aria-label="Toggle language">
+            <span class="lang-text text-xl font-semibold text-accent-gold">ع</span>
+        </button>
+    </div>
+
     <!-- Animated Background -->
-    <div class="background">
-        <div class="gradient-orb orb-1"></div>
-        <div class="gradient-orb orb-2"></div>
-        <div class="gradient-orb orb-3"></div>
+    <div class="fixed inset-0 -z-10 bg-gradient-to-br from-primary-dark via-primary to-primary-light overflow-hidden">
+        <div class="absolute -top-48 -left-48 w-[500px] h-[500px] bg-accent-blue/40 rounded-full blur-[100px] animate-float"></div>
+        <div class="absolute -bottom-36 -right-36 w-96 h-96 bg-accent-gold/40 rounded-full blur-[100px] animate-float-delayed"></div>
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-primary-light/40 rounded-full blur-[100px] animate-float-slow"></div>
     </div>
 
     <!-- Floating Shapes -->
-    <div class="floating-shapes">
-        <div class="shape shape-1"></div>
-        <div class="shape shape-2"></div>
-        <div class="shape shape-3"></div>
-        <div class="shape shape-4"></div>
-        <div class="shape shape-5"></div>
+    <div class="fixed inset-0 pointer-events-none -z-5">
+        <div class="absolute top-[10%] left-[10%] w-24 h-24 border-2 border-white/10 rounded-full animate-rotate-float"></div>
+        <div class="absolute top-[70%] right-[15%] w-20 h-20 border-2 border-white/10 animate-rotate-float-reverse"></div>
+        <div class="absolute top-[30%] right-[25%] w-16 h-16 border-2 border-white/10 rounded-full animate-pulse-float"></div>
+        <div class="absolute bottom-[15%] left-[20%] w-28 h-28 border-2 border-white/10 animate-rotate-float"></div>
+        <div class="absolute top-[50%] left-[5%] w-20 h-20 border-2 border-white/10 rounded-full animate-pulse-float"></div>
     </div>
 
-    <!-- Main Content -->
-    <div class="container">
-        <div class="glass-card">
-            <!-- Logo/Icon -->
-            <div class="logo-container">
-                <img src="logo.png" alt="Muhammad Auf Logo" class="logo-image">
+    <!-- Header -->
+    <header id="header" class="fixed top-0 left-0 w-full z-40 transition-all duration-300 py-4">
+        <nav class="max-w-7xl mx-auto px-8 flex justify-between items-center h-16">
+            <a href="#" class="flex items-center">
+                <img src="logo.png" alt="Logo" class="w-12 h-12 object-contain">
+            </a>
+
+            <div id="navMenu" class="nav-menu">
+                <ul class="flex gap-8 items-center max-md:fixed max-md:top-20 max-md:right-0 max-md:w-3/4 max-md:h-[calc(100vh-5rem)] max-md:bg-white/5 max-md:backdrop-blur-xl max-md:border-l max-md:border-white/10 max-md:flex-col max-md:p-8 max-md:gap-6 max-md:-right-full max-md:transition-all max-md:shadow-2xl rtl:max-md:right-auto rtl:max-md:left-0 rtl:max-md:-left-full rtl:max-md:border-l-0 rtl:max-md:border-r">
+                    <li>
+                        <a href="#home" class="nav-link text-white hover:text-accent-gold font-medium transition-colors relative pb-2 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-accent-gold after:transition-all hover:after:w-full" data-en="Home" data-ar="الرئيسية">Home</a>
+                    </li>
+                    <li>
+                        <a href="#about" class="nav-link text-white hover:text-accent-gold font-medium transition-colors relative pb-2 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-accent-gold after:transition-all hover:after:w-full" data-en="About" data-ar="عني">About</a>
+                    </li>
+                    <li>
+                        <a href="#services" class="nav-link text-white hover:text-accent-gold font-medium transition-colors relative pb-2 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-accent-gold after:transition-all hover:after:w-full" data-en="Services" data-ar="الخدمات">Services</a>
+                    </li>
+                    <li>
+                        <a href="#tools" class="nav-link text-white hover:text-accent-gold font-medium transition-colors relative pb-2 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-accent-gold after:transition-all hover:after:w-full" data-en="Tools" data-ar="الأدوات">Tools</a>
+                    </li>
+                    <li>
+                        <a href="#contact" class="nav-link text-white hover:text-accent-gold font-medium transition-colors relative pb-2 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-accent-gold after:transition-all hover:after:w-full" data-en="Contact" data-ar="تواصل">Contact</a>
+                    </li>
+                </ul>
             </div>
 
-            <!-- Content -->
-            <div class="content">
-                <h1 class="title">
-                    <span class="name">Muhammad Auf</span>
-                </h1>
-                <h2 class="subtitle">Computer & Software Engineer</h2>
+            <div id="navToggle" class="nav-toggle hidden max-md:flex flex-col gap-1.5 cursor-pointer w-8 h-6 justify-center">
+                <span class="block w-full h-0.5 bg-white rounded transition-all"></span>
+                <span class="block w-full h-0.5 bg-white rounded transition-all"></span>
+                <span class="block w-full h-0.5 bg-white rounded transition-all"></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center pt-20 px-8">
+        <div class="max-w-7xl mx-auto text-center animate-fade-in-up">
+            <span class="block text-xl text-white/70 mb-2" data-en="Hi, I'm" data-ar="مرحباً، أنا">Hi, I'm</span>
+            <h1 class="font-display text-5xl md:text-6xl lg:text-7xl font-bold mb-4 leading-tight">
+                <span class="text-gradient">Muhammad Auf</span>
+            </h1>
+            <h2 class="text-2xl md:text-3xl text-accent-blue mb-6 font-light" data-en="Computer Engineer" data-ar="مهندس كمبيوتر">Computer Engineer</h2>
+            <p class="text-lg text-white/70 max-w-2xl mx-auto mb-10 leading-relaxed" 
+               data-en="Crafting innovative solutions and bringing ideas to life through code. Passionate about building exceptional digital experiences." 
+               data-ar="أصنع حلولاً مبتكرة وأحول الأفكار إلى واقع من خلال البرمجة. شغوف ببناء تجارب رقمية استثنائية.">
+                Crafting innovative solutions and bringing ideas to life through code. Passionate about building exceptional digital experiences.
+            </p>
+            <div class="flex gap-6 justify-center flex-wrap">
+                <a href="#contact" class="px-10 py-4 rounded-full bg-gradient-to-r from-accent-gold to-accent-gold-light text-primary-dark font-semibold hover:scale-105 transition-transform duration-300 shadow-lg hover:shadow-accent-gold/50" 
+                   data-en="Get In Touch" data-ar="تواصل معي">Get In Touch</a>
+                <a href="#about" class="px-10 py-4 rounded-full bg-white/5 backdrop-blur-md border border-white/10 text-white font-semibold hover:bg-white/10 hover:scale-105 transition-all duration-300" 
+                   data-en="Learn More" data-ar="اعرف المزيد">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 px-8">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="font-display text-4xl md:text-5xl font-bold text-center mb-4 text-gradient" data-en="About Me" data-ar="عني">About Me</h2>
+            
+            <div class="grid md:grid-cols-5 gap-12 items-center mt-12">
+                <div class="md:col-span-2">
+                    <div class="glass-card p-8 rounded-3xl">
+                        <img src="logo.png" alt="Muhammad Auf" class="w-full h-auto object-cover rounded-2xl">
+                    </div>
+                </div>
                 
-                <div class="status-badge">
-                    <span class="pulse-dot"></span>
-                    <span>Coming Soon</span>
+                <div class="md:col-span-3 space-y-6">
+                    <h3 class="text-2xl font-semibold text-accent-gold mb-6" data-en="Computer Engineer & Developer" data-ar="مهندس كمبيوتر ومطور">Computer Engineer & Developer</h3>
+                    <p class="text-white/70 leading-relaxed text-lg" 
+                       data-en="I am a passionate computer engineer with extensive experience in software development and system design. I specialize in creating efficient, scalable solutions that solve real-world problems. My journey in technology has equipped me with a diverse skill set and a deep understanding of modern development practices." 
+                       data-ar="أنا مهندس كمبيوتر شغوف بخبرة واسعة في تطوير البرمجيات وتصميم الأنظمة. أتخصص في إنشاء حلول فعالة وقابلة للتطوير تحل مشاكل العالم الحقيقي. لقد زودتني رحلتي في التكنولوجيا بمجموعة مهارات متنوعة وفهم عميق للممارسات الحديثة في التطوير.">
+                        I am a passionate computer engineer with extensive experience in software development and system design. I specialize in creating efficient, scalable solutions that solve real-world problems. My journey in technology has equipped me with a diverse skill set and a deep understanding of modern development practices.
+                    </p>
+                    
+                    <div class="grid grid-cols-3 gap-4 mt-8">
+                        <div class="glass-card p-6 rounded-2xl text-center hover:scale-105 transition-transform duration-300">
+                            <span class="block text-sm text-white/60 mb-2" data-en="Experience" data-ar="الخبرة">Experience</span>
+                            <span class="block text-4xl font-bold text-accent-gold mb-1">5+</span>
+                            <span class="block text-sm text-white/60" data-en="Years" data-ar="سنوات">Years</span>
+                        </div>
+                        <div class="glass-card p-6 rounded-2xl text-center hover:scale-105 transition-transform duration-300">
+                            <span class="block text-sm text-white/60 mb-2" data-en="Projects" data-ar="المشاريع">Projects</span>
+                            <span class="block text-4xl font-bold text-accent-gold mb-1">50+</span>
+                            <span class="block text-sm text-white/60" data-en="Completed" data-ar="مكتمل">Completed</span>
+                        </div>
+                        <div class="glass-card p-6 rounded-2xl text-center hover:scale-105 transition-transform duration-300">
+                            <span class="block text-sm text-white/60 mb-2" data-en="Clients" data-ar="العملاء">Clients</span>
+                            <span class="block text-4xl font-bold text-accent-gold mb-1">30+</span>
+                            <span class="block text-sm text-white/60" data-en="Satisfied" data-ar="راضي">Satisfied</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 px-8">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="font-display text-4xl md:text-5xl font-bold text-center mb-4 text-gradient" data-en="Services" data-ar="الخدمات">Services</h2>
+            <p class="text-center text-white/60 mb-16 text-lg" data-en="What I can do for you" data-ar="ما يمكنني فعله لك">What I can do for you</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Web Development -->
+                <div class="glass-card p-8 rounded-3xl hover:scale-105 hover:shadow-2xl transition-all duration-300 group">
+                    <div class="w-16 h-16 mb-6 text-accent-gold group-hover:scale-110 transition-transform duration-300">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-full h-full">
+                            <polyline points="16 18 22 12 16 6"></polyline>
+                            <polyline points="8 6 2 12 8 18"></polyline>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-white" data-en="Web Development" data-ar="تطوير الويب">Web Development</h3>
+                    <p class="text-white/70 leading-relaxed" 
+                       data-en="Building responsive and modern web applications using the latest technologies and best practices." 
+                       data-ar="بناء تطبيقات ويب متجاوبة وحديثة باستخدام أحدث التقنيات وأفضل الممارسات.">
+                        Building responsive and modern web applications using the latest technologies and best practices.
+                    </p>
                 </div>
 
-                <p class="description">
-                    Something amazing is being crafted. My portfolio is under construction 
-                    and will be launching soon with exciting projects and innovations.
-                </p>
+                <!-- UI/UX Design -->
+                <div class="glass-card p-8 rounded-3xl hover:scale-105 hover:shadow-2xl transition-all duration-300 group">
+                    <div class="w-16 h-16 mb-6 text-accent-gold group-hover:scale-110 transition-transform duration-300">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-full h-full">
+                            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                            <line x1="8" y1="21" x2="16" y2="21"></line>
+                            <line x1="12" y1="17" x2="12" y2="21"></line>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-white" data-en="UI/UX Design" data-ar="تصميم واجهات المستخدم">UI/UX Design</h3>
+                    <p class="text-white/70 leading-relaxed" 
+                       data-en="Creating intuitive and attractive user interfaces that provide excellent user experiences." 
+                       data-ar="إنشاء واجهات مستخدم بديهية وجذابة توفر تجارب مستخدم ممتازة.">
+                        Creating intuitive and attractive user interfaces that provide excellent user experiences.
+                    </p>
+                </div>
 
-                <!-- Contact Info -->
-                <div class="contact-section">
-                    <h3 class="contact-title">Get In Touch</h3>
-                    <div class="contact-items">
-                        <a href="mailto:mmfauf@gmail.com" class="contact-item">
-                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <!-- Mobile Development -->
+                <div class="glass-card p-8 rounded-3xl hover:scale-105 hover:shadow-2xl transition-all duration-300 group">
+                    <div class="w-16 h-16 mb-6 text-accent-gold group-hover:scale-110 transition-transform duration-300">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-full h-full">
+                            <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                            <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-white" data-en="Mobile Development" data-ar="تطوير التطبيقات">Mobile Development</h3>
+                    <p class="text-white/70 leading-relaxed" 
+                       data-en="Developing cross-platform mobile applications with native performance and seamless user experience." 
+                       data-ar="تطوير تطبيقات الهاتف متعددة المنصات بأداء أصلي وتجربة مستخدم سلسة.">
+                        Developing cross-platform mobile applications with native performance and seamless user experience.
+                    </p>
+                </div>
+
+                <!-- System Architecture -->
+                <div class="glass-card p-8 rounded-3xl hover:scale-105 hover:shadow-2xl transition-all duration-300 group">
+                    <div class="w-16 h-16 mb-6 text-accent-gold group-hover:scale-110 transition-transform duration-300">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-full h-full">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <polygon points="10 8 16 12 10 16 10 8"></polygon>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-white" data-en="System Architecture" data-ar="هندسة الأنظمة">System Architecture</h3>
+                    <p class="text-white/70 leading-relaxed" 
+                       data-en="Designing robust and scalable system architectures for enterprise-level applications." 
+                       data-ar="تصميم بنى أنظمة قوية وقابلة للتطوير لتطبيقات المؤسسات.">
+                        Designing robust and scalable system architectures for enterprise-level applications.
+                    </p>
+                </div>
+
+                <!-- API Development -->
+                <div class="glass-card p-8 rounded-3xl hover:scale-105 hover:shadow-2xl transition-all duration-300 group">
+                    <div class="w-16 h-16 mb-6 text-accent-gold group-hover:scale-110 transition-transform duration-300">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-full h-full">
+                            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                            <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                            <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-white" data-en="API Development" data-ar="تطوير واجهات برمجية">API Development</h3>
+                    <p class="text-white/70 leading-relaxed" 
+                       data-en="Building secure and efficient RESTful APIs and microservices for seamless integration." 
+                       data-ar="بناء واجهات برمجية آمنة وفعالة وخدمات مصغرة للتكامل السلس.">
+                        Building secure and efficient RESTful APIs and microservices for seamless integration.
+                    </p>
+                </div>
+
+                <!-- Technical Consulting -->
+                <div class="glass-card p-8 rounded-3xl hover:scale-105 hover:shadow-2xl transition-all duration-300 group">
+                    <div class="w-16 h-16 mb-6 text-accent-gold group-hover:scale-110 transition-transform duration-300">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-full h-full">
+                            <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-white" data-en="Technical Consulting" data-ar="الاستشارات التقنية">Technical Consulting</h3>
+                    <p class="text-white/70 leading-relaxed" 
+                       data-en="Providing expert guidance on technology stack selection and development best practices." 
+                       data-ar="تقديم إرشادات متخصصة حول اختيار التقنيات وأفضل ممارسات التطوير.">
+                        Providing expert guidance on technology stack selection and development best practices.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tools Section -->
+    <section id="tools" class="py-20 px-8">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="font-display text-4xl md:text-5xl font-bold text-center mb-4 text-gradient" data-en="My Tools" data-ar="أدواتي">My Tools</h2>
+            <p class="text-center text-white/60 mb-16 text-lg" data-en="Technologies and tools I work with" data-ar="التقنيات والأدوات التي أعمل بها">Technologies and tools I work with</p>
+            
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-6">
+                <div class="glass-card p-6 rounded-2xl text-center hover:scale-110 transition-transform duration-300 group">
+                    <div class="text-4xl mb-3 group-hover:scale-110 transition-transform duration-300">💻</div>
+                    <h3 class="text-white font-semibold">JavaScript</h3>
+                </div>
+                <div class="glass-card p-6 rounded-2xl text-center hover:scale-110 transition-transform duration-300 group">
+                    <div class="text-4xl mb-3 group-hover:scale-110 transition-transform duration-300">⚛️</div>
+                    <h3 class="text-white font-semibold">React</h3>
+                </div>
+                <div class="glass-card p-6 rounded-2xl text-center hover:scale-110 transition-transform duration-300 group">
+                    <div class="text-4xl mb-3 group-hover:scale-110 transition-transform duration-300">🔷</div>
+                    <h3 class="text-white font-semibold">TypeScript</h3>
+                </div>
+                <div class="glass-card p-6 rounded-2xl text-center hover:scale-110 transition-transform duration-300 group">
+                    <div class="text-4xl mb-3 group-hover:scale-110 transition-transform duration-300">🟢</div>
+                    <h3 class="text-white font-semibold">Node.js</h3>
+                </div>
+                <div class="glass-card p-6 rounded-2xl text-center hover:scale-110 transition-transform duration-300 group">
+                    <div class="text-4xl mb-3 group-hover:scale-110 transition-transform duration-300">🐍</div>
+                    <h3 class="text-white font-semibold">Python</h3>
+                </div>
+                <div class="glass-card p-6 rounded-2xl text-center hover:scale-110 transition-transform duration-300 group">
+                    <div class="text-4xl mb-3 group-hover:scale-110 transition-transform duration-300">☕</div>
+                    <h3 class="text-white font-semibold">Java</h3>
+                </div>
+                <div class="glass-card p-6 rounded-2xl text-center hover:scale-110 transition-transform duration-300 group">
+                    <div class="text-4xl mb-3 group-hover:scale-110 transition-transform duration-300">🗄️</div>
+                    <h3 class="text-white font-semibold">SQL</h3>
+                </div>
+                <div class="glass-card p-6 rounded-2xl text-center hover:scale-110 transition-transform duration-300 group">
+                    <div class="text-4xl mb-3 group-hover:scale-110 transition-transform duration-300">🍃</div>
+                    <h3 class="text-white font-semibold">MongoDB</h3>
+                </div>
+                <div class="glass-card p-6 rounded-2xl text-center hover:scale-110 transition-transform duration-300 group">
+                    <div class="text-4xl mb-3 group-hover:scale-110 transition-transform duration-300">🔥</div>
+                    <h3 class="text-white font-semibold">Firebase</h3>
+                </div>
+                <div class="glass-card p-6 rounded-2xl text-center hover:scale-110 transition-transform duration-300 group">
+                    <div class="text-4xl mb-3 group-hover:scale-110 transition-transform duration-300">🐳</div>
+                    <h3 class="text-white font-semibold">Docker</h3>
+                </div>
+                <div class="glass-card p-6 rounded-2xl text-center hover:scale-110 transition-transform duration-300 group">
+                    <div class="text-4xl mb-3 group-hover:scale-110 transition-transform duration-300">☁️</div>
+                    <h3 class="text-white font-semibold">AWS</h3>
+                </div>
+                <div class="glass-card p-6 rounded-2xl text-center hover:scale-110 transition-transform duration-300 group">
+                    <div class="text-4xl mb-3 group-hover:scale-110 transition-transform duration-300">🎨</div>
+                    <h3 class="text-white font-semibold">Figma</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="py-20 px-8 border-t border-white/10">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+                <!-- Logo & Description -->
+                <div>
+                    <img src="logo.png" alt="Logo" class="h-12 w-auto mb-4">
+                    <p class="text-white/60 leading-relaxed" 
+                       data-en="Building the future, one line of code at a time." 
+                       data-ar="بناء المستقبل، سطر برمجي واحد في كل مرة.">
+                        Building the future, one line of code at a time.
+                    </p>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-xl font-bold text-accent-gold mb-6" data-en="Quick Links" data-ar="روابط سريعة">Quick Links</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#home" class="text-white/70 hover:text-accent-gold transition-colors duration-300" data-en="Home" data-ar="الرئيسية">Home</a></li>
+                        <li><a href="#about" class="text-white/70 hover:text-accent-gold transition-colors duration-300" data-en="About" data-ar="عني">About</a></li>
+                        <li><a href="#services" class="text-white/70 hover:text-accent-gold transition-colors duration-300" data-en="Services" data-ar="الخدمات">Services</a></li>
+                        <li><a href="#tools" class="text-white/70 hover:text-accent-gold transition-colors duration-300" data-en="Tools" data-ar="الأدوات">Tools</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact -->
+                <div>
+                    <h3 class="text-xl font-bold text-accent-gold mb-6" data-en="Contact" data-ar="تواصل">Contact</h3>
+                    <div class="space-y-4 mb-6">
+                        <a href="mailto:mmfauf@gmail.com" class="flex items-center gap-3 text-white/70 hover:text-accent-gold transition-colors duration-300">
+                            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
                                 <polyline points="22,6 12,13 2,6"></polyline>
                             </svg>
-                            <span>Muhammad Auf</span>
+                            <span>mmfauf@gmail.com</span>
                         </a>
-                        <a href="tel:+97433005113" class="contact-item">
-                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <a href="tel:+97433005113" class="flex items-center gap-3 text-white/70 hover:text-accent-gold transition-colors duration-300">
+                            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
                             </svg>
                             <span>+974 33005113</span>
                         </a>
                     </div>
-                </div>
-
-                <!-- Social Links (Optional) -->
-                <div class="social-links">
-                    <a href="https://www.linkedin.com/in/mmfauf/" class="social-link" aria-label="LinkedIn">
-                        <svg viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-                        </svg>
-                    </a>
-                    <a href="https://github.com/Mfauf" class="social-link" aria-label="GitHub">
-                        <svg viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                        </svg>
-                    </a>
+                    <!-- Social Links -->
+                    <div class="flex gap-4">
+                        <a href="https://www.linkedin.com/in/mmfauf/" 
+                           aria-label="LinkedIn" 
+                           target="_blank"
+                           class="w-10 h-10 flex items-center justify-center rounded-full backdrop-blur-xl bg-white/5 border border-white/10 text-white hover:bg-accent-gold hover:text-primary-dark hover:scale-110 transition-all duration-300">
+                            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                            </svg>
+                        </a>
+                        <a href="https://github.com/Mfauf" 
+                           aria-label="GitHub" 
+                           target="_blank"
+                           class="w-10 h-10 flex items-center justify-center rounded-full backdrop-blur-xl bg-white/5 border border-white/10 text-white hover:bg-accent-gold hover:text-primary-dark hover:scale-110 transition-all duration-300">
+                            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                            </svg>
+                        </a>
+                    </div>
                 </div>
             </div>
+            
+            <!-- Copyright -->
+            <div class="pt-8 border-t border-white/10 text-center text-white/60">
+                <p>&copy; 2026 Muhammad Auf. <span data-en="All Rights Reserved" data-ar="جميع الحقوق محفوظة">All Rights Reserved</span></p>
+            </div>
         </div>
+    </footer>
 
-        <!-- Footer -->
-        <footer class="footer">
-            <p>&copy; 2026 All Rights Reserved</p>
-        </footer>
-    </div>
-
-    <script>
-        // Theme switcher with system preference detection
-        const themeToggle = document.getElementById('themeToggle');
-        const htmlElement = document.documentElement;
-        
-        // Check for saved theme preference or default to system preference
-        function getPreferredTheme() {
-            const savedTheme = localStorage.getItem('theme');
-            if (savedTheme) {
-                return savedTheme;
-            }
-            return window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
-        }
-        
-        // Set theme
-        function setTheme(theme) {
-            htmlElement.setAttribute('data-theme', theme);
-            localStorage.setItem('theme', theme);
-        }
-        
-        // Initialize theme
-        setTheme(getPreferredTheme());
-        
-        // Toggle theme on button click
-        themeToggle.addEventListener('click', () => {
-            const currentTheme = htmlElement.getAttribute('data-theme');
-            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-            setTheme(newTheme);
-        });
-        
-        // Listen for system theme changes
-        window.matchMedia('(prefers-color-scheme: light)').addEventListener('change', (e) => {
-            if (!localStorage.getItem('theme')) {
-                setTheme(e.matches ? 'light' : 'dark');
-            }
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
