@@ -43,7 +43,7 @@
 </head>
 <body class="bg-primary-dark text-white font-sans overflow-x-hidden transition-colors duration-300">
     <!-- Control Buttons -->
-    <div class="fixed top-8 right-8 flex gap-4 z-50 rtl:right-auto rtl:left-8">
+    <div class="fixed top-4 right-8 flex gap-4 z-50 rtl:right-auto rtl:left-8">
         <button id="themeToggle" 
                 class="w-12 h-12 rounded-full bg-white/5 backdrop-blur-xl border border-white/10 flex items-center justify-center hover:scale-110 transition-all duration-300 shadow-lg hover:bg-white/10"
                 aria-label="Toggle theme">
@@ -70,14 +70,14 @@
     </div>
 
     <!-- Animated Background -->
-    <div class="fixed inset-0 -z-10 bg-gradient-to-br from-primary-dark via-primary to-primary-light overflow-hidden">
+    <div id="animatedBg" class="fixed inset-0 -z-10 bg-gradient-to-br from-primary-dark via-primary to-primary-light overflow-hidden">
         <div class="absolute -top-48 -left-48 w-[500px] h-[500px] bg-accent-blue/40 rounded-full blur-[100px] animate-float"></div>
         <div class="absolute -bottom-36 -right-36 w-96 h-96 bg-accent-gold/40 rounded-full blur-[100px] animate-float-delayed"></div>
         <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-primary-light/40 rounded-full blur-[100px] animate-float-slow"></div>
     </div>
 
     <!-- Floating Shapes -->
-    <div class="fixed inset-0 pointer-events-none -z-5">
+    <div id="floatingShapes" class="fixed inset-0 pointer-events-none -z-5">
         <div class="absolute top-[10%] left-[10%] w-24 h-24 border-2 border-white/10 rounded-full animate-rotate-float"></div>
         <div class="absolute top-[70%] right-[15%] w-20 h-20 border-2 border-white/10 animate-rotate-float-reverse"></div>
         <div class="absolute top-[30%] right-[25%] w-16 h-16 border-2 border-white/10 rounded-full animate-pulse-float"></div>
@@ -87,12 +87,12 @@
 
     <!-- Header -->
     <header id="header" class="fixed top-0 left-0 w-full z-40 transition-all duration-300 py-4">
-        <nav class="max-w-7xl mx-auto px-8 flex justify-between items-center h-16">
+        <nav class="max-w-7xl mx-auto px-8 flex justify-between items-center h-16 relative">
             <a href="#" class="flex items-center">
                 <img src="logo.png" alt="Logo" class="w-12 h-12 object-contain">
             </a>
 
-            <div id="navMenu" class="nav-menu">
+            <div id="navMenu" class="nav-menu md:absolute md:left-1/2 md:-translate-x-1/2 md:w-max">
                 <ul class="flex gap-8 items-center max-md:fixed max-md:top-20 max-md:right-0 max-md:w-3/4 max-md:h-[calc(100vh-5rem)] max-md:bg-white/5 max-md:backdrop-blur-xl max-md:border-l max-md:border-white/10 max-md:flex-col max-md:p-8 max-md:gap-6 max-md:-right-full max-md:transition-all max-md:shadow-2xl rtl:max-md:right-auto rtl:max-md:left-0 rtl:max-md:-left-full rtl:max-md:border-l-0 rtl:max-md:border-r">
                     <li>
                         <a href="#home" class="nav-link text-white hover:text-accent-gold font-medium transition-colors relative pb-2 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-accent-gold after:transition-all hover:after:w-full" data-en="Home" data-ar="الرئيسية">Home</a>
@@ -113,9 +113,9 @@
             </div>
 
             <div id="navToggle" class="nav-toggle hidden max-md:flex flex-col gap-1.5 cursor-pointer w-8 h-6 justify-center">
-                <span class="block w-full h-0.5 bg-white rounded transition-all"></span>
-                <span class="block w-full h-0.5 bg-white rounded transition-all"></span>
-                <span class="block w-full h-0.5 bg-white rounded transition-all"></span>
+                <span class="block w-full h-0.5 bg-accent-gold rounded transition-all"></span>
+                <span class="block w-full h-0.5 bg-accent-gold rounded transition-all"></span>
+                <span class="block w-full h-0.5 bg-accent-gold rounded transition-all"></span>
             </div>
         </nav>
     </header>

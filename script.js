@@ -16,6 +16,16 @@ function getPreferredTheme() {
 // Set theme
 function setTheme(theme) {
     htmlElement.setAttribute('data-theme', theme);
+    htmlElement.classList.toggle('dark', theme === 'dark');
+    document.body.classList.toggle('light-theme', theme === 'light');
+
+    const sunIcon = themeToggle?.querySelector('.sun-icon');
+    const moonIcon = themeToggle?.querySelector('.moon-icon');
+    if (sunIcon && moonIcon) {
+        sunIcon.classList.toggle('hidden', theme !== 'light');
+        moonIcon.classList.toggle('hidden', theme !== 'dark');
+    }
+
     localStorage.setItem('theme', theme);
 }
 
@@ -57,6 +67,8 @@ function setLanguage(lang) {
     currentLang = lang;
     htmlElement.setAttribute('lang', lang);
     htmlElement.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
+    document.body.classList.toggle('font-arabic', lang === 'ar');
+    document.body.classList.toggle('font-sans', lang !== 'ar');
     localStorage.setItem('language', lang);
     
     // Update language toggle button

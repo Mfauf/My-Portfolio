@@ -157,12 +157,16 @@ html {
 
 /* Light Theme Support */
 body.light-theme {
-    background: linear-gradient(135deg, #e0f2fe 0%, #fef3c7 100%);
+    background: linear-gradient(135deg, #ffffff 0%, #f8fbff 55%, #fffdf7 100%);
+}
+
+html[data-theme="light"] body {
+    background: linear-gradient(135deg, #ffffff 0%, #f8fbff 55%, #fffdf7 100%);
 }
 
 body.light-theme .glass-card {
-    background: rgba(255, 255, 255, 0.7);
-    border: 1px solid rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(10, 17, 40, 0.08);
 }
 
 body.light-theme .text-white {
@@ -178,11 +182,52 @@ body.light-theme .text-white\/60 {
 }
 
 body.light-theme .border-white\/10 {
-    border-color: rgba(0, 0, 0, 0.1) !important;
+    border-color: rgba(10, 17, 40, 0.08) !important;
 }
 
 body.light-theme .bg-white\/5 {
-    background-color: rgba(0, 0, 0, 0.05) !important;
+    background-color: rgba(255, 255, 255, 0.78) !important;
+}
+
+body.light-theme .text-accent-blue {
+    color: #034078 !important;
+}
+
+body.light-theme .bg-primary-dark {
+    background-color: #ffffff !important;
+}
+
+body.light-theme .from-primary-dark {
+    --tw-gradient-from: #ffffff var(--tw-gradient-from-position) !important;
+    --tw-gradient-to: rgb(255 255 255 / 0) var(--tw-gradient-to-position) !important;
+}
+
+body.light-theme .via-primary {
+    --tw-gradient-stops: var(--tw-gradient-from), #f6faff var(--tw-gradient-via-position), var(--tw-gradient-to) !important;
+}
+
+body.light-theme .to-primary-light {
+    --tw-gradient-to: #fffdf7 var(--tw-gradient-to-position) !important;
+}
+
+body.light-theme #animatedBg {
+    background-image: linear-gradient(135deg, #ffffff 0%, #f6faff 55%, #fffdf7 100%) !important;
+}
+
+body.light-theme #floatingShapes div {
+    border-color: rgba(10, 17, 40, 0.08) !important;
+}
+
+body.light-theme .bg-accent-blue\/40 {
+    background-color: rgb(3 64 120 / 0.14) !important;
+}
+
+body.light-theme .bg-accent-gold\/40 {
+    background-color: rgb(255 200 87 / 0.2) !important;
+}
+
+body.light-theme .bg-primary-light\/40 {
+    background-color: rgb(3 64 120 / 0.1) !important;
 }
 
 /* Custom Scrollbar */
@@ -222,6 +267,11 @@ body {
 [lang="ar"],
 [lang="ar"] * {
     font-family: 'Cairo', 'Poppins', sans-serif;
+}
+
+html[lang="ar"] body,
+html[lang="ar"] body * {
+    font-family: 'Cairo', 'Poppins', sans-serif !important;
 }
 
 /* ==================== */
