@@ -237,16 +237,6 @@ const serviceData = {
             'REST API development',
             'Deployment & hosting setup'
         ]
-    },
-    'Data Analysis': {
-        price: '400 QR',
-        items: [
-            'Data cleaning & preprocessing',
-            'Statistical analysis with Python',
-            'Excel dashboards & reports',
-            'Data visualization & charts',
-            'Summary report with insights'
-        ]
     }
 };
 

@@ -243,21 +243,6 @@
                     </p>
                 </div>
 
-                <!-- System Architecture -->
-                <div class="glass-card p-8 rounded-3xl hover:scale-105 hover:shadow-2xl transition-all duration-300 group">
-                    <div class="w-16 h-16 mb-6 text-accent-gold group-hover:scale-110 transition-transform duration-300">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-full h-full">
-                            <circle cx="12" cy="12" r="10"></circle>
-                            <polygon points="10 8 16 12 10 16 10 8"></polygon>
-                        </svg>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4 text-white" data-en="Data Analysis: Using Python and Excel" data-ar="تحليل البيانات: باستخدام بايثون وإكسل">Data Analysis: Using Python and Excel</h3>
-                    <p class="text-white/70 leading-relaxed" 
-                       data-en="Analyzing and visualizing data using Python and Excel to support decisions and insights." 
-                       data-ar="تحليل البيانات وتصويرها باستخدام بايثون وإكسل لدعم القرارات واستخلاص الرؤى.">
-                        Analyzing and visualizing data using Python and Excel to support decisions and insights.
-                    </p>
-                </div>
             </div>
         </div>
     </section>
@@ -324,16 +309,16 @@
     </section>
 
     <!-- Order Service Section -->
-    <section id="order" class="py-20 px-8">
-        <div class="max-w-3xl mx-auto">
-            <h2 class="font-display text-4xl md:text-5xl font-bold text-center mb-4 text-gradient" data-en="Get Your Service Now" data-ar="احصل على خدمتك الآن">Get Your Service Now</h2>
-            <p class="text-center text-white/60 mb-12 text-lg" data-en="Fill in the form below and I'll get back to you shortly" data-ar="املأ النموذج أدناه وسأعود إليك قريباً">Fill in the form below and I'll get back to you shortly</p>
+    <section id="order" class="py-20 px-8 flex justify-center">
+        <div class="max-w-3xl w-full mx-auto">
+            <h2 class="font-display text-4xl md:text-5xl font-bold text-center mb-4 text-white" data-en="Get Your Service Now" data-ar="احصل على خدمتك الآن">Get Your Service Now</h2>
+            <p class="text-center text-white/80 mb-12 text-lg" data-en="Fill in the form below and I'll get back to you shortly" data-ar="املأ النموذج أدناه وسأعود إليك قريباً">Fill in the form below and I'll get back to you shortly</p>
 
-            <form name="order-service" method="POST" data-netlify="true" class="glass-card p-8 md:p-10 rounded-3xl space-y-6" id="orderForm">
+            <form name="order-service" method="POST" data-netlify="true" class="glass-card max-w-2xl mx-auto p-8 md:p-10 rounded-3xl space-y-6" id="orderForm">
                 <input type="hidden" name="form-name" value="order-service">
                 <!-- Name -->
                 <div>
-                    <label class="block text-white/80 mb-2 font-medium" data-en="Name" data-ar="الاسم">Name</label>
+                    <label class="block text-white mb-2 font-medium" data-en="Name" data-ar="الاسم">Name</label>
                     <input type="text" name="name" required
                            class="order-input w-full px-5 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-white/40 focus:outline-none focus:border-accent-gold focus:ring-1 focus:ring-accent-gold transition-all duration-300"
                            placeholder="Your full name" data-placeholder-en="Your full name" data-placeholder-ar="اسمك الكامل">
@@ -341,7 +326,7 @@
 
                 <!-- Mobile Number -->
                 <div>
-                    <label class="block text-white/80 mb-2 font-medium" data-en="Mobile Number" data-ar="رقم الجوال">Mobile Number</label>
+                    <label class="block text-white mb-2 font-medium" data-en="Mobile Number" data-ar="رقم الجوال">Mobile Number</label>
                     <input type="tel" name="mobile" required
                            class="order-input w-full px-5 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-white/40 focus:outline-none focus:border-accent-gold focus:ring-1 focus:ring-accent-gold transition-all duration-300"
                            placeholder="+974 XXXX XXXX" data-placeholder-en="+974 XXXX XXXX" data-placeholder-ar="+974 XXXX XXXX">
@@ -349,14 +334,13 @@
 
                 <!-- Service -->
                 <div>
-                    <label class="block text-white/80 mb-2 font-medium" data-en="Service" data-ar="الخدمة">Service</label>
+                    <label class="block text-white mb-2 font-medium" data-en="Service" data-ar="الخدمة">Service</label>
                     <select name="service" required id="serviceSelect"
                             class="order-input w-full px-5 py-3 rounded-xl bg-white/5 border border-white/10 text-white focus:outline-none focus:border-accent-gold focus:ring-1 focus:ring-accent-gold transition-all duration-300 appearance-none cursor-pointer">
                         <option value="" disabled selected data-en="Choose a service" data-ar="اختر خدمة">Choose a service</option>
                         <option value="Frontend Development" data-en="Frontend Development" data-ar="تطوير الواجهات الأمامية">Frontend Development</option>
                         <option value="Landing Page" data-en="Landing Page" data-ar="صفحة هبوط">Landing Page</option>
                         <option value="Full-Stack WebApp" data-en="Full-Stack WebApp" data-ar="تطبيق ويب متكامل">Full-Stack WebApp</option>
-                        <option value="Data Analysis" data-en="Data Analysis: Python & Excel" data-ar="تحليل البيانات: بايثون وإكسل">Data Analysis: Python & Excel</option>
                     </select>
                 </div>
 
@@ -364,7 +348,7 @@
                 <div id="serviceDetails" class="hidden service-details-reveal">
                     <div class="rounded-2xl bg-white/5 border border-accent-gold/30 p-6 space-y-3">
                         <div class="flex items-center justify-between">
-                            <h4 id="serviceDetailTitle" class="text-lg font-bold text-accent-gold"></h4>
+                            <h4 id="serviceDetailTitle" class="text-lg font-bold text-white"></h4>
                             <span id="serviceDetailPrice" class="text-xl font-bold text-accent-gold"></span>
                         </div>
                         <ul id="serviceDetailList" class="space-y-2 text-white/70 text-sm"></ul>
@@ -373,7 +357,7 @@
 
                 <!-- Details -->
                 <div>
-                    <label class="block text-white/80 mb-2 font-medium" data-en="Details" data-ar="التفاصيل">Details</label>
+                    <label class="block text-white mb-2 font-medium" data-en="Details" data-ar="التفاصيل">Details</label>
                     <textarea name="details" rows="5" required
                               class="order-input w-full px-5 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-white/40 focus:outline-none focus:border-accent-gold focus:ring-1 focus:ring-accent-gold transition-all duration-300 resize-y"
                               placeholder="Describe your project requirements..." data-placeholder-en="Describe your project requirements..." data-placeholder-ar="اشرح متطلبات مشروعك..."></textarea>
