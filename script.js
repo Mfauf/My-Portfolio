@@ -82,6 +82,9 @@ function setLanguage(lang) {
             element.textContent = element.getAttribute('data-ar');
         }
     });
+
+    // Update input placeholders & select options
+    updatePlaceholders(lang);
 }
 
 // Initialize language
@@ -116,13 +119,16 @@ navLinks.forEach(link => {
 });
 
 // Header scroll effect
-window.addEventListener('scroll', () => {
+const updateHeaderOnScroll = () => {
     if (window.scrollY > 50) {
         header.classList.add('scrolled');
     } else {
         header.classList.remove('scrolled');
     }
-});
+};
+
+window.addEventListener('scroll', updateHeaderOnScroll);
+window.addEventListener('load', updateHeaderOnScroll);
 
 // ==========================================
 // Smooth Scroll
@@ -191,3 +197,93 @@ const animateOnScroll = () => {
 
 window.addEventListener('scroll', animateOnScroll);
 window.addEventListener('load', animateOnScroll);
+
+// ==========================================
+// Service Order Form – Details Reveal
+// ==========================================
+const serviceSelect = document.getElementById('serviceSelect');
+const serviceDetails = document.getElementById('serviceDetails');
+const serviceDetailTitle = document.getElementById('serviceDetailTitle');
+const serviceDetailPrice = document.getElementById('serviceDetailPrice');
+const serviceDetailList = document.getElementById('serviceDetailList');
+
+const serviceData = {
+    'Frontend Development': {
+        price: '500 QR',
+        items: [
+            'Responsive design for all screen sizes',
+            'Modern UI with HTML, CSS & JavaScript',
+            'Cross-browser compatibility',
+            'Performance optimized code',
+            'Up to 5 pages'
+        ]
+    },
+    'Landing Page': {
+        price: '300 QR',
+        items: [
+            'Single-page conversion-focused design',
+            'Contact form integration',
+            'SEO-friendly structure',
+            'Mobile-first responsive layout',
+            'Fast delivery within 3 days'
+        ]
+    },
+    'Full-Stack WebApp': {
+        price: '1500 QR',
+        items: [
+            'Frontend & Backend development',
+            'Database design and integration',
+            'User authentication & authorization',
+            'REST API development',
+            'Deployment & hosting setup'
+        ]
+    },
+    'Data Analysis': {
+        price: '400 QR',
+        items: [
+            'Data cleaning & preprocessing',
+            'Statistical analysis with Python',
+            'Excel dashboards & reports',
+            'Data visualization & charts',
+            'Summary report with insights'
+        ]
+    }
+};
+
+if (serviceSelect) {
+    serviceSelect.addEventListener('change', function () {
+        const key = this.value;
+        const data = serviceData[key];
+
+        if (data) {
+            serviceDetailTitle.textContent = this.options[this.selectedIndex].textContent;
+            serviceDetailPrice.textContent = data.price;
+            serviceDetailList.innerHTML = data.items
+                .map(item => `<li class="flex items-start gap-2"><svg class="w-4 h-4 mt-0.5 text-accent-gold shrink-0" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span>${item}</span></li>`)
+                .join('');
+            serviceDetails.classList.remove('hidden');
+            serviceDetails.classList.add('service-details-show');
+        } else {
+            serviceDetails.classList.add('hidden');
+            serviceDetails.classList.remove('service-details-show');
+        }
+    });
+}
+
+// Update placeholders on language change
+function updatePlaceholders(lang) {
+    document.querySelectorAll('[data-placeholder-en]').forEach(el => {
+        const key = lang === 'ar' ? 'data-placeholder-ar' : 'data-placeholder-en';
+        if (el.hasAttribute(key)) {
+            el.placeholder = el.getAttribute(key);
+        }
+    });
+    // Update select options text
+    document.querySelectorAll('select option[data-en]').forEach(opt => {
+        if (lang === 'ar' && opt.hasAttribute('data-ar')) {
+            opt.textContent = opt.getAttribute('data-ar');
+        } else if (lang === 'en' && opt.hasAttribute('data-en')) {
+            opt.textContent = opt.getAttribute('data-en');
+        }
+    });
+}
