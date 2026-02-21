@@ -183,7 +183,7 @@ html {
         backdrop-filter: blur(10px);
         -webkit-backdrop-filter: blur(10px);
         padding: 0.6rem 1.2rem;
-        z-index: 500000;
+        z-index: 1;
     }
 }
 
@@ -405,7 +405,24 @@ html[lang="ar"] body * {
     right: 2rem;
     display: flex;
     gap: 1rem;
-    z-index: 44;
+    z-index: 80;
+    pointer-events: auto;
+}
+
+body > .control-buttons {
+    z-index: 2147483000 !important;
+    pointer-events: auto !important;
+}
+
+body > .control-buttons .theme-toggle,
+body > .control-buttons .lang-toggle {
+    position: relative;
+    z-index: 2147483001;
+    pointer-events: auto;
+}
+
+.control-buttons * {
+    pointer-events: auto;
 }
 
 [dir="rtl"] .control-buttons {
@@ -1974,6 +1991,9 @@ html[lang="ar"] body * {
     .mobile-sidebar-controls {
         margin-top: auto;
         padding-top: 1rem;
+        position: relative;
+        z-index: 2;
+        pointer-events: auto;
     }
 
     .mobile-sidebar-controls .control-buttons {
@@ -1983,6 +2003,7 @@ html[lang="ar"] body * {
         left: auto;
         z-index: auto;
         gap: 0.75rem;
+        pointer-events: auto;
     }
 
     .mobile-sidebar-controls .theme-toggle,
