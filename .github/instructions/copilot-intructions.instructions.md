@@ -1,0 +1,4 @@
+- **Always** use a Mobile-First approuch when writing CSS. This means that you should write styles for mobile devices first, and then use media queries to add styles for larger screens.
+- **Always** ensure responsive design by using relative units (like %, em, rem) instead of fixed units (like px) for layout and typography.
+- **Always** ensure responsviness using flexbox or CSS grid for layout to create flexible and adaptive designs.
+- **Always** use tailwind CSS for styling to maintain consistency and efficiency in your design.
