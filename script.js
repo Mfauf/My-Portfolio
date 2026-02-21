@@ -1,7 +1,7 @@
 // ==========================================
 // Theme Switcher
 // ==========================================
-const themeToggle = document.getElementById('themeToggle');
+const themeToggles = document.querySelectorAll('[data-theme-toggle]');
 const htmlElement = document.documentElement;
 
 // Check for saved theme preference or default to system preference
@@ -19,12 +19,14 @@ function setTheme(theme) {
     htmlElement.classList.toggle('dark', theme === 'dark');
     document.body.classList.toggle('light-theme', theme === 'light');
 
-    const sunIcon = themeToggle?.querySelector('.sun-icon');
-    const moonIcon = themeToggle?.querySelector('.moon-icon');
-    if (sunIcon && moonIcon) {
-        sunIcon.classList.toggle('hidden', theme !== 'light');
-        moonIcon.classList.toggle('hidden', theme !== 'dark');
-    }
+    themeToggles.forEach((themeToggle) => {
+        const sunIcon = themeToggle?.querySelector('.sun-icon');
+        const moonIcon = themeToggle?.querySelector('.moon-icon');
+        if (sunIcon && moonIcon) {
+            sunIcon.classList.toggle('hidden', theme !== 'light');
+            moonIcon.classList.toggle('hidden', theme !== 'dark');
+        }
+    });
 
     localStorage.setItem('theme', theme);
 }
@@ -33,10 +35,12 @@ function setTheme(theme) {
 setTheme(getPreferredTheme());
 
 // Toggle theme on button click
-themeToggle.addEventListener('click', () => {
-    const currentTheme = htmlElement.getAttribute('data-theme');
-    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-    setTheme(newTheme);
+themeToggles.forEach((themeToggle) => {
+    themeToggle.addEventListener('click', () => {
+        const currentTheme = htmlElement.getAttribute('data-theme');
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        setTheme(newTheme);
+    });
 });
 
 // Listen for system theme changes
@@ -49,7 +53,7 @@ window.matchMedia('(prefers-color-scheme: light)').addEventListener('change', (e
 // ==========================================
 // Language Switcher
 // ==========================================
-const langToggle = document.getElementById('langToggle');
+const langToggles = document.querySelectorAll('[data-lang-toggle]');
 let currentLang = localStorage.getItem('language') || 'en';
 
 // Translation data
@@ -72,7 +76,12 @@ function setLanguage(lang) {
     localStorage.setItem('language', lang);
     
     // Update language toggle button
-    langToggle.querySelector('.lang-text').textContent = translations[lang].langText;
+    langToggles.forEach((langToggle) => {
+        const langText = langToggle.querySelector('.lang-text');
+        if (langText) {
+            langText.textContent = translations[lang].langText;
+        }
+    });
     
     // Update all translatable elements
     document.querySelectorAll('[data-en]').forEach(element => {
@@ -91,9 +100,11 @@ function setLanguage(lang) {
 setLanguage(currentLang);
 
 // Toggle language on button click
-langToggle.addEventListener('click', () => {
-    const newLang = currentLang === 'en' ? 'ar' : 'en';
-    setLanguage(newLang);
+langToggles.forEach((langToggle) => {
+    langToggle.addEventListener('click', () => {
+        const newLang = currentLang === 'en' ? 'ar' : 'en';
+        setLanguage(newLang);
+    });
 });
 
 // ==========================================
@@ -101,21 +112,65 @@ langToggle.addEventListener('click', () => {
 // ==========================================
 const navToggle = document.getElementById('navToggle');
 const navMenu = document.getElementById('navMenu');
+const navBackdrop = document.getElementById('navBackdrop');
 const navLinks = document.querySelectorAll('.nav-link');
 const header = document.getElementById('header');
 
-// Toggle mobile menu
-navToggle.addEventListener('click', () => {
-    navMenu.classList.toggle('active');
-    navToggle.classList.toggle('active');
-});
+function openMobileMenu() {
+    navMenu.classList.add('active');
+    navToggle.classList.add('active');
+    navBackdrop?.classList.add('active');
+    navToggle?.setAttribute('aria-expanded', 'true');
+    document.body.classList.add('nav-open');
+}
+
+function closeMobileMenu() {
+    navMenu.classList.remove('active');
+    navToggle.classList.remove('active');
+    navBackdrop?.classList.remove('active');
+    navToggle?.setAttribute('aria-expanded', 'false');
+    document.body.classList.remove('nav-open');
+}
+
+function toggleMobileMenu() {
+    if (navMenu.classList.contains('active')) {
+        closeMobileMenu();
+    } else {
+        openMobileMenu();
+    }
+}
+
+if (navToggle) {
+    navToggle.addEventListener('click', toggleMobileMenu);
+    navToggle.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter' || event.key === ' ') {
+            event.preventDefault();
+            toggleMobileMenu();
+        }
+    });
+}
+
+if (navBackdrop) {
+    navBackdrop.addEventListener('click', closeMobileMenu);
+}
 
 // Close mobile menu when clicking on a link
 navLinks.forEach(link => {
     link.addEventListener('click', () => {
-        navMenu.classList.remove('active');
-        navToggle.classList.remove('active');
+        closeMobileMenu();
     });
+});
+
+document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') {
+        closeMobileMenu();
+    }
+});
+
+window.addEventListener('resize', () => {
+    if (window.innerWidth >= 768) {
+        closeMobileMenu();
+    }
 });
 
 // Header scroll effect
@@ -197,6 +252,79 @@ const animateOnScroll = () => {
 
 window.addEventListener('scroll', animateOnScroll);
 window.addEventListener('load', animateOnScroll);
+
+// ==========================================
+// External JSON Content (Services & Tools)
+// ==========================================
+const serviceIcons = {
+    code: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-full h-full"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>`,
+    page: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-full h-full"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>`,
+    app: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-full h-full"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>`
+};
+
+function renderServices(services) {
+    const servicesGrid = document.getElementById('servicesGrid');
+    if (!servicesGrid || !Array.isArray(services)) return;
+
+    servicesGrid.innerHTML = services.map(service => {
+        const title = currentLang === 'ar' ? service.titleAr : service.titleEn;
+        const description = currentLang === 'ar' ? service.descriptionAr : service.descriptionEn;
+        const iconSvg = serviceIcons[service.icon] || serviceIcons.code;
+
+        return `
+            <div class="glass-card p-8 rounded-3xl hover:scale-105 hover:shadow-2xl transition-all duration-300 group">
+                <div class="w-16 h-16 mb-6 text-accent-gold group-hover:scale-110 transition-transform duration-300">
+                    ${iconSvg}
+                </div>
+                <h3 class="text-2xl font-bold mb-4 text-white" data-en="${service.titleEn}" data-ar="${service.titleAr}">${title}</h3>
+                <p class="text-white/70 leading-relaxed" data-en="${service.descriptionEn}" data-ar="${service.descriptionAr}">${description}</p>
+            </div>
+        `;
+    }).join('');
+}
+
+function renderTools(tools) {
+    const toolsGrid = document.getElementById('toolsGrid');
+    if (!toolsGrid || !Array.isArray(tools)) return;
+
+    toolsGrid.innerHTML = tools.map(tool => {
+        const label = currentLang === 'ar' ? tool.nameAr : tool.nameEn;
+        return `
+            <div class="glass-card p-6 rounded-2xl text-center hover:scale-110 transition-transform duration-300 group flex flex-col items-center">
+                <img src="${tool.icon}" alt="${tool.nameEn}" class="w-12 h-12 mb-3 group-hover:scale-110 transition-transform duration-300">
+                <h3 class="text-white font-semibold" data-en="${tool.nameEn}" data-ar="${tool.nameAr}">${label}</h3>
+            </div>
+        `;
+    }).join('');
+}
+
+async function loadExternalContent() {
+    try {
+        const [servicesResponse, toolsResponse] = await Promise.all([
+            fetch('services.json'),
+            fetch('mytools.json')
+        ]);
+
+        if (!servicesResponse.ok || !toolsResponse.ok) {
+            throw new Error('Failed to load external JSON content');
+        }
+
+        const [services, tools] = await Promise.all([
+            servicesResponse.json(),
+            toolsResponse.json()
+        ]);
+
+        renderServices(services);
+        renderTools(tools);
+
+        setLanguage(currentLang);
+        animateOnScroll();
+    } catch (error) {
+        console.error('Error loading JSON content:', error);
+    }
+}
+
+window.addEventListener('load', loadExternalContent);
 
 // ==========================================
 // Service Order Form – Details Reveal

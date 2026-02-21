@@ -1,0 +1,23 @@
+[
+  {
+    "icon": "code",
+    "titleEn": "Frontend development",
+    "titleAr": "تطوير الواجهات الأمامية",
+    "descriptionEn": "Building responsive and modern user interfaces using HTML, CSS, and JavaScript best practices.",
+    "descriptionAr": "بناء واجهات مستخدم حديثة ومتجاوبة باستخدام أفضل ممارسات HTML وCSS وJavaScript."
+  },
+  {
+    "icon": "page",
+    "titleEn": "Landing Page",
+    "titleAr": "صفحات الهبوط",
+    "descriptionEn": "Designing and developing conversion-focused landing pages for products, services, and campaigns.",
+    "descriptionAr": "تصميم وتطوير صفحات هبوط تركز على التحويل للمنتجات والخدمات والحملات."
+  },
+  {
+    "icon": "app",
+    "titleEn": "Full-Stack WebApp",
+    "titleAr": "تطبيقات ويب متكاملة",
+    "descriptionEn": "Building complete web applications from frontend interfaces to backend APIs and databases.",
+    "descriptionAr": "بناء تطبيقات ويب متكاملة من الواجهات الأمامية إلى الواجهات الخلفية وقواعد البيانات."
+  }
+]

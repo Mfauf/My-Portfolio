@@ -1,0 +1,12 @@
+[
+  { "icon": "assets/html5.svg", "nameEn": "HTML", "nameAr": "HTML" },
+  { "icon": "assets/css.svg", "nameEn": "CSS", "nameAr": "CSS" },
+  { "icon": "assets/javascript.svg", "nameEn": "Javascript", "nameAr": "جافاسكريبت" },
+  { "icon": "assets/python.svg", "nameEn": "Python", "nameAr": "بايثون" },
+  { "icon": "assets/office.svg", "nameEn": "Office M365", "nameAr": "أوفيس M365" },
+  { "icon": "assets/firebase.svg", "nameEn": "Firebase", "nameAr": "فايربيس" },
+  { "icon": "assets/supabase.svg", "nameEn": "Supabase", "nameAr": "سوبابيس" },
+  { "icon": "assets/netlify.svg", "nameEn": "Netlify", "nameAr": "نتلايفاي" },
+  { "icon": "assets/ai_tools.svg", "nameEn": "AI Tools", "nameAr": "أدوات الذكاء الاصطناعي" },
+  { "icon": "assets/adobe-illustrator.svg", "nameEn": "Adobe Illustrator", "nameAr": "أدوبي إليستريتور" }
+]
