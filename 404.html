@@ -1,173 +1,59 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="404 - Page Not Found" />
-  <title>404 | Page Not Found</title>
-  <link rel="icon" type="image/png" href="logo.png" />
-  <style>
-    :root {
-      --bg-dark: #0a1128;
-      --bg-main: #001f54;
-      --bg-light: #034078;
-      --accent-gold: #ffc857;
-      --accent-blue: #1282a2;
-      --text-main: #ffffff;
-      --text-soft: rgba(255, 255, 255, 0.78);
-      --glass-bg: rgba(255, 255, 255, 0.08);
-      --glass-border: rgba(255, 255, 255, 0.14);
-      --shadow: 0 1.4rem 3rem rgba(0, 0, 0, 0.35);
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      min-height: 100dvh;
-      display: grid;
-      place-items: center;
-      padding: 1.25rem;
-      color: var(--text-main);
-      font-family: Poppins, Arial, sans-serif;
-      background: linear-gradient(135deg, var(--bg-dark) 0%, var(--bg-main) 52%, var(--bg-light) 100%);
-      overflow: hidden;
-      position: relative;
-    }
-
-    .orb {
-      position: absolute;
-      border-radius: 999rem;
-      filter: blur(5.5rem);
-      opacity: 0.5;
-      pointer-events: none;
-    }
-
-    .orb-one {
-      width: 19rem;
-      height: 19rem;
-      top: -6rem;
-      left: -4rem;
-      background: rgba(18, 130, 162, 0.6);
-    }
-
-    .orb-two {
-      width: 16rem;
-      height: 16rem;
-      right: -5rem;
-      bottom: -4rem;
-      background: rgba(255, 200, 87, 0.5);
-    }
-
-    .card {
-      width: min(100%, 34rem);
-      padding: 2rem 1.25rem;
-      border-radius: 1.25rem;
-      background: var(--glass-bg);
-      border: 0.06rem solid var(--glass-border);
-      backdrop-filter: blur(0.9rem);
-      -webkit-backdrop-filter: blur(0.9rem);
-      box-shadow: var(--shadow);
-      text-align: center;
-      display: grid;
-      gap: 1rem;
-      z-index: 1;
-    }
-
-    .code {
-      font-size: clamp(3.2rem, 16vw, 5.8rem);
-      font-weight: 700;
-      letter-spacing: 0.06em;
-      line-height: 1;
-      color: var(--accent-gold);
-      text-shadow: 0 0.5rem 1.4rem rgba(255, 200, 87, 0.22);
-    }
-
-    .title {
-      font-size: clamp(1.2rem, 5.2vw, 1.8rem);
-      font-weight: 600;
-    }
-
-    .text {
-      color: var(--text-soft);
-      font-size: 1rem;
-      line-height: 1.7;
-      margin-inline: auto;
-      max-width: 30ch;
-    }
-
-    .actions {
-      margin-top: 0.5rem;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 0.75rem;
-      flex-wrap: wrap;
-    }
-
-    .btn {
-      display: inline-flex;
-      justify-content: center;
-      align-items: center;
-      text-decoration: none;
-      border-radius: 999rem;
-      padding: 0.8rem 1.25rem;
-      font-weight: 600;
-      font-size: 0.98rem;
-      transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
-    }
-
-    .btn-primary {
-      color: #0a1128;
-      background: linear-gradient(135deg, var(--accent-gold) 0%, #ffd97d 100%);
-      box-shadow: 0 0.8rem 1.8rem rgba(255, 200, 87, 0.22);
-    }
-
-    .btn-secondary {
-      color: var(--text-main);
-      background: rgba(255, 255, 255, 0.06);
-      border: 0.06rem solid rgba(255, 255, 255, 0.18);
-    }
-
-    .btn:hover {
-      transform: translateY(-0.08rem);
-    }
-
-    .hint {
-      margin-top: 0.4rem;
-      font-size: 0.88rem;
-      color: rgba(255, 255, 255, 0.58);
-    }
-
-    @media (min-width: 48rem) {
-      .card {
-        padding: 2.3rem 2rem;
-      }
-
-      .text {
-        font-size: 1.05rem;
-      }
-    }
-  </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="404 - Page not found" />
+    <title>404 | Page Not Found</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            dark: '#0a1128',
+                            DEFAULT: '#001f54',
+                            light: '#034078'
+                        },
+                        accent: {
+                            blue: '#1282a2',
+                            gold: '#ffc857',
+                            'gold-light': '#ffd97d'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                        display: ['Playfair Display', 'serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 </head>
-<body>
-  <div class="orb orb-one" aria-hidden="true"></div>
-  <div class="orb orb-two" aria-hidden="true"></div>
+<body class="min-h-screen w-full max-w-full overflow-x-hidden bg-gradient-to-br from-primary-dark via-primary to-primary-light text-white font-sans">
+    <main class="min-h-screen w-full max-w-full flex items-center justify-center px-4 py-10 sm:px-6">
+        <section class="w-full max-w-full sm:max-w-2xl rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl p-6 sm:p-10 text-center shadow-2xl">
+            <p class="text-accent-gold text-sm sm:text-base tracking-[0.12em] uppercase">Error</p>
+            <h1 class="font-display mt-3 text-6xl sm:text-7xl md:text-8xl leading-none text-accent-gold">404</h1>
+            <h2 class="mt-4 text-2xl sm:text-3xl font-semibold">Page Not Found</h2>
+            <p class="mt-4 text-white/75 text-sm sm:text-base leading-relaxed">
+                The page you’re looking for doesn’t exist or may have been moved.
+            </p>
 
-  <main class="card" role="main">
-    <p class="code" aria-label="Error 404">404</p>
-    <h1 class="title">Page Not Found</h1>
-    <p class="text">The page you're looking for doesn't exist or may have been moved to a different location.</p>
-
-    <div class="actions">
-      <a class="btn btn-primary" href="index.html">Back to Home</a>
-      <a class="btn btn-secondary" href="javascript:history.back()">Go Back</a>
-    </div>
-
-    <p class="hint">If this keeps happening, check the URL and try again.</p>
-  </main>
+            <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
+                <a href="index.html" class="w-full sm:w-auto inline-flex items-center justify-center rounded-full bg-gradient-to-r from-accent-gold to-accent-gold-light px-6 py-3 text-primary-dark font-semibold transition-transform duration-300 hover:scale-105">
+                    Back To Home
+                </a>
+                <button type="button" onclick="history.back()" class="w-full sm:w-auto inline-flex items-center justify-center rounded-full border border-white/20 bg-white/5 px-6 py-3 font-semibold transition-all duration-300 hover:bg-white/10 hover:scale-105">
+                    Go Back
+                </button>
+            </div>
+        </section>
+    </main>
 </body>
 </html>
