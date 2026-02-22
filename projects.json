@@ -1,14 +1,8 @@
 [
     {
         "screenshot": "assets/projects/project1.png",
-        "nameEn": "Portfolio Website",
-        "nameAr": "موقع المحفظة الشخصية",
-        "url": "https://mmfauf.netlify.app"
-    },
-    {
-        "screenshot": "assets/projects/project2.png",
-        "nameEn": "Landing Page",
-        "nameAr": "صفحة هبوط",
-        "url": "https://example.com"
+        "nameEn": "QFL Dashboard",
+        "nameAr": "لوحة تحكم",
+        "url": "https://qfldashboard.netlify.app/"
     }
 ]
