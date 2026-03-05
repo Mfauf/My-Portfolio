@@ -290,9 +290,9 @@ function renderTools(tools) {
     toolsGrid.innerHTML = tools.map(tool => {
         const label = currentLang === 'ar' ? tool.nameAr : tool.nameEn;
         return `
-            <div class="glass-card p-6 rounded-2xl text-center hover:scale-110 transition-transform duration-300 group flex flex-col items-center">
-                <img src="${tool.icon}" alt="${tool.nameEn}" class="w-12 h-12 mb-3 group-hover:scale-110 transition-transform duration-300">
-                <h3 class="text-white font-semibold" data-en="${tool.nameEn}" data-ar="${tool.nameAr}">${label}</h3>
+            <div class="carousel-card-tool glass-card p-5 rounded-2xl text-center hover:scale-105 transition-transform duration-300 group flex flex-col items-center">
+                <img src="${tool.icon}" alt="${tool.nameEn}" class="w-10 h-10 mb-3 group-hover:scale-110 transition-transform duration-300">
+                <h3 class="text-white text-sm font-semibold leading-tight" data-en="${tool.nameEn}" data-ar="${tool.nameAr}">${label}</h3>
             </div>
         `;
     }).join('');
@@ -337,6 +337,54 @@ function renderProjects(projects) {
     }).join('');
 }
 
+// ==========================================
+// Carousel – auto-scroll + arrow navigation
+// ==========================================
+function initCarousel(trackId, prevBtnId, nextBtnId, intervalMs = 3500) {
+    const track   = document.getElementById(trackId);
+    const prevBtn = document.getElementById(prevBtnId);
+    const nextBtn = document.getElementById(nextBtnId);
+    if (!track || !prevBtn || !nextBtn) return;
+
+    const getStep = () => {
+        const card = track.firstElementChild;
+        if (!card) return 220;
+        const gap = parseFloat(getComputedStyle(track).gap) || 20;
+        return card.offsetWidth + gap;
+    };
+
+    const scrollNext = () => {
+        const { scrollLeft, scrollWidth, clientWidth } = track;
+        if (scrollLeft + clientWidth >= scrollWidth - 4) {
+            track.scrollTo({ left: 0, behavior: 'smooth' });
+        } else {
+            track.scrollBy({ left: getStep(), behavior: 'smooth' });
+        }
+    };
+
+    const scrollPrev = () => {
+        if (track.scrollLeft <= 4) {
+            track.scrollTo({ left: track.scrollWidth, behavior: 'smooth' });
+        } else {
+            track.scrollBy({ left: -getStep(), behavior: 'smooth' });
+        }
+    };
+
+    // RTL: flip direction
+    const isRtl = () => document.documentElement.dir === 'rtl';
+    prevBtn.addEventListener('click', () => isRtl() ? scrollNext() : scrollPrev());
+    nextBtn.addEventListener('click', () => isRtl() ? scrollPrev() : scrollNext());
+
+    let timer = setInterval(scrollNext, intervalMs);
+    const pause = () => clearInterval(timer);
+    const resume = () => { timer = setInterval(scrollNext, intervalMs); };
+
+    track.addEventListener('mouseenter', pause);
+    track.addEventListener('mouseleave', resume);
+    track.addEventListener('touchstart', pause, { passive: true });
+    track.addEventListener('touchend',   resume, { passive: true });
+}
+
 async function loadExternalContent() {
     try {
         const [servicesResponse, toolsResponse, projectsResponse] = await Promise.all([
@@ -359,6 +407,8 @@ async function loadExternalContent() {
         renderTools(tools);
         renderProjects(projects);
 
+        initCarousel('toolsGrid', 'toolsPrev', 'toolsNext', 3000);
+
         setLanguage(currentLang);
         animateOnScroll();
     } catch (error) {
@@ -367,68 +417,6 @@ async function loadExternalContent() {
 }
 
 window.addEventListener('load', loadExternalContent);
-
-// ==========================================
-// Service Order Form – Details Reveal
-// ==========================================
-const serviceSelect = document.getElementById('serviceSelect');
-const serviceDetails = document.getElementById('serviceDetails');
-const serviceDetailTitle = document.getElementById('serviceDetailTitle');
-const serviceDetailPrice = document.getElementById('serviceDetailPrice');
-const serviceDetailList = document.getElementById('serviceDetailList');
-
-const serviceData = {
-    'Frontend Development': {
-        price: '500 QR',
-        items: [
-            'Responsive design for all screen sizes',
-            'Modern UI with HTML, CSS & JavaScript',
-            'Cross-browser compatibility',
-            'Performance optimized code',
-            'Up to 5 pages'
-        ]
-    },
-    'Landing Page': {
-        price: '300 QR',
-        items: [
-            'Single-page conversion-focused design',
-            'Contact form integration',
-            'SEO-friendly structure',
-            'Mobile-first responsive layout',
-            'Fast delivery within 3 days'
-        ]
-    },
-    'Full-Stack WebApp': {
-        price: '1500 QR',
-        items: [
-            'Frontend & Backend development',
-            'Database design and integration',
-            'User authentication & authorization',
-            'REST API development',
-            'Deployment & hosting setup'
-        ]
-    }
-};
-
-if (serviceSelect) {
-    serviceSelect.addEventListener('change', function () {
-        const key = this.value;
-        const data = serviceData[key];
-
-        if (data) {
-            serviceDetailTitle.textContent = this.options[this.selectedIndex].textContent;
-            serviceDetailPrice.textContent = data.price;
-            serviceDetailList.innerHTML = data.items
-                .map(item => `<li class="flex items-start gap-2"><svg class="w-4 h-4 mt-0.5 text-accent-gold shrink-0" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span>${item}</span></li>`)
-                .join('');
-            serviceDetails.classList.remove('hidden');
-            serviceDetails.classList.add('service-details-show');
-        } else {
-            serviceDetails.classList.add('hidden');
-            serviceDetails.classList.remove('service-details-show');
-        }
-    });
-}
 
 // Update placeholders on language change
 function updatePlaceholders(lang) {

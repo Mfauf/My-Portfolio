@@ -6,7 +6,9 @@
   { "icon": "assets/office.svg", "nameEn": "Office M365", "nameAr": "أوفيس M365" },
   { "icon": "assets/firebase.svg", "nameEn": "Firebase", "nameAr": "فايربيس" },
   { "icon": "assets/supabase.svg", "nameEn": "Supabase", "nameAr": "سوبابيس" },
-  { "icon": "assets/netlify.svg", "nameEn": "Netlify", "nameAr": "نتلايفاي" },
+  { "icon": "assets/cloudflare.svg", "nameEn": "Cloudflare", "nameAr": "كلاودفلير" },
   { "icon": "assets/ai_tools.svg", "nameEn": "AI Tools", "nameAr": "أدوات الذكاء الاصطناعي" },
-  { "icon": "assets/adobe-illustrator.svg", "nameEn": "Adobe Illustrator", "nameAr": "أدوبي إليستريتور" }
+  { "icon": "assets/adobe-illustrator.svg", "nameEn": "Adobe Illustrator", "nameAr": "أدوبي إليستريتور" },
+  { "icon": "assets/tailwindcss.svg", "nameEn": "Tailwind CSS", "nameAr": "Tailwind CSS"},
+  { "icon": "assets/github.svg", "nameEn": "Git Hub", "nameAr": "جيت هاب" }
 ]

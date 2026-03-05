@@ -1888,6 +1888,77 @@ body > .control-buttons .lang-toggle {
 }
 
 /* ==================== */
+/* ==========================================
+   Carousel
+   ========================================== */
+.carousel-wrapper {
+    position: relative;
+    padding: 0 3rem;
+}
+
+.carousel-track {
+    display: flex;
+    gap: 1.25rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding: 0.5rem 0 1rem;
+}
+
+.carousel-track::-webkit-scrollbar {
+    display: none;
+}
+
+/* Tool cards */
+.carousel-card-tool {
+    scroll-snap-align: start;
+    flex-shrink: 0;
+    width: 9rem;
+}
+
+@media (max-width: 640px) {
+    .carousel-wrapper {
+        padding: 0 2.25rem;
+    }
+    .carousel-card-tool {
+        width: 7.5rem;
+    }
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    width: 2.65rem;
+    height: 2.65rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.07);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    color: #ffc857;
+    cursor: pointer;
+    transition: background 0.25s, transform 0.25s;
+}
+
+.carousel-btn:hover {
+    background: rgba(255, 200, 87, 0.18);
+    transform: translateY(-50%) scale(1.12);
+}
+
+.carousel-btn-prev { left: 0; }
+.carousel-btn-next { right: 0; }
+
+[dir="rtl"] .carousel-btn-prev { left: auto; right: 0; }
+[dir="rtl"] .carousel-btn-next { right: auto; left: 0; }
+[dir="rtl"] .carousel-btn-prev svg { transform: scaleX(-1); }
+[dir="rtl"] .carousel-btn-next svg { transform: scaleX(-1); }
+
 /* Mobile Sidebar Nav */
 /* ==================== */
 .nav-backdrop {
