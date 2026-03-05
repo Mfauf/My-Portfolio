@@ -190,8 +190,10 @@ window.addEventListener('load', updateHeaderOnScroll);
 // ==========================================
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
+        const href = this.getAttribute('href');
+        if (!href || !href.startsWith('#')) return; // skip PDF / external links
         e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
+        const target = document.querySelector(href);
         if (target) {
             const headerOffset = 80;
             const elementPosition = target.getBoundingClientRect().top;
@@ -272,12 +274,12 @@ function renderServices(services) {
         const iconSvg = serviceIcons[service.icon] || serviceIcons.code;
 
         return `
-            <div class="glass-card p-8 rounded-3xl hover:scale-105 hover:shadow-2xl transition-all duration-300 group">
+            <div class="glass-card p-8 rounded-3xl hover:scale-105 hover:shadow-2xl transition-all duration-300 group flex flex-col">
                 <div class="w-16 h-16 mb-6 text-accent-gold group-hover:scale-110 transition-transform duration-300">
                     ${iconSvg}
                 </div>
                 <h3 class="text-2xl font-bold mb-4 text-white" data-en="${service.titleEn}" data-ar="${service.titleAr}">${title}</h3>
-                <p class="text-white/70 leading-relaxed" data-en="${service.descriptionEn}" data-ar="${service.descriptionAr}">${description}</p>
+                <p class="text-white/70 leading-relaxed flex-1" data-en="${service.descriptionEn}" data-ar="${service.descriptionAr}">${description}</p>
             </div>
         `;
     }).join('');
@@ -387,25 +389,35 @@ function initCarousel(trackId, prevBtnId, nextBtnId, intervalMs = 3500) {
 
 async function loadExternalContent() {
     try {
-        const [servicesResponse, toolsResponse, projectsResponse] = await Promise.all([
+        const [servicesResponse, toolsResponse, projectsResponse, linksResponse] = await Promise.all([
             fetch('services.json'),
             fetch('mytools.json'),
-            fetch('projects.json')
+            fetch('projects.json'),
+            fetch('links.json')
         ]);
 
-        if (!servicesResponse.ok || !toolsResponse.ok || !projectsResponse.ok) {
+        if (!servicesResponse.ok || !toolsResponse.ok || !projectsResponse.ok || !linksResponse.ok) {
             throw new Error('Failed to load external JSON content');
         }
 
-        const [services, tools, projects] = await Promise.all([
+        const [services, tools, projects, links] = await Promise.all([
             servicesResponse.json(),
             toolsResponse.json(),
-            projectsResponse.json()
+            projectsResponse.json(),
+            linksResponse.json()
         ]);
 
         renderServices(services);
         renderTools(tools);
         renderProjects(projects);
+
+        // Apply CV link
+        const cvBtn = document.getElementById('cvBtn');
+        if (cvBtn && links.cv) cvBtn.href = links.cv;
+
+        // Apply services details link
+        const servicesDetailsBtn = document.getElementById('servicesDetailsBtn');
+        if (servicesDetailsBtn && links.servicesDetails) servicesDetailsBtn.href = links.servicesDetails;
 
         initCarousel('toolsGrid', 'toolsPrev', 'toolsNext', 3000);
 
