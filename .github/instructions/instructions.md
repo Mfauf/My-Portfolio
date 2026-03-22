@@ -26,3 +26,6 @@ When a bug is reported:
 3. Fix the root cause, not the symptom.
 4. Explain the root cause clearly in the commit message body.
 5. Check for related issues that the same bug might have caused elsewhere.
+
+
+**Always** commit & push your changes to the `dev` branch after completing a task.
