@@ -292,7 +292,7 @@ function renderTools(tools) {
     toolsGrid.innerHTML = tools.map(tool => {
         const label = currentLang === 'ar' ? tool.nameAr : tool.nameEn;
         return `
-            <div class="carousel-card-tool glass-card p-5 rounded-2xl text-center hover:scale-105 transition-transform duration-300 group flex flex-col items-center">
+            <div class="glass-card p-5 rounded-2xl text-center hover:scale-105 transition-transform duration-300 group flex flex-col items-center justify-center min-h-[8.5rem]">
                 <img src="${tool.icon}" alt="${tool.nameEn}" class="w-10 h-10 mb-3 group-hover:scale-110 transition-transform duration-300">
                 <h3 class="text-white text-sm font-semibold leading-tight" data-en="${tool.nameEn}" data-ar="${tool.nameAr}">${label}</h3>
             </div>
@@ -339,54 +339,6 @@ function renderProjects(projects) {
     }).join('');
 }
 
-// ==========================================
-// Carousel – auto-scroll + arrow navigation
-// ==========================================
-function initCarousel(trackId, prevBtnId, nextBtnId, intervalMs = 3500) {
-    const track   = document.getElementById(trackId);
-    const prevBtn = document.getElementById(prevBtnId);
-    const nextBtn = document.getElementById(nextBtnId);
-    if (!track || !prevBtn || !nextBtn) return;
-
-    const getStep = () => {
-        const card = track.firstElementChild;
-        if (!card) return 220;
-        const gap = parseFloat(getComputedStyle(track).gap) || 20;
-        return card.offsetWidth + gap;
-    };
-
-    const scrollNext = () => {
-        const { scrollLeft, scrollWidth, clientWidth } = track;
-        if (scrollLeft + clientWidth >= scrollWidth - 4) {
-            track.scrollTo({ left: 0, behavior: 'smooth' });
-        } else {
-            track.scrollBy({ left: getStep(), behavior: 'smooth' });
-        }
-    };
-
-    const scrollPrev = () => {
-        if (track.scrollLeft <= 4) {
-            track.scrollTo({ left: track.scrollWidth, behavior: 'smooth' });
-        } else {
-            track.scrollBy({ left: -getStep(), behavior: 'smooth' });
-        }
-    };
-
-    // RTL: flip direction
-    const isRtl = () => document.documentElement.dir === 'rtl';
-    prevBtn.addEventListener('click', () => isRtl() ? scrollNext() : scrollPrev());
-    nextBtn.addEventListener('click', () => isRtl() ? scrollPrev() : scrollNext());
-
-    let timer = setInterval(scrollNext, intervalMs);
-    const pause = () => clearInterval(timer);
-    const resume = () => { timer = setInterval(scrollNext, intervalMs); };
-
-    track.addEventListener('mouseenter', pause);
-    track.addEventListener('mouseleave', resume);
-    track.addEventListener('touchstart', pause, { passive: true });
-    track.addEventListener('touchend',   resume, { passive: true });
-}
-
 async function loadExternalContent() {
     try {
         const [servicesResponse, toolsResponse, projectsResponse, linksResponse] = await Promise.all([
@@ -418,8 +370,6 @@ async function loadExternalContent() {
         // Apply services details link
         const servicesDetailsBtn = document.getElementById('servicesDetailsBtn');
         if (servicesDetailsBtn && links.servicesDetails) servicesDetailsBtn.href = links.servicesDetails;
-
-        initCarousel('toolsGrid', 'toolsPrev', 'toolsNext', 3000);
 
         setLanguage(currentLang);
         animateOnScroll();
