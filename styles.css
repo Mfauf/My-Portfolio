@@ -93,6 +93,11 @@ html {
     animation-delay: -5s;
 }
 
+.animate-float-slow {
+    animation: float 30s ease-in-out infinite;
+    animation-delay: -10s;
+}
+
 @keyframes rotate-float {
     0%, 100% {
         transform: translate(0, 0) rotate(0deg);
@@ -107,6 +112,10 @@ html {
 
 .animate-rotate-float {
     animation: rotate-float 30s ease-in-out infinite;
+}
+
+.animate-rotate-float-reverse {
+    animation: rotate-float 30s ease-in-out infinite reverse;
 }
 
 @keyframes pulse-float {
@@ -259,19 +268,18 @@ html[lang="ar"] body * {
 /* ==================== */
 /* Control Buttons */
 /* ==================== */
-.control-buttons {
+body > .control-buttons {
     position: fixed;
-    top: 2rem;
-    right: 2rem;
     display: flex;
     gap: 1rem;
-    z-index: 80;
-    pointer-events: auto;
-}
-
-body > .control-buttons {
     z-index: 2147483000 !important;
     pointer-events: auto !important;
+}
+
+@media (max-width: 767px) {
+    body > .control-buttons {
+        display: none;
+    }
 }
 
 body > .control-buttons .lang-toggle {
@@ -284,7 +292,7 @@ body > .control-buttons .lang-toggle {
     pointer-events: auto;
 }
 
-[dir="rtl"] .control-buttons {
+[dir="rtl"] body > .control-buttons {
     right: auto;
     left: 2rem;
 }
@@ -1035,16 +1043,19 @@ body > .control-buttons .lang-toggle {
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     border: 1px solid var(--glass-border);
+    box-shadow: 0 8px 32px 0 var(--shadow-color),
+                inset 0 1px 0 0 rgba(255, 255, 255, 0.1);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+#orderForm.glass-card {
     border-radius: 30px;
     padding: 3rem 2.5rem;
     max-width: 600px;
     width: 100%;
-    box-shadow: 0 8px 32px 0 var(--shadow-color),
-                inset 0 1px 0 0 rgba(255, 255, 255, 0.1);
     animation: slideUp 1s ease-out;
-    position: relative;
-    overflow: hidden;
-    transition: all 0.3s ease;
 }
 
 .glass-card::before {
@@ -1352,7 +1363,7 @@ body > .control-buttons .lang-toggle {
         padding: 1.5rem;
     }
 
-    .glass-card {
+    #orderForm.glass-card {
         padding: 2rem 1.5rem;
         border-radius: 20px;
     }
