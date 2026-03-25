@@ -1,58 +1,7 @@
 // ==========================================
-// Theme Switcher
-// ==========================================
-const themeToggles = document.querySelectorAll('[data-theme-toggle]');
-const htmlElement = document.documentElement;
-
-// Check for saved theme preference or default to system preference
-function getPreferredTheme() {
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme) {
-        return savedTheme;
-    }
-    return window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
-}
-
-// Set theme
-function setTheme(theme) {
-    htmlElement.setAttribute('data-theme', theme);
-    htmlElement.classList.toggle('dark', theme === 'dark');
-    document.body.classList.toggle('light-theme', theme === 'light');
-
-    themeToggles.forEach((themeToggle) => {
-        const sunIcon = themeToggle?.querySelector('.sun-icon');
-        const moonIcon = themeToggle?.querySelector('.moon-icon');
-        if (sunIcon && moonIcon) {
-            sunIcon.classList.toggle('hidden', theme !== 'light');
-            moonIcon.classList.toggle('hidden', theme !== 'dark');
-        }
-    });
-
-    localStorage.setItem('theme', theme);
-}
-
-// Initialize theme
-setTheme(getPreferredTheme());
-
-// Toggle theme on button click
-themeToggles.forEach((themeToggle) => {
-    themeToggle.addEventListener('click', () => {
-        const currentTheme = htmlElement.getAttribute('data-theme');
-        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-        setTheme(newTheme);
-    });
-});
-
-// Listen for system theme changes
-window.matchMedia('(prefers-color-scheme: light)').addEventListener('change', (e) => {
-    if (!localStorage.getItem('theme')) {
-        setTheme(e.matches ? 'light' : 'dark');
-    }
-});
-
-// ==========================================
 // Language Switcher
 // ==========================================
+const htmlElement = document.documentElement;
 const langToggles = document.querySelectorAll('[data-lang-toggle]');
 let currentLang = localStorage.getItem('language') || 'en';
 
@@ -306,6 +255,7 @@ function renderProjects(projects) {
 
     projectsGrid.innerHTML = projects.map(project => {
         const name = currentLang === 'ar' ? project.nameAr : project.nameEn;
+        const description = currentLang === 'ar' ? (project.descriptionAr || '') : (project.descriptionEn || '');
         const visitLabel = currentLang === 'ar' ? 'زيارة المشروع' : 'Visit Project';
         return `
             <div class="glass-card rounded-3xl overflow-hidden hover:scale-[1.03] hover:shadow-2xl transition-all duration-300 group flex flex-col">
@@ -325,6 +275,7 @@ function renderProjects(projects) {
                 </div>
                 <div class="p-6 flex flex-col gap-4 flex-1">
                     <h3 class="text-xl font-bold text-white" data-en="${project.nameEn}" data-ar="${project.nameAr}">${name}</h3>
+                    <p class="text-sm text-white/60" data-en="${project.descriptionEn || ''}" data-ar="${project.descriptionAr || ''}">${description}</p>
                     <a href="${project.url}" target="_blank" rel="noopener noreferrer"
                        class="mt-auto inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-accent-gold to-accent-gold-light text-primary-dark font-semibold text-sm hover:scale-105 hover:shadow-lg hover:shadow-accent-gold/30 transition-all duration-300">
                         <span data-en="Visit Project" data-ar="زيارة المشروع">${visitLabel}</span>

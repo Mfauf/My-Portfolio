@@ -3,6 +3,24 @@
         "screenshot": "assets/projects/project1.png",
         "nameEn": "QFL Dashboard",
         "nameAr": "لوحة تحكم العمل الحر",
+        "descriptionEn": "A freelancing management dashboard to track projects, clients, and payments efficiently.",
+        "descriptionAr": "لوحة تحكم لإدارة العمل الحر لتتبع المشاريع والعملاء والمدفوعات بكفاءة.",
         "url": "https://qfl.mmfauf.com/"
+    },
+    {
+        "screenshot": "assets/projects/project2.png",
+        "nameEn": "My Portfolio",
+        "nameAr": "صفحتي الشخصية",
+        "descriptionEn": "A personal portfolio website showcasing my skills, projects, and services.",
+        "descriptionAr": "موقع شخصي يعرض مهاراتي ومشاريعي وخدماتي.",
+        "url": "https://www.mmfauf.com/"
+    },
+    {
+        "screenshot": "assets/projects/project3.png",
+        "nameEn": "Rafeeq AI",
+        "nameAr": "رفيق - ذكاء اصطناعي",
+        "descriptionEn": "An AI-powered assistant application built to help users with intelligent conversations.",
+        "descriptionAr": "تطبيق مساعد مدعوم بالذكاء الاصطناعي لمساعدة المستخدمين بمحادثات ذكية.",
+        "url": "https://rafeeq-ai.web.app.com/"
     }
 ]
