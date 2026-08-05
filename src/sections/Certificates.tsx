@@ -1,15 +1,15 @@
 import { AnimatePresence, motion } from 'framer-motion';
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 
 import { cn } from '@/lib/cn';
 import { certificates } from '@/lib/content';
 import { EASE_EXPO } from '@/lib/motion';
 import { useI18n } from '@/providers/I18nProvider';
-import type { Certificate, CertificateCategory } from '@/types/content';
+import type { CertificateCategory } from '@/types/content';
 import { Badge } from '@/components/ui/Badge';
+import { Button } from '@/components/ui/Button';
 import { Card } from '@/components/ui/Card';
 import { Icon } from '@/components/ui/Icon';
-import { Modal } from '@/components/ui/Modal';
 import { Section, SectionHeading } from '@/components/ui/Section';
 
 /** Icon per credential type — keeps the grid readable at a glance. */
@@ -22,10 +22,13 @@ const CATEGORY_ICONS: Record<CertificateCategory, string> = {
   quran: 'book',
 };
 
+/** How many cards show before the visitor has to ask for more. */
+const DEFAULT_VISIBLE = 5;
+
 export function Certificates() {
   const { t, pick, formatNumber } = useI18n();
   const [filter, setFilter] = useState<CertificateCategory | 'all'>('all');
-  const [selected, setSelected] = useState<Certificate | null>(null);
+  const [expanded, setExpanded] = useState(false);
 
   // Only offer filters that actually have entries behind them.
   const categories = useMemo(() => {
@@ -33,10 +36,16 @@ export function Certificates() {
     return (Object.keys(CATEGORY_ICONS) as CertificateCategory[]).filter((key) => present.has(key));
   }, []);
 
-  const visible = useMemo(
+  const filtered = useMemo(
     () => (filter === 'all' ? certificates : certificates.filter((c) => c.category === filter)),
     [filter],
   );
+
+  // Switching filters always starts back at the first page.
+  useEffect(() => setExpanded(false), [filter]);
+
+  const visible = expanded ? filtered : filtered.slice(0, DEFAULT_VISIBLE);
+  const remaining = filtered.length - visible.length;
 
   return (
     <Section id="certificates">
@@ -93,13 +102,18 @@ export function Certificates() {
               exit={{ opacity: 0, scale: 0.94 }}
               transition={{ duration: 0.45, ease: EASE_EXPO }}
             >
-              <Card className="h-full">
-                <button
-                  type="button"
-                  onClick={() => setSelected(certificate)}
-                  className="flex h-full w-full flex-col p-6 text-start"
-                >
-                  <div className="mb-5 flex items-start justify-between gap-3">
+              <Card className="flex h-full flex-col overflow-hidden">
+                {certificate.image && (
+                  <img
+                    src={certificate.image}
+                    alt={pick(certificate.title)}
+                    loading="lazy"
+                    className="aspect-[22/17] w-full object-cover"
+                  />
+                )}
+
+                <div className="flex flex-1 flex-col p-6">
+                  <div className="mb-4 flex items-start justify-between gap-3">
                     <span className="grid size-11 place-items-center rounded-2xl bg-gold/12 text-gold transition-transform duration-500 group-hover:scale-110">
                       <Icon name={CATEGORY_ICONS[certificate.category]} className="size-5" />
                     </span>
@@ -112,76 +126,51 @@ export function Certificates() {
                     {pick(certificate.title)}
                   </h3>
                   <p className="mt-1.5 text-xs text-gold">{pick(certificate.issuer)}</p>
-                  <p className="mt-3 line-clamp-3 text-sm leading-relaxed text-muted">
+                  <p className="mt-3 text-sm leading-relaxed text-muted">
                     {pick(certificate.description)}
                   </p>
 
-                  <span className="mt-auto inline-flex items-center gap-1.5 pt-5 text-xs font-medium text-faint transition-colors group-hover:text-gold">
-                    {t('certificates.viewCertificate')}
-                    <Icon name="arrow-up-right" className="size-3.5 rtl:-scale-x-100" />
-                  </span>
-                </button>
+                  <div className="mt-4 flex flex-wrap items-center gap-2">
+                    <Badge tone="gold">{t(`certificates.categories.${certificate.category}`)}</Badge>
+                    {!certificate.image && (
+                      <span className="inline-flex items-center gap-1.5 text-xs text-faint">
+                        <Icon name="file-text" className="size-3.5 shrink-0" />
+                        {t('certificates.onRequest')}
+                      </span>
+                    )}
+                  </div>
+
+                  {certificate.url && (
+                    <a
+                      href={certificate.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-auto inline-flex items-center gap-1.5 pt-5 text-xs font-medium text-gold hover:opacity-70"
+                    >
+                      <Icon name="external-link" className="size-3.5 rtl:-scale-x-100" />
+                      {t('certificates.viewCertificate')}
+                    </a>
+                  )}
+                </div>
               </Card>
             </motion.li>
           ))}
         </AnimatePresence>
       </ul>
 
-      {/* Detail dialog --------------------------------------------------- */}
-      <Modal
-        open={selected !== null}
-        onClose={() => setSelected(null)}
-        title={selected ? pick(selected.title) : ''}
-        closeLabel={t('certificates.close')}
-      >
-        {selected && (
-          <div className="flex flex-col gap-5">
-            <div className="flex items-center gap-4 pe-12">
-              <span className="grid size-14 shrink-0 place-items-center rounded-2xl bg-gold/12 text-gold">
-                <Icon name={CATEGORY_ICONS[selected.category]} className="size-6" />
-              </span>
-              <div className="min-w-0">
-                <h3 className="text-lg leading-snug font-semibold text-ink-strong">
-                  {pick(selected.title)}
-                </h3>
-                <p className="text-sm text-gold">{pick(selected.issuer)}</p>
-              </div>
-            </div>
-
-            <div className="flex flex-wrap gap-2">
-              <Badge tone="gold">{t(`certificates.categories.${selected.category}`)}</Badge>
-              <Badge>{formatNumber(selected.year, { useGrouping: false })}</Badge>
-            </div>
-
-            <p className="leading-relaxed text-muted">{pick(selected.description)}</p>
-
-            {selected.image ? (
-              <img
-                src={selected.image}
-                alt={pick(selected.title)}
-                className="w-full rounded-2xl border border-line"
-              />
-            ) : (
-              <p className="flex items-center gap-2 rounded-2xl border border-line bg-surface-2/60 px-4 py-3 text-xs text-faint">
-                <Icon name="file-text" className="size-4 shrink-0" />
-                {t('certificates.onRequest')}
-              </p>
-            )}
-
-            {selected.url && (
-              <a
-                href={selected.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 text-sm font-medium text-gold hover:opacity-70"
-              >
-                <Icon name="external-link" className="size-4" />
-                {t('certificates.viewCertificate')}
-              </a>
-            )}
-          </div>
-        )}
-      </Modal>
+      {/* View more --------------------------------------------------------- */}
+      {remaining > 0 && (
+        <motion.div
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.4, ease: EASE_EXPO }}
+          className="mt-10 flex justify-center"
+        >
+          <Button variant="outline" onClick={() => setExpanded(true)} trailingIcon="chevron-down">
+            {t('certificates.viewMore')} ({formatNumber(remaining)})
+          </Button>
+        </motion.div>
+      )}
     </Section>
   );
 }
