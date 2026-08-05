@@ -1,0 +1,155 @@
+{
+  "meta": {
+    "dir": "ltr",
+    "name": "English",
+    "switchTo": "ع"
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "skills": "Skills",
+    "journey": "Journey",
+    "projects": "Projects",
+    "certificates": "Certificates",
+    "contact": "Contact",
+    "menu": "Menu",
+    "closeMenu": "Close menu",
+    "openMenu": "Open menu",
+    "skipToContent": "Skip to content"
+  },
+  "controls": {
+    "theme": "Theme",
+    "themeLight": "Light",
+    "themeDark": "Dark",
+    "themeSystem": "System",
+    "language": "Language",
+    "toggleTheme": "Switch theme",
+    "toggleLanguage": "Switch language",
+    "backToTop": "Back to top"
+  },
+  "hero": {
+    "scroll": "Scroll",
+    "cta": "Start a project",
+    "secondary": "See my work",
+    "basedIn": "Based in"
+  },
+  "about": {
+    "eyebrow": "About me",
+    "title": "Engineering student by day, builder the rest of the time",
+    "languagesTitle": "Languages",
+    "focusTitle": "What I focus on",
+    "focus": [
+      "Fast, accessible frontends that work on real devices",
+      "Bilingual interfaces designed Arabic-first, not translated",
+      "Cloud-backed apps on Supabase and Cloudflare",
+      "AI-assisted workflows that speed up delivery, not quality"
+    ]
+  },
+  "services": {
+    "eyebrow": "Services",
+    "title": "What I can build for you",
+    "subtitle": "Three packages that cover most of what people ask for — and a set of add-ons for everything else.",
+    "popular": "Most popular",
+    "startingFrom": "From",
+    "delivery": "Delivery",
+    "liveExample": "Live example",
+    "includes": "Includes",
+    "requestCta": "Request this package",
+    "addonsTitle": "Optional add-ons",
+    "addonsSubtitle": "Bolt these onto any package.",
+    "freeTitle": "Included free with every project",
+    "freeSubtitle": "No extra charge, on every package.",
+    "termsTitle": "How we work",
+    "deckCta": "Full services & pricing (PDF)",
+    "priceNote": "Prices are indicative and adjust with project scope, hours and the technologies used."
+  },
+  "skills": {
+    "eyebrow": "Toolkit",
+    "title": "The tools I reach for",
+    "subtitle": "The stack I use daily, and how deep I currently go with each."
+  },
+  "journey": {
+    "eyebrow": "Journey",
+    "title": "Experience & education",
+    "subtitle": "Where I've worked, studied and volunteered.",
+    "work": "Work",
+    "volunteer": "Volunteering",
+    "education": "Education",
+    "present": "Present",
+    "current": "Current"
+  },
+  "projects": {
+    "eyebrow": "Selected work",
+    "title": "Things I've built",
+    "subtitle": "A few projects that show how I think about interfaces, data and delivery.",
+    "visit": "Visit live site",
+    "code": "Source code",
+    "featured": "Featured"
+  },
+  "certificates": {
+    "eyebrow": "Credentials",
+    "title": "Certificates & training",
+    "subtitle": "Courses, credentials and programmes completed so far.",
+    "all": "All",
+    "categories": {
+      "ai": "AI",
+      "engineering": "Engineering",
+      "academic": "Academic",
+      "leadership": "Leadership",
+      "volunteer": "Volunteering",
+      "quran": "Qur'an"
+    },
+    "viewCertificate": "View certificate",
+    "onRequest": "Original certificate available on request",
+    "close": "Close"
+  },
+  "stats": {
+    "eyebrow": "By the numbers",
+    "title": "A quick snapshot"
+  },
+  "process": {
+    "eyebrow": "How it works",
+    "title": "From first message to live site",
+    "subtitle": "The same four steps on every project, whatever the size.",
+    "step": "Step"
+  },
+  "contact": {
+    "eyebrow": "Get in touch",
+    "title": "Have something in mind?",
+    "subtitle": "Tell me what you're building and I'll come back to you with a plan and a price — usually within a day.",
+    "formTitle": "Send a request",
+    "name": "Your name",
+    "namePlaceholder": "Full name",
+    "email": "Email",
+    "emailPlaceholder": "you@example.com",
+    "phone": "Mobile number",
+    "phonePlaceholder": "+974 XXXX XXXX",
+    "service": "Service",
+    "servicePlaceholder": "Choose a service",
+    "serviceOther": "Something else",
+    "budget": "Budget (optional)",
+    "budgetPlaceholder": "Choose a range",
+    "details": "Project details",
+    "detailsPlaceholder": "What are you building, who is it for, and when do you need it?",
+    "submit": "Send request",
+    "submitting": "Sending…",
+    "success": "Thank you — your request is on its way. I'll reply to you shortly.",
+    "error": "Something went wrong. Please message me on WhatsApp instead.",
+    "required": "Required",
+    "invalidEmail": "Please enter a valid email address",
+    "orReachMe": "Or reach me directly",
+    "responseTime": "Typical reply time: under 24 hours",
+    "whatsappCta": "Chat on WhatsApp"
+  },
+  "footer": {
+    "tagline": "Building the future, one line of code at a time.",
+    "sitemap": "Sitemap",
+    "connect": "Connect",
+    "elsewhere": "Elsewhere",
+    "rights": "All rights reserved.",
+    "builtWith": "Built with React, TypeScript & Tailwind CSS",
+    "nameCanvas": "An interactive canvas spelling the name Muhammad in gold particles",
+    "hint": "Move your cursor over the name"
+  }
+}
