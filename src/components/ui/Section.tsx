@@ -17,7 +17,11 @@ export function Section({ id, children, className, grid = false }: SectionProps)
   return (
     <section
       id={id}
-      className={cn('relative scroll-mt-24 py-20 sm:py-28 lg:py-36', className)}
+      // Header clearance comes solely from `scroll-padding-top` on <html>
+      // (index.css). Adding `scroll-mt-*` here too would stack on top of
+      // it — both Lenis and native scrollIntoView subtract each source
+      // independently, so landing would overshoot past the header twice over.
+      className={cn('relative py-20 sm:py-28 lg:py-36', className)}
     >
       {grid && (
         <div

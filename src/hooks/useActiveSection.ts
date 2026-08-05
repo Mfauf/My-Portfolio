@@ -18,10 +18,15 @@ export function useActiveSection(sectionIds: string[]): string {
 
     const observer = new IntersectionObserver(
       (entries) => {
-        // Prefer the entry closest to the top of the reading zone.
+        // Adjacent sections share a boundary, so right as one ends and the
+        // next begins, both can briefly satisfy "isIntersecting" at once —
+        // the outgoing section only by the sliver of itself still left in
+        // the band. Prefer whichever one started most recently (the largest
+        // `top`, i.e. lowest in the document): that's reliably the section
+        // the reader has actually scrolled into, not the one they're leaving.
         const visible = entries
           .filter((entry) => entry.isIntersecting)
-          .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
+          .sort((a, b) => b.boundingClientRect.top - a.boundingClientRect.top);
 
         if (visible[0]) setActive(visible[0].target.id);
       },

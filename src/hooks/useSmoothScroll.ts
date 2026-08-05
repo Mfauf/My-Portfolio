@@ -43,12 +43,12 @@ export function scrollToSection(id: string): void {
   const target = document.getElementById(id);
   if (!target) return;
 
-  const headerOffset = -Math.round(
-    parseFloat(getComputedStyle(document.documentElement).fontSize) * 4.5,
-  );
-
   if (window.__lenis) {
-    window.__lenis.scrollTo(target, { offset: headerOffset, duration: 1.2 });
+    // Lenis reads `scroll-padding-top` off <html> itself (see index.css) and
+    // already subtracts it when landing on a target — passing our own
+    // `offset` here on top of that double-counts the header clearance and
+    // overshoots past it.
+    window.__lenis.scrollTo(target, { duration: 1.2 });
   } else {
     target.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }

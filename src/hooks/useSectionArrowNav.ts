@@ -9,14 +9,16 @@ const EDITABLE_TAGS = new Set(['INPUT', 'TEXTAREA', 'SELECT']);
 /**
  * The section whose top has most recently crossed the reading line.
  *
- * This needs to sit comfortably below wherever `scrollToSection` actually
- * lands a section's top edge — otherwise the section you just arrow-key'd
- * to doesn't register as "current" yet, and the next press just re-targets
- * the same section instead of advancing. A generous mid-viewport line keeps
- * consecutive presses reliably moving one section at a time.
+ * Derived from `scroll-padding-top` on <html> rather than a guessed
+ * percentage of the viewport: that's the exact value Lenis itself already
+ * subtracts when landing on a target (see scrollToSection), so the section
+ * you just arrow-key'd to is guaranteed to clear this line and register as
+ * "current" immediately — otherwise the next press would just re-target the
+ * same section instead of advancing.
  */
 function currentSectionIndex(): number {
-  const readingLine = window.innerHeight * 0.5;
+  const scrollPaddingTop = parseFloat(getComputedStyle(document.documentElement).scrollPaddingTop) || 0;
+  const readingLine = scrollPaddingTop + 32;
   let index = 0;
 
   for (let i = 0; i < SECTION_IDS.length; i += 1) {
