@@ -1,0 +1,38 @@
+[
+  {
+    "id": "whatsapp",
+    "label": "WhatsApp",
+    "handle": "+974 3300 5113",
+    "url": "https://wa.me/97433005113",
+    "icon": "whatsapp",
+    "brandColor": "#25D366",
+    "primary": true
+  },
+  {
+    "id": "linkedin",
+    "label": "LinkedIn",
+    "handle": "in/mmfauf",
+    "url": "https://www.linkedin.com/in/mmfauf/",
+    "icon": "linkedin",
+    "brandColor": "#0A66C2",
+    "primary": true
+  },
+  {
+    "id": "github",
+    "label": "GitHub",
+    "handle": "@Mfauf",
+    "url": "https://github.com/Mfauf",
+    "icon": "github",
+    "brandColor": "#8b949e",
+    "primary": true
+  },
+  {
+    "id": "email",
+    "label": "Email",
+    "handle": "mmfauf@gmail.com",
+    "url": "mailto:mmfauf@gmail.com",
+    "icon": "mail",
+    "brandColor": "#EA4335",
+    "primary": true
+  }
+]

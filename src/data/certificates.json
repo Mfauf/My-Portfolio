@@ -1,0 +1,158 @@
+[
+  {
+    "id": "claude-101",
+    "title": { "en": "Claude 101", "ar": "شهادة Claude 101" },
+    "issuer": { "en": "Anthropic", "ar": "أنثروبيك" },
+    "year": 2025,
+    "category": "ai",
+    "description": {
+      "en": "Claude capabilities, prompting techniques and AI-assisted development workflows.",
+      "ar": "قدرات Claude وتقنيات كتابة التوجيهات وسير العمل البرمجي المدعوم بالذكاء الاصطناعي."
+    },
+    "image": null,
+    "url": null
+  },
+  {
+    "id": "huawei-hcia-ai",
+    "title": { "en": "HCIA — Artificial Intelligence", "ar": "HCIA — الذكاء الاصطناعي" },
+    "issuer": { "en": "Huawei (self-study coursework)", "ar": "هواوي (دراسة ذاتية)" },
+    "year": 2025,
+    "category": "ai",
+    "description": {
+      "en": "Machine learning fundamentals, deep learning basics, neural networks and AI workflow design.",
+      "ar": "أساسيات تعلّم الآلة، مبادئ التعلّم العميق، الشبكات العصبية، وتصميم سير عمل الذكاء الاصطناعي."
+    },
+    "image": null,
+    "url": null
+  },
+  {
+    "id": "python-programming",
+    "title": { "en": "Programming Concepts in Python", "ar": "مفاهيم البرمجة بلغة بايثون" },
+    "issuer": { "en": "Completed course", "ar": "دورة مكتملة" },
+    "year": 2024,
+    "category": "engineering",
+    "description": {
+      "en": "Core programming concepts, data structures and problem solving in Python.",
+      "ar": "مفاهيم البرمجة الأساسية وهياكل البيانات وحل المشكلات باستخدام بايثون."
+    },
+    "image": null,
+    "url": null
+  },
+  {
+    "id": "aipm",
+    "title": { "en": "AI in Project Management (AIPM)", "ar": "الذكاء الاصطناعي في إدارة المشاريع" },
+    "issuer": { "en": "Professional training", "ar": "تدريب مهني" },
+    "year": 2024,
+    "category": "ai",
+    "description": {
+      "en": "Applying AI tooling to planning, tracking and delivery of technical projects.",
+      "ar": "توظيف أدوات الذكاء الاصطناعي في تخطيط المشاريع التقنية ومتابعتها وتسليمها."
+    },
+    "image": null,
+    "url": null
+  },
+  {
+    "id": "ielts",
+    "title": { "en": "IELTS Academic — Band 5.5", "ar": "آيلتس أكاديمي — ٥٫٥" },
+    "issuer": { "en": "British Council", "ar": "المجلس الثقافي البريطاني" },
+    "year": 2024,
+    "category": "academic",
+    "description": {
+      "en": "English proficiency across listening, reading, writing and speaking.",
+      "ar": "إتقان اللغة الإنجليزية في الاستماع والقراءة والكتابة والمحادثة."
+    },
+    "image": null,
+    "url": null
+  },
+  {
+    "id": "act-math",
+    "title": { "en": "ACT Mathematics — Score 27", "ar": "اختبار ACT للرياضيات — ٢٧" },
+    "issuer": { "en": "ACT, Inc.", "ar": "مؤسسة ACT" },
+    "year": 2025,
+    "category": "academic",
+    "description": {
+      "en": "Standardised mathematics assessment taken for university admission.",
+      "ar": "اختبار رياضيات معياري أُدّي لأغراض القبول الجامعي."
+    },
+    "image": null,
+    "url": null
+  },
+  {
+    "id": "tamkeen",
+    "title": { "en": "Tamkeen Program", "ar": "برنامج تمكين" },
+    "issuer": { "en": "Ministry of Islamic Affairs, Qatar", "ar": "وزارة الأوقاف والشؤون الإسلامية — قطر" },
+    "year": 2024,
+    "category": "leadership",
+    "description": {
+      "en": "Leadership and community programme run by the Ministry of Islamic Affairs.",
+      "ar": "برنامج قيادي ومجتمعي تنظّمه وزارة الأوقاف والشؤون الإسلامية."
+    },
+    "image": null,
+    "url": null
+  },
+  {
+    "id": "class-administration",
+    "title": { "en": "Skills Improvement in Class Administration", "ar": "تطوير مهارات إدارة الحلقات" },
+    "issuer": { "en": "Jana Academy", "ar": "أكاديمية جنى" },
+    "year": 2023,
+    "category": "leadership",
+    "description": {
+      "en": "Classroom management, teaching delivery and student engagement techniques.",
+      "ar": "إدارة الحلقة التعليمية وأساليب التدريس وتحفيز الطلاب."
+    },
+    "image": null,
+    "url": null
+  },
+  {
+    "id": "itqan-workshop",
+    "title": { "en": "Itqan Center Training Workshop — 40 hours", "ar": "ورشة مركز إتقان التدريبية — ٤٠ ساعة" },
+    "issuer": { "en": "Hamad Medical Corporation", "ar": "مؤسسة حمد الطبية" },
+    "year": 2024,
+    "category": "volunteer",
+    "description": {
+      "en": "Forty volunteered hours supporting training workshops at Hamad Hospital's Itqan Center.",
+      "ar": "أربعون ساعة تطوّع في دعم الورش التدريبية بمركز إتقان في مستشفى حمد."
+    },
+    "image": null,
+    "url": null
+  },
+  {
+    "id": "ibdaa-alfurqan",
+    "title": { "en": "Certificate of Appreciation", "ar": "شهادة تقدير" },
+    "issuer": { "en": "Ibda'a Al-Furqan Club", "ar": "نادي إبداع الفرقان" },
+    "year": 2022,
+    "category": "volunteer",
+    "description": {
+      "en": "Recognition for contribution to the club's youth programmes.",
+      "ar": "تقديراً للمساهمة في برامج النادي الشبابية."
+    },
+    "image": null,
+    "url": null
+  },
+  {
+    "id": "ijaza-quran",
+    "title": { "en": "Ijazah in the Holy Qur'an", "ar": "إجازة في القرآن الكريم" },
+    "issuer": { "en": "Riwayat Hafs & Qalun", "ar": "رواية حفص وقالون" },
+    "year": 2023,
+    "category": "quran",
+    "description": {
+      "en": "Certified chain of transmission for Qur'anic recitation in the Asim and Qalun readings.",
+      "ar": "إجازة بسند متصل في رواية عاصم وقالون."
+    },
+    "image": null,
+    "url": null
+  },
+  {
+    "id": "stem-hour-of-code",
+    "title": { "en": "STEM Summer Camp & Hour of Code", "ar": "معسكر STEM الصيفي وساعة برمجة" },
+    "issuer": { "en": "STEM Qatar / Code.org", "ar": "STEM قطر / Code.org" },
+    "year": 2022,
+    "category": "engineering",
+    "description": {
+      "en": "Early hands-on programming and engineering exposure.",
+      "ar": "أول تجربة عملية في البرمجة والهندسة."
+    },
+    "image": null,
+    "url": null
+  }
+]

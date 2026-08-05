@@ -1,0 +1,62 @@
+[
+  {
+    "id": "landing-page",
+    "icon": "rocket",
+    "title": { "en": "Landing Pages", "ar": "صفحات الهبوط" },
+    "summary": {
+      "en": "Perfect for launching a product, introducing a service, or a personal portfolio.",
+      "ar": "مثالية لإطلاق منتج جديد، أو التعريف بخدمة معيّنة، أو صفحة شخصية."
+    },
+    "price": { "amount": 500, "from": false },
+    "duration": { "en": "3 – 5 working days", "ar": "٣ – ٥ أيام عمل" },
+    "features": [
+      { "en": "Modern, fully responsive design", "ar": "تصميم عصري متجاوب بالكامل" },
+      { "en": "UX focused on turning visitors into clients", "ar": "تجربة مستخدم تركّز على تحويل الزائر إلى عميل" },
+      { "en": "Blazing-fast load times", "ar": "سرعة تحميل فائقة" },
+      { "en": "Contact forms delivered straight to your inbox", "ar": "نماذج تواصل تصل إلى بريدك مباشرة" },
+      { "en": "Automatic light / dark theme", "ar": "وضع ليلي ونهاري تلقائي" },
+      { "en": "Rich media: maps, video, file previews", "ar": "دعم الوسائط: خرائط، فيديو، عرض ملفات" }
+    ],
+    "example": { "label": "mmfauf.com", "url": "https://www.mmfauf.com" },
+    "featured": false
+  },
+  {
+    "id": "frontend",
+    "icon": "layers",
+    "title": { "en": "Frontend Development", "ar": "تطوير الواجهات الأمامية" },
+    "summary": {
+      "en": "For projects that need multi-page, interactive interfaces and a standout user experience.",
+      "ar": "للمشاريع التي تحتاج واجهات تفاعلية متعددة الصفحات وتجربة مستخدم مميّزة."
+    },
+    "price": { "amount": 800, "from": false },
+    "duration": { "en": "10 – 20 working days", "ar": "١٠ – ٢٠ يوم عمل" },
+    "features": [
+      { "en": "Everything in the Landing Page package", "ar": "كل ما في باقة صفحات الهبوط" },
+      { "en": "Multi-page application architecture", "ar": "بناء موقع متعدد الصفحات" },
+      { "en": "Frontend-only web apps", "ar": "بناء تطبيق ويب بدون واجهة خلفية" },
+      { "en": "Local data persistence", "ar": "تخزين محلي للبيانات" }
+    ],
+    "example": { "label": "qfl.mmfauf.com", "url": "https://qfl.mmfauf.com" },
+    "featured": true
+  },
+  {
+    "id": "full-stack",
+    "icon": "database",
+    "title": { "en": "Full-Stack Web Apps", "ar": "التطبيقات والمنصّات المتكاملة" },
+    "summary": {
+      "en": "For platforms that manage real data, real users, and custom business logic.",
+      "ar": "للتطبيقات والمنصّات التي تتطلّب إدارة بيانات ومستخدمين ومنطق برمجي خاص."
+    },
+    "price": { "amount": 1500, "from": true },
+    "duration": { "en": "From one month", "ar": "تبدأ من شهر واحد" },
+    "features": [
+      { "en": "Everything in the previous packages", "ar": "كل ما في الباقات السابقة" },
+      { "en": "Frontend & backend development", "ar": "تطوير الواجهة الأمامية والخلفية" },
+      { "en": "Database design and integration", "ar": "تصميم وتكامل قواعد البيانات" },
+      { "en": "Complete admin dashboard", "ar": "لوحة تحكم كاملة للمدير" },
+      { "en": "Authentication & role-based access", "ar": "أنظمة العضوية والتحقق وضبط الصلاحيات" }
+    ],
+    "example": null,
+    "featured": false
+  }
+]
