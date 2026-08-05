@@ -67,16 +67,21 @@ export function Skills() {
                       </span>
                     </div>
 
-                    <div className="h-1 w-full overflow-hidden rounded-full bg-line">
+                    {/* whileInView lives on this track, not the bar: a
+                        scaleX:0 element collapses to zero width, so an
+                        observer watching it directly never fires. */}
+                    <motion.div
+                      className="h-1 w-full overflow-hidden rounded-full bg-line"
+                      initial="hidden"
+                      whileInView="visible"
+                      viewport={{ once: true, amount: 0.8 }}
+                    >
                       <motion.div
-                        className="h-full rounded-full bg-linear-to-r from-gold-600 via-gold-400 to-gold-200"
-                        initial={{ scaleX: 0 }}
-                        whileInView={{ scaleX: skill.level / 100 }}
-                        viewport={{ once: true, amount: 0.8 }}
+                        className="h-full origin-left rounded-full bg-linear-to-r from-gold-600 via-gold-400 to-gold-200 rtl:origin-right"
+                        variants={{ hidden: { scaleX: 0 }, visible: { scaleX: skill.level / 100 } }}
                         transition={{ duration: 1.2, ease: EASE_EXPO }}
-                        style={{ transformOrigin: 'left' }}
                       />
-                    </div>
+                    </motion.div>
                   </motion.li>
                 ))}
               </motion.ul>

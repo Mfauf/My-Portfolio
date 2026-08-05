@@ -39,16 +39,22 @@ function LanguageBar({ item }: { item: (typeof profile.languages)[number] }) {
         <span className="text-sm font-medium text-ink-strong">{pick(item.name)}</span>
         <span className="text-xs text-faint">{pick(item.level)}</span>
       </div>
-      <div className="h-1.5 w-full overflow-hidden rounded-full bg-line">
+      {/* whileInView lives on this always-full-width track, not the bar
+          itself: a scaleX:0 element collapses to zero width, so an
+          IntersectionObserver watching it directly never sees enough of it
+          to fire and the fill would never animate in. */}
+      <motion.div
+        className="h-1.5 w-full overflow-hidden rounded-full bg-line"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.6 }}
+      >
         <motion.div
-          className="h-full rounded-full bg-linear-to-r from-gold-600 to-gold-300"
-          initial={{ scaleX: 0 }}
-          whileInView={{ scaleX: item.value / 100 }}
-          viewport={{ once: true, amount: 0.6 }}
+          className="h-full origin-left rounded-full bg-linear-to-r from-gold-600 to-gold-300 rtl:origin-right"
+          variants={{ hidden: { scaleX: 0 }, visible: { scaleX: item.value / 100 } }}
           transition={{ duration: 1.1, ease: EASE_EXPO }}
-          style={{ transformOrigin: 'left' }}
         />
-      </div>
+      </motion.div>
     </li>
   );
 }
