@@ -1,30 +1,34 @@
 {
   "name": "mmfauf.com",
-  "version": "1.0.0",
-  "description": "",
-  "main": "script.js",
-  "directories": {
-    "doc": "docs"
-  },
+  "private": true,
+  "version": "2.0.0",
+  "type": "module",
+  "description": "Muhammad Auf — personal portfolio. React + TypeScript + Tailwind CSS.",
   "scripts": {
-    "build:css": "tailwindcss -i ./src/input.css -o ./dist/output.css --minify",
-    "watch:css": "tailwindcss -i ./src/input.css -o ./dist/output.css --watch",
-    "build": "npm run build:css"
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview",
+    "typecheck": "tsc -b --noEmit"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Mfauf/Portoflio.git"
   },
-  "keywords": [],
-  "author": "",
   "license": "ISC",
-  "type": "commonjs",
-  "bugs": {
-    "url": "https://github.com/Mfauf/Portoflio/issues"
+  "dependencies": {
+    "framer-motion": "^12.23.12",
+    "lenis": "^1.3.11",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
   },
-  "homepage": "https://github.com/Mfauf/Portoflio#readme",
   "devDependencies": {
-    "@tailwindcss/cli": "^4.2.2",
-    "tailwindcss": "^4.2.2"
+    "@tailwindcss/vite": "^4.2.2",
+    "@types/node": "^24.10.1",
+    "@types/react": "^19.2.0",
+    "@types/react-dom": "^19.2.0",
+    "@vitejs/plugin-react": "^5.0.4",
+    "tailwindcss": "^4.2.2",
+    "typescript": "^5.9.3",
+    "vite": "^7.1.14"
   }
 }

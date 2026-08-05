@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+
+    <title>Muhammad Auf — Computer Engineer & Web Developer</title>
+    <meta
+      name="description"
+      content="Muhammad Auf — Computer Engineering student at Qatar University and freelance web developer. I design and build fast, bilingual, high-performance websites and web apps."
+    />
+    <meta name="author" content="Muhammad Auf" />
+    <meta name="theme-color" content="#05070f" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#f6f4ef" media="(prefers-color-scheme: light)" />
+    <link rel="canonical" href="https://www.mmfauf.com/" />
+
+    <!-- Open Graph / social -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.mmfauf.com/" />
+    <meta property="og:site_name" content="Muhammad Auf" />
+    <meta property="og:title" content="Muhammad Auf — Computer Engineer & Web Developer" />
+    <meta
+      property="og:description"
+      content="I design and build fast, bilingual, high-performance websites and web apps."
+    />
+    <meta property="og:image" content="https://www.mmfauf.com/profile.png" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:locale:alternate" content="ar_QA" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="icon" type="image/png" href="/logo.png" />
+    <link rel="apple-touch-icon" href="/logo.png" />
+
+    <!-- Fonts: Sora (display), Inter (body), IBM Plex Sans Arabic (Arabic) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Inter:wght@300..700&family=Sora:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Structured data: helps search engines describe the site owner correctly. -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Muhammad Auf",
+        "alternateName": "محمد عوف",
+        "url": "https://www.mmfauf.com/",
+        "email": "mailto:mmfauf@gmail.com",
+        "telephone": "+974-3300-5113",
+        "jobTitle": "Computer Engineer & Web Developer",
+        "address": { "@type": "PostalAddress", "addressLocality": "Doha", "addressCountry": "QA" },
+        "alumniOf": { "@type": "CollegeOrUniversity", "name": "Qatar University" },
+        "sameAs": ["https://www.linkedin.com/in/mmfauf/", "https://github.com/Mfauf"]
+      }
+    </script>
+
+    <!--
+      Applies the stored theme/language before first paint so there is no
+      flash of the wrong theme or direction. Mirrors src/lib/preferences.ts.
+    -->
+    <script>
+      (function () {
+        try {
+          var root = document.documentElement;
+          var theme = localStorage.getItem('mmfauf:theme') || 'system';
+          var dark =
+            theme === 'dark' ||
+            (theme !== 'light' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+          root.classList.toggle('dark', dark);
+          root.dataset.theme = dark ? 'dark' : 'light';
+
+          var lang = localStorage.getItem('mmfauf:lang');
+          if (lang !== 'ar' && lang !== 'en') {
+            lang = (navigator.language || 'en').toLowerCase().startsWith('ar') ? 'ar' : 'en';
+          }
+          root.lang = lang;
+          root.dir = lang === 'ar' ? 'rtl' : 'ltr';
+        } catch (e) {
+          /* storage blocked — fall back to the markup defaults */
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
