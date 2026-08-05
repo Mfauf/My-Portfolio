@@ -79,7 +79,10 @@ export function Certificates() {
       </div>
 
       {/* Grid ------------------------------------------------------------ */}
-      <motion.ul layout className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      {/* `layout` lives on the items, not the list: animating the container's
+          height as well scales its children and visibly squashes the cards
+          mid-filter. */}
+      <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
         <AnimatePresence mode="popLayout">
           {visible.map((certificate) => (
             <motion.li
@@ -122,7 +125,7 @@ export function Certificates() {
             </motion.li>
           ))}
         </AnimatePresence>
-      </motion.ul>
+      </ul>
 
       {/* Detail dialog --------------------------------------------------- */}
       <Modal
