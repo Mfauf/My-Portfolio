@@ -40,7 +40,7 @@ export function Card({ children, className, spotlight = true, gradientRing = fal
       onMouseMove={handleMove}
       onMouseLeave={() => setPointer((prev) => ({ ...prev, active: false }))}
       className={cn(
-        'glass group relative overflow-hidden rounded-[var(--radius-card)] transition-[border-color,transform,box-shadow] duration-500 ease-[var(--ease-expo)]',
+        'glass group isolate relative overflow-hidden rounded-[var(--radius-card)] transition-[border-color,transform,box-shadow] duration-500 ease-[var(--ease-expo)]',
         'hover:border-gold/35',
         gradientRing && 'ring-gradient',
         className,
@@ -49,14 +49,14 @@ export function Card({ children, className, spotlight = true, gradientRing = fal
       {spotlight && !isTouch && (
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+          className="pointer-events-none absolute inset-0 -z-10 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
           style={{
             opacity: pointer.active ? 1 : 0,
             background: `radial-gradient(420px circle at ${pointer.x}% ${pointer.y}%, color-mix(in oklab, var(--accent) 13%, transparent), transparent 62%)`,
           }}
         />
       )}
-      <div className="relative">{children}</div>
+      {children}
     </div>
   );
 }

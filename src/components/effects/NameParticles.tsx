@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react';
 
 import { cn } from '@/lib/cn';
 import { usePrefersReducedMotion } from '@/hooks/useMediaQuery';
+import { useTheme } from '@/providers/ThemeProvider';
 
 interface Particle {
   /** Resting position — where the letterform actually is. */
@@ -30,8 +31,16 @@ interface NameParticlesProps {
   className?: string;
 }
 
-/** Gold ramp the particles are tinted from — brightest in the middle. */
-const GOLD_RAMP = ['#f6e8c4', '#efd89d', '#e6c572', '#d9ae4a', '#c99a32', '#a87c25'];
+/**
+ * Gold ramps the particles are tinted from.
+ *
+ * The panel this used to sit in was always dark, so one ramp worked for both
+ * themes. Now that the canvas sits directly on the page, the pale end of that
+ * ramp would all but disappear against the light theme's ivory background —
+ * so light mode gets a deeper, more saturated set instead.
+ */
+const GOLD_RAMP_DARK = ['#f6e8c4', '#efd89d', '#e6c572', '#d9ae4a', '#c99a32', '#a87c25'];
+const GOLD_RAMP_LIGHT = ['#a87c25', '#8f6a1e', '#c99a32', '#7a5817', '#d9ae4a', '#8f6a1e'];
 
 const POINTER_RADIUS = 120;
 const POINTER_STRENGTH = 0.55;
@@ -56,6 +65,7 @@ export function NameParticles({
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const reducedMotion = usePrefersReducedMotion();
+  const { theme } = useTheme();
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -64,6 +74,8 @@ export function NameParticles({
 
     const context = canvas.getContext('2d', { alpha: true });
     if (!context) return;
+
+    const goldRamp = theme === 'light' ? GOLD_RAMP_LIGHT : GOLD_RAMP_DARK;
 
     let particles: Particle[] = [];
     let width = 0;
@@ -136,7 +148,7 @@ export function NameParticles({
                 vx: 0,
                 vy: 0,
                 size: 0.9 + depth * 1.5,
-                colour: GOLD_RAMP[Math.floor(Math.random() * GOLD_RAMP.length)],
+                colour: goldRamp[Math.floor(Math.random() * goldRamp.length)],
                 phase: Math.random() * Math.PI * 2,
                 twinkleSpeed: 0.7 + Math.random() * 2.2,
                 sparkle: Math.random() < 0.018,
@@ -309,24 +321,15 @@ export function NameParticles({
       canvas.removeEventListener('pointerleave', onPointerLeave);
       canvas.removeEventListener('pointercancel', onPointerLeave);
     };
-  }, [text, fontFamily, reducedMotion]);
+  }, [text, fontFamily, reducedMotion, theme]);
 
   return (
     <div
       ref={containerRef}
       role="img"
       aria-label={label}
-      className={cn(
-        'relative isolate aspect-[1054/420] w-full overflow-hidden rounded-[2rem]',
-        'bg-navy-950 ring-1 ring-gold/12',
-        className,
-      )}
+      className={cn('relative isolate aspect-[1054/420] w-full', className)}
     >
-      {/* Warm bloom behind the letterforms so the gold has something to sit on. */}
-      <div
-        aria-hidden="true"
-        className="absolute inset-0 bg-[radial-gradient(ellipse_60%_70%_at_50%_50%,rgb(230_197_114/0.14),transparent_70%)]"
-      />
       <canvas ref={canvasRef} aria-hidden="true" className="absolute inset-0 touch-none" />
     </div>
   );

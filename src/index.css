@@ -65,7 +65,6 @@
   --animate-glow-pulse: glow-pulse 5s ease-in-out infinite;
   --animate-spin-slow: spin 22s linear infinite;
   --animate-caret: caret 1.05s steps(2, start) infinite;
-  --animate-scroll-hint: scroll-hint 2.1s var(--ease-quint) infinite;
   --animate-ping-ring: ping-ring 2.6s var(--ease-expo) infinite;
 }
 
@@ -113,20 +112,6 @@
     opacity: 1;
   }
   50% {
-    opacity: 0;
-  }
-}
-
-@keyframes scroll-hint {
-  0% {
-    transform: translateY(-40%);
-    opacity: 0;
-  }
-  35% {
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(140%);
     opacity: 0;
   }
 }

@@ -1,4 +1,6 @@
+import { useSectionArrowNav } from '@/hooks/useSectionArrowNav';
 import { useSmoothScroll } from '@/hooks/useSmoothScroll';
+import { useI18n } from '@/providers/I18nProvider';
 import { AuroraBackground } from '@/components/effects/AuroraBackground';
 import { CursorGlow } from '@/components/effects/CursorGlow';
 import { ScrollProgress } from '@/components/effects/ScrollProgress';
@@ -16,7 +18,9 @@ import { Services } from '@/sections/Services';
 import { Skills } from '@/sections/Skills';
 
 export default function App() {
+  const { isRTL } = useI18n();
   useSmoothScroll();
+  useSectionArrowNav(isRTL);
 
   return (
     <>

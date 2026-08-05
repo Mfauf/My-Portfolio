@@ -225,13 +225,13 @@ export function Hero() {
       </div>
 
       {/* -------------------------------------------------------------------- */}
-      {/* Tech belt + scroll hint                                              */}
+      {/* Tech belt                                                            */}
       {/* -------------------------------------------------------------------- */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1, duration: 0.9 }}
-        className="mt-16 flex flex-col gap-8"
+        className="mt-16"
       >
         {/* Decorative only — the same technologies are listed, with context,
             in the Skills section. */}
@@ -246,17 +246,6 @@ export function Hero() {
             </span>
           ))}
         </Marquee>
-
-        <button
-          type="button"
-          onClick={() => scrollToSection('about')}
-          className="group mx-auto flex flex-col items-center gap-2 text-xs font-medium tracking-[0.25em] text-faint uppercase transition-colors hover:text-gold"
-        >
-          {t('hero.scroll')}
-          <span className="relative grid h-9 w-5.5 place-items-start overflow-hidden rounded-full border border-line-strong pt-1.5 transition-colors group-hover:border-gold/50">
-            <span className="size-1 rounded-full bg-gold animate-scroll-hint" />
-          </span>
-        </button>
       </motion.div>
     </section>
   );

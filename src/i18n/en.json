@@ -29,7 +29,6 @@
     "backToTop": "Back to top"
   },
   "hero": {
-    "scroll": "Scroll",
     "cta": "Start a project",
     "secondary": "See my work",
     "basedIn": "Based in"
@@ -102,7 +101,7 @@
     },
     "viewCertificate": "View certificate",
     "onRequest": "Original certificate available on request",
-    "close": "Close"
+    "viewMore": "View more"
   },
   "stats": {
     "eyebrow": "By the numbers",
