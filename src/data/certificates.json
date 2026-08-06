@@ -25,6 +25,19 @@
     "image": "/certificates/aipm.webp",
     "url": null
   },
+    {
+    "id": "qu-cert1",
+    "title": { "en": "ENGL 202 – Paraphrasing & Argumentative Essay _Workshop II", "ar": "ENGL 202 – إعادة الصياغة والمقال النقدي _ورشة II" },
+    "issuer": { "en": "Qatar University SLSC", "ar": "جامعة قطر - مركز تعليم ودعم الطلاب" },
+    "year": 2025,
+    "category": "ai",
+    "description": {
+      "en": "Applying AI tooling to planning, tracking and delivery of technical projects.",
+      "ar": "توظيف أدوات الذكاء الاصطناعي في تخطيط المشاريع التقنية ومتابعتها وتسليمها."
+    },
+    "image": "/certificates/qu-cert1.jpg",
+    "url": null
+  },
   {
     "id": "huawei-hcia-ai",
     "title": { "en": "HCIA — Artificial Intelligence", "ar": "HCIA — الذكاء الاصطناعي" },

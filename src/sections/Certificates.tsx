@@ -1,18 +1,17 @@
 import { AnimatePresence, motion } from 'framer-motion';
-import { useEffect, useMemo, useState } from 'react';
+import { useMemo, useState } from 'react';
 
 import { cn } from '@/lib/cn';
 import { certificates } from '@/lib/content';
 import { EASE_EXPO } from '@/lib/motion';
+import { useMediaQuery, usePrefersReducedMotion } from '@/hooks/useMediaQuery';
 import { useI18n } from '@/providers/I18nProvider';
 import type { CertificateCategory } from '@/types/content';
 import { Badge } from '@/components/ui/Badge';
-import { Button } from '@/components/ui/Button';
-import { Card } from '@/components/ui/Card';
 import { Icon } from '@/components/ui/Icon';
 import { Section, SectionHeading } from '@/components/ui/Section';
 
-/** Icon per credential type — keeps the grid readable at a glance. */
+/** Icon per credential type — shown in the detail panel. */
 const CATEGORY_ICONS: Record<CertificateCategory, string> = {
   ai: 'sparkles',
   engineering: 'code',
@@ -22,30 +21,41 @@ const CATEGORY_ICONS: Record<CertificateCategory, string> = {
   quran: 'book',
 };
 
-/** How many cards show before the visitor has to ask for more. */
-const DEFAULT_VISIBLE = 3;
+/** How far a neighbouring card sits from the centre, in px, per breakpoint. */
+function useCardGeometry() {
+  const isLg = useMediaQuery('(min-width: 1024px)');
+  const isSm = useMediaQuery('(min-width: 640px)');
+  const width = isLg ? 260 : isSm ? 220 : 168;
+  return { width, spacing: width * 0.64 };
+}
 
 export function Certificates() {
-  const { t, pick, formatNumber } = useI18n();
-  const [filter, setFilter] = useState<CertificateCategory | 'all'>('all');
-  const [expanded, setExpanded] = useState(false);
+  const { t, pick, formatNumber, isRTL } = useI18n();
+  const reducedMotion = usePrefersReducedMotion();
+  const { width: cardWidth, spacing } = useCardGeometry();
 
-  // Only offer filters that actually have entries behind them.
-  const categories = useMemo(() => {
-    const present = new Set(certificates.map((certificate) => certificate.category));
-    return (Object.keys(CATEGORY_ICONS) as CertificateCategory[]).filter((key) => present.has(key));
-  }, []);
+  // A picture gallery only makes sense for certificates that actually have a
+  // scan — entries still waiting on one (image: null) sit out until they do.
+  const gallery = useMemo(() => certificates.filter((certificate) => certificate.image), []);
 
-  const filtered = useMemo(
-    () => (filter === 'all' ? certificates : certificates.filter((c) => c.category === filter)),
-    [filter],
-  );
+  const [centerIndex, setCenterIndex] = useState(0);
+  const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
+  const selected = selectedIndex !== null ? gallery[selectedIndex] : null;
 
-  // Switching filters always starts back at the first page.
-  useEffect(() => setExpanded(false), [filter]);
+  if (gallery.length === 0) return null;
 
-  const visible = expanded ? filtered : filtered.slice(0, DEFAULT_VISIBLE);
-  const remaining = filtered.length - visible.length;
+  const dirMul = isRTL ? -1 : 1;
+
+  function selectCard(index: number) {
+    setCenterIndex(index);
+    setSelectedIndex(index);
+  }
+
+  function step(delta: number) {
+    const nextIndex = (centerIndex + delta + gallery.length) % gallery.length;
+    setCenterIndex(nextIndex);
+    setSelectedIndex((current) => (current !== null ? nextIndex : current));
+  }
 
   return (
     <Section id="certificates">
@@ -55,122 +65,135 @@ export function Certificates() {
         subtitle={t('certificates.subtitle')}
       />
 
-      {/* Filters --------------------------------------------------------- */}
-      <div className="mt-10 flex flex-wrap justify-center gap-2">
-        {(['all', ...categories] as const).map((key) => {
-          const active = filter === key;
-          return (
-            <button
-              key={key}
-              type="button"
-              onClick={() => setFilter(key)}
-              aria-pressed={active}
-              className={cn(
-                'relative rounded-full border px-4 py-2 text-sm font-medium transition-colors duration-300',
-                active
-                  ? 'border-gold/40 text-gold'
-                  : 'border-line text-muted hover:border-gold/30 hover:text-ink-strong',
-              )}
-            >
-              {active && (
-                <motion.span
-                  layoutId="certificate-filter"
-                  className="absolute inset-0 rounded-full bg-gold/10"
-                  transition={{ type: 'spring', stiffness: 320, damping: 30 }}
+      <div className="relative mt-14 lg:mt-20">
+        {/* Gallery ----------------------------------------------------- */}
+        <div
+          className="relative mx-auto h-[220px] sm:h-[280px] lg:h-[340px] max-w-full"
+          style={{ perspective: reducedMotion ? undefined : 1600 }}
+        >
+          {gallery.map((certificate, index) => {
+            const offset = (index - centerIndex) * dirMul;
+            const abs = Math.abs(offset);
+            const isActive = index === centerIndex;
+            const hidden = abs > 4;
+
+            const transform = reducedMotion
+              ? `translate(-50%, -50%) translateX(${offset * spacing}px)`
+              : `translate(-50%, -50%) translateX(${offset * spacing}px) translateZ(${-abs * 70}px) rotateY(${offset * -30}deg) scale(${Math.max(0.62, 1 - abs * 0.15)})`;
+
+            return (
+              <button
+                key={certificate.id}
+                type="button"
+                onClick={() => selectCard(index)}
+                aria-label={pick(certificate.title)}
+                aria-current={isActive ? 'true' : undefined}
+                className="absolute top-1/2 left-1/2 overflow-hidden rounded-2xl shadow-2xl outline-none [transform-style:preserve-3d]"
+                style={{
+                  width: cardWidth,
+                  transform,
+                  zIndex: 50 - abs,
+                  opacity: hidden ? 0 : 1,
+                  pointerEvents: hidden ? 'none' : 'auto',
+                  transitionProperty: 'transform, opacity',
+                  transitionDuration: reducedMotion ? '0.15s' : '0.6s',
+                  transitionTimingFunction: 'cubic-bezier(0.16, 1, 0.3, 1)',
+                }}
+              >
+                <img
+                  src={certificate.image ?? undefined}
+                  alt={pick(certificate.title)}
+                  loading="lazy"
+                  className="aspect-[22/17] w-full object-cover"
                 />
-              )}
-              <span className="relative">
-                {key === 'all' ? t('certificates.all') : t(`certificates.categories.${key}`)}
-              </span>
-            </button>
-          );
-        })}
-      </div>
+                <span
+                  aria-hidden="true"
+                  className={cn(
+                    'pointer-events-none absolute inset-0 rounded-2xl ring-2 transition-opacity duration-300',
+                    isActive ? 'ring-gold opacity-100' : 'ring-transparent opacity-0',
+                  )}
+                />
+              </button>
+            );
+          })}
 
-      {/* Grid ------------------------------------------------------------ */}
-      {/* `layout` lives on the items, not the list: animating the container's
-          height as well scales its children and visibly squashes the cards
-          mid-filter. */}
-      <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-        <AnimatePresence mode="popLayout">
-          {visible.map((certificate) => (
-            <motion.li
-              key={certificate.id}
-              layout
-              initial={{ opacity: 0, scale: 0.94, y: 18 }}
-              animate={{ opacity: 1, scale: 1, y: 0 }}
-              exit={{ opacity: 0, scale: 0.94 }}
-              transition={{ duration: 0.45, ease: EASE_EXPO }}
+          {gallery.length > 1 && (
+            <>
+              <button
+                type="button"
+                onClick={() => step(-1)}
+                aria-label={t('certificates.previous')}
+                className="glass absolute start-0 top-1/2 z-60 -translate-y-1/2 grid size-10 place-items-center rounded-full text-ink transition-colors hover:border-gold/45 hover:text-gold sm:size-12"
+              >
+                <Icon name="arrow-right" className="size-4 rotate-180 rtl:-scale-x-100 sm:size-5" />
+              </button>
+              <button
+                type="button"
+                onClick={() => step(1)}
+                aria-label={t('certificates.next')}
+                className="glass absolute end-0 top-1/2 z-60 -translate-y-1/2 grid size-10 place-items-center rounded-full text-ink transition-colors hover:border-gold/45 hover:text-gold sm:size-12"
+              >
+                <Icon name="arrow-right" className="size-4 rtl:-scale-x-100 sm:size-5" />
+              </button>
+            </>
+          )}
+        </div>
+
+        {/* Detail panel -------------------------------------------------- */}
+        <AnimatePresence mode="wait">
+          {selected && (
+            <motion.div
+              key={selected.id}
+              initial={{ opacity: 0, y: 16, height: 0 }}
+              animate={{ opacity: 1, y: 0, height: 'auto' }}
+              exit={{ opacity: 0, y: -8, height: 0 }}
+              transition={{ duration: 0.4, ease: EASE_EXPO }}
+              className="mx-auto mt-8 max-w-xl overflow-hidden"
             >
-              <Card className="flex h-full flex-col overflow-hidden">
-                {certificate.image && (
-                  <img
-                    src={certificate.image}
-                    alt={pick(certificate.title)}
-                    loading="lazy"
-                    className="aspect-[22/17] w-full object-cover"
-                  />
-                )}
+              <div className="glass relative rounded-[var(--radius-card)] p-6 sm:p-8">
+                <button
+                  type="button"
+                  onClick={() => setSelectedIndex(null)}
+                  aria-label={t('certificates.close')}
+                  className="absolute end-4 top-4 grid size-9 place-items-center rounded-full border border-line bg-surface-2/70 text-muted transition-colors hover:border-gold/40 hover:text-gold"
+                >
+                  <Icon name="close" className="size-4" />
+                </button>
 
-                <div className="flex flex-1 flex-col p-6">
-                  <div className="mb-4 flex items-start justify-between gap-3">
-                    <span className="grid size-11 place-items-center rounded-2xl bg-gold/12 text-gold transition-transform duration-500 group-hover:scale-110">
-                      <Icon name={CATEGORY_ICONS[certificate.category]} className="size-5" />
-                    </span>
-                    <span className="text-xs text-faint tabular-nums">
-                      {formatNumber(certificate.year, { useGrouping: false })}
-                    </span>
+                <div className="flex items-start gap-4 pe-12">
+                  <span className="grid size-12 shrink-0 place-items-center rounded-2xl bg-gold/12 text-gold">
+                    <Icon name={CATEGORY_ICONS[selected.category]} className="size-5" />
+                  </span>
+                  <div className="min-w-0">
+                    <h3 className="text-lg leading-snug font-semibold text-ink-strong">
+                      {pick(selected.title)}
+                    </h3>
+                    <p className="text-sm text-gold">{pick(selected.issuer)}</p>
                   </div>
+                </div>
 
-                  <h3 className="text-[0.95rem] leading-snug font-semibold text-ink-strong">
-                    {pick(certificate.title)}
-                  </h3>
-                  <p className="mt-1.5 text-xs text-gold">{pick(certificate.issuer)}</p>
-                  <p className="mt-3 text-sm leading-relaxed text-muted">
-                    {pick(certificate.description)}
-                  </p>
+                <p className="mt-4 leading-relaxed text-muted">{pick(selected.description)}</p>
 
-                  <div className="mt-4 flex flex-wrap items-center gap-2">
-                    <Badge tone="gold">{t(`certificates.categories.${certificate.category}`)}</Badge>
-                    {!certificate.image && (
-                      <span className="inline-flex items-center gap-1.5 text-xs text-faint">
-                        <Icon name="file-text" className="size-3.5 shrink-0" />
-                        {t('certificates.onRequest')}
-                      </span>
-                    )}
-                  </div>
-
-                  {certificate.url && (
+                <div className="mt-4 flex flex-wrap items-center gap-2">
+                  <Badge tone="gold">{t(`certificates.categories.${selected.category}`)}</Badge>
+                  <Badge>{formatNumber(selected.year, { useGrouping: false })}</Badge>
+                  {selected.url && (
                     <a
-                      href={certificate.url}
+                      href={selected.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="mt-auto inline-flex items-center gap-1.5 pt-5 text-xs font-medium text-gold hover:opacity-70"
+                      className="ms-auto inline-flex items-center gap-1.5 text-sm font-medium text-gold hover:opacity-70"
                     >
-                      <Icon name="external-link" className="size-3.5 rtl:-scale-x-100" />
+                      <Icon name="external-link" className="size-4" />
                       {t('certificates.viewCertificate')}
                     </a>
                   )}
                 </div>
-              </Card>
-            </motion.li>
-          ))}
+              </div>
+            </motion.div>
+          )}
         </AnimatePresence>
-      </ul>
-
-      {/* View more --------------------------------------------------------- */}
-      {remaining > 0 && (
-        <motion.div
-          initial={{ opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4, ease: EASE_EXPO }}
-          className="mt-10 flex justify-center"
-        >
-          <Button variant="outline" onClick={() => setExpanded(true)} trailingIcon="chevron-down">
-            {t('certificates.viewMore')} ({formatNumber(remaining)})
-          </Button>
-        </motion.div>
-      )}
+      </div>
     </Section>
   );
 }

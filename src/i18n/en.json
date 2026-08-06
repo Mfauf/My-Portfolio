@@ -90,8 +90,7 @@
   "certificates": {
     "eyebrow": "Credentials",
     "title": "Certificates & training",
-    "subtitle": "Courses, credentials and programmes completed so far.",
-    "all": "All",
+    "subtitle": "A few of the certificates behind the credentials above.",
     "categories": {
       "ai": "AI",
       "engineering": "Engineering",
@@ -101,8 +100,9 @@
       "quran": "Qur'an"
     },
     "viewCertificate": "View certificate",
-    "onRequest": "Original certificate available on request",
-    "viewMore": "View more"
+    "close": "Close",
+    "previous": "Previous certificate",
+    "next": "Next certificate"
   },
   "stats": {
     "eyebrow": "By the numbers",
