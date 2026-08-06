@@ -21,6 +21,14 @@ const CATEGORY_ICONS: Record<CertificateCategory, string> = {
   quran: 'book',
 };
 
+/**
+ * At most this many cards show on each side of the centre one. Beyond that,
+ * the rotateY angle needed to keep fanning out approaches 90° — a rectangle
+ * viewed edge-on — which renders as a thin, warped sliver rather than a
+ * legible card, so those are hidden outright instead.
+ */
+const MAX_SIDE_CARDS = 2;
+
 /** How far a neighbouring card sits from the centre, in px, per breakpoint. */
 function useCardGeometry() {
   const isLg = useMediaQuery('(min-width: 1024px)');
@@ -75,11 +83,11 @@ export function Certificates() {
             const offset = (index - centerIndex) * dirMul;
             const abs = Math.abs(offset);
             const isActive = index === centerIndex;
-            const hidden = abs > 4;
+            const hidden = abs > MAX_SIDE_CARDS;
 
             const transform = reducedMotion
               ? `translate(-50%, -50%) translateX(${offset * spacing}px)`
-              : `translate(-50%, -50%) translateX(${offset * spacing}px) translateZ(${-abs * 70}px) rotateY(${offset * -30}deg) scale(${Math.max(0.62, 1 - abs * 0.15)})`;
+              : `translate(-50%, -50%) translateX(${offset * spacing}px) translateZ(${-abs * 60}px) rotateY(${offset * -22}deg) scale(${1 - abs * 0.14})`;
 
             return (
               <button

@@ -28,14 +28,40 @@
     {
     "id": "qu-cert1",
     "title": { "en": "ENGL 202 – Paraphrasing & Argumentative Essay _Workshop II", "ar": "ENGL 202 – إعادة الصياغة والمقال النقدي _ورشة II" },
-    "issuer": { "en": "Qatar University SLSC", "ar": "جامعة قطر - مركز تعليم ودعم الطلاب" },
+    "issuer": { "en": "Qatar University - SLSC", "ar": "جامعة قطر - مركز دعم تعلم الطلاب" },
     "year": 2025,
-    "category": "ai",
+    "category": "academic",
     "description": {
-      "en": "Applying AI tooling to planning, tracking and delivery of technical projects.",
-      "ar": "توظيف أدوات الذكاء الاصطناعي في تخطيط المشاريع التقنية ومتابعتها وتسليمها."
+      "en": "Workshop on paraphrasing and argumentative essay writing.",
+      "ar": "ورشة عمل حول إعادة الصياغة والمقال النقدي."
     },
     "image": "/certificates/qu-cert1.jpg",
+    "url": null
+  },
+    {
+    "id": "qu-cert2",
+    "title": { "en": "Start Your Academic Journey Right", "ar": "ابدأ مسيرتك الجامعية صح" },
+    "issuer": { "en": "Qatar University - SLSC", "ar": "جامعة قطر - مركز دعم تعلم الطلاب" },
+    "year": 2025,
+    "category": "academic",
+    "description": {
+      "en": "Workshop on academic writing, research and study skills.",
+      "ar": "ورشة عمل حول الكتابة الجامعية والبحث والمهارات الدراسية."
+    },
+    "image": "/certificates/qu-cert2.webp",
+    "url": null
+  },
+    {
+    "id": "qu-cert3",
+    "title": { "en": "Prioritization and Time Management", "ar": "ترتيب الأولويات وإدارة وقت الدراسة" },
+    "issuer": { "en": "Qatar University - SLSC", "ar": "جامعة قطر - مركز دعم تعلم الطلاب" },
+    "year": 2025,
+    "category": "academic",
+    "description": {
+      "en": "Workshop on prioritization and time management for academic success.",
+      "ar": "ورشة عمل حول ترتيب الأولويات وإدارة وقت الدراسة لنجاح أكاديمي."
+    },
+    "image": "/certificates/qu-cert3.webp",
     "url": null
   },
   {
@@ -47,45 +73,6 @@
     "description": {
       "en": "Machine learning fundamentals, deep learning basics, neural networks and AI workflow design.",
       "ar": "أساسيات تعلّم الآلة، مبادئ التعلّم العميق، الشبكات العصبية، وتصميم سير عمل الذكاء الاصطناعي."
-    },
-    "image": null,
-    "url": null
-  },
-  {
-    "id": "python-programming",
-    "title": { "en": "Programming Concepts in Python", "ar": "مفاهيم البرمجة بلغة بايثون" },
-    "issuer": { "en": "Completed course", "ar": "دورة مكتملة" },
-    "year": 2024,
-    "category": "engineering",
-    "description": {
-      "en": "Core programming concepts, data structures and problem solving in Python.",
-      "ar": "مفاهيم البرمجة الأساسية وهياكل البيانات وحل المشكلات باستخدام بايثون."
-    },
-    "image": null,
-    "url": null
-  },
-  {
-    "id": "ielts",
-    "title": { "en": "IELTS Academic — Band 5.5", "ar": "آيلتس أكاديمي — ٥٫٥" },
-    "issuer": { "en": "British Council", "ar": "المجلس الثقافي البريطاني" },
-    "year": 2024,
-    "category": "academic",
-    "description": {
-      "en": "English proficiency across listening, reading, writing and speaking.",
-      "ar": "إتقان اللغة الإنجليزية في الاستماع والقراءة والكتابة والمحادثة."
-    },
-    "image": null,
-    "url": null
-  },
-  {
-    "id": "act-math",
-    "title": { "en": "ACT Mathematics — Score 27", "ar": "اختبار ACT للرياضيات — ٢٧" },
-    "issuer": { "en": "ACT, Inc.", "ar": "مؤسسة ACT" },
-    "year": 2025,
-    "category": "academic",
-    "description": {
-      "en": "Standardised mathematics assessment taken for university admission.",
-      "ar": "اختبار رياضيات معياري أُدّي لأغراض القبول الجامعي."
     },
     "image": null,
     "url": null
@@ -138,19 +125,6 @@
     "description": {
       "en": "Recognition for contribution to the club's youth programmes.",
       "ar": "تقديراً للمساهمة في برامج النادي الشبابية."
-    },
-    "image": null,
-    "url": null
-  },
-  {
-    "id": "ijaza-quran",
-    "title": { "en": "Ijazah in the Holy Qur'an", "ar": "إجازة في القرآن الكريم" },
-    "issuer": { "en": "Riwayat Hafs & Qalun", "ar": "رواية حفص وقالون" },
-    "year": 2023,
-    "category": "quran",
-    "description": {
-      "en": "Certified chain of transmission for Qur'anic recitation in the Asim and Qalun readings.",
-      "ar": "إجازة بسند متصل في رواية عاصم وقالون."
     },
     "image": null,
     "url": null
