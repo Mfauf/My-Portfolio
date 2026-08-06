@@ -64,7 +64,7 @@ export interface Addons {
 export interface SkillGroup {
   id: string;
   title: Localized;
-  items: { name: string; icon: string; level: number }[];
+  items: { name: string; icon: string }[];
 }
 
 export interface Project {

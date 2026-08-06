@@ -8,8 +8,8 @@ import { Reveal } from '@/components/ui/Reveal';
 import { Section, SectionHeading } from '@/components/ui/Section';
 
 const item = {
-  hidden: { opacity: 0, y: 18 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.55, ease: EASE_EXPO } },
+  hidden: { opacity: 0, y: 14, scale: 0.96 },
+  visible: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.5, ease: EASE_EXPO } },
 };
 
 export function Skills() {
@@ -40,48 +40,29 @@ export function Skills() {
               </div>
 
               <motion.ul
-                variants={staggerParent(0.07)}
+                variants={staggerParent(0.05)}
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.3 }}
-                className="grid gap-4 sm:grid-cols-2"
+                className="flex flex-wrap gap-2.5"
               >
                 {group.items.map((skill) => (
-                  <motion.li key={`${group.id}-${skill.name}`} variants={item} className="group/skill">
-                    <div className="mb-2 flex items-center gap-3">
-                      <span className="grid size-9 shrink-0 place-items-center rounded-xl border border-line bg-surface-2/60 transition-transform duration-400 group-hover/skill:scale-110">
-                        <img
-                          src={skill.icon}
-                          alt=""
-                          width={20}
-                          height={20}
-                          loading="lazy"
-                          className="size-5 object-contain"
-                        />
-                      </span>
-                      <span className="min-w-0 flex-1 truncate text-sm font-medium text-ink">
-                        {skill.name}
-                      </span>
-                      <span className="text-xs text-faint tabular-nums">
-                        {formatNumber(skill.level)}%
-                      </span>
-                    </div>
-
-                    {/* whileInView lives on this track, not the bar: a
-                        scaleX:0 element collapses to zero width, so an
-                        observer watching it directly never fires. */}
-                    <motion.div
-                      className="h-1 w-full overflow-hidden rounded-full bg-line"
-                      initial="hidden"
-                      whileInView="visible"
-                      viewport={{ once: true, amount: 0.8 }}
-                    >
-                      <motion.div
-                        className="h-full origin-left rounded-full bg-linear-to-r from-gold-600 via-gold-400 to-gold-200 rtl:origin-right"
-                        variants={{ hidden: { scaleX: 0 }, visible: { scaleX: skill.level / 100 } }}
-                        transition={{ duration: 1.2, ease: EASE_EXPO }}
+                  <motion.li
+                    key={`${group.id}-${skill.name}`}
+                    variants={item}
+                    className="group/skill flex items-center gap-2.5 rounded-full border border-line bg-surface-2/50 py-2.5 ps-3 pe-4 transition-all duration-300 hover:-translate-y-0.5 hover:border-gold/35 hover:bg-gold/8"
+                  >
+                    <span className="grid size-7 shrink-0 place-items-center">
+                      <img
+                        src={skill.icon}
+                        alt=""
+                        width={20}
+                        height={20}
+                        loading="lazy"
+                        className="size-5 object-contain transition-transform duration-400 group-hover/skill:scale-110"
                       />
-                    </motion.div>
+                    </span>
+                    <span className="text-sm font-medium whitespace-nowrap text-ink">{skill.name}</span>
                   </motion.li>
                 ))}
               </motion.ul>
