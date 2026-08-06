@@ -32,6 +32,14 @@ export function SplitText({
 
   return (
     <MotionTag
+      // Remounts the whole heading when the text changes (e.g. a language
+      // switch). Without this, React just patches the existing word spans in
+      // place — but `viewport={{ once: true }}` had already fired and
+      // disconnected its observer, so a heading that had already scrolled
+      // into view stayed stuck in whatever state it was last resolved to
+      // instead of being re-evaluated for the new words, sometimes leaving it
+      // blank until the next scroll.
+      key={text}
       className={cn('[perspective:800px]', className)}
       variants={staggerParent(stagger, delay)}
       initial="hidden"
