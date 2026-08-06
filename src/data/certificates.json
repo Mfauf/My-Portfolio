@@ -9,7 +9,20 @@
       "en": "Claude capabilities, prompting techniques and AI-assisted development workflows.",
       "ar": "قدرات Claude وتقنيات كتابة التوجيهات وسير العمل البرمجي المدعوم بالذكاء الاصطناعي."
     },
-    "image": "/certificates/claude-101.jpg",
+    "image": "/certificates/claude-101.webp",
+    "url": null
+  },
+  {
+    "id": "aipm",
+    "title": { "en": "AI in Project Management (AIPM)", "ar": "الذكاء الاصطناعي في إدارة المشاريع" },
+    "issuer": { "en": "Ajnee Institute for Training and Innovation", "ar": "معهد أجني للتدريب والابتكار" },
+    "year": 2025,
+    "category": "ai",
+    "description": {
+      "en": "Applying AI tooling to planning, tracking and delivery of technical projects.",
+      "ar": "توظيف أدوات الذكاء الاصطناعي في تخطيط المشاريع التقنية ومتابعتها وتسليمها."
+    },
+    "image": "/certificates/aipm.webp",
     "url": null
   },
   {
@@ -34,19 +47,6 @@
     "description": {
       "en": "Core programming concepts, data structures and problem solving in Python.",
       "ar": "مفاهيم البرمجة الأساسية وهياكل البيانات وحل المشكلات باستخدام بايثون."
-    },
-    "image": null,
-    "url": null
-  },
-  {
-    "id": "aipm",
-    "title": { "en": "AI in Project Management (AIPM)", "ar": "الذكاء الاصطناعي في إدارة المشاريع" },
-    "issuer": { "en": "Professional training", "ar": "تدريب مهني" },
-    "year": 2024,
-    "category": "ai",
-    "description": {
-      "en": "Applying AI tooling to planning, tracking and delivery of technical projects.",
-      "ar": "توظيف أدوات الذكاء الاصطناعي في تخطيط المشاريع التقنية ومتابعتها وتسليمها."
     },
     "image": null,
     "url": null
