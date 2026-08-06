@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 
 import { addons, profile, services } from '@/lib/content';
 import { EASE_EXPO } from '@/lib/motion';
-import { scrollToSection } from '@/hooks/useSmoothScroll';
+import { scrollToSection } from '@/lib/scroll';
 import { useI18n } from '@/providers/I18nProvider';
 import { Badge } from '@/components/ui/Badge';
 import { Button } from '@/components/ui/Button';

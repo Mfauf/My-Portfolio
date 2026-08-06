@@ -3,6 +3,7 @@ import { useState } from 'react';
 
 import { profile } from '@/lib/content';
 import { EASE_EXPO } from '@/lib/motion';
+import { scrollToTop } from '@/lib/scroll';
 import { useI18n } from '@/providers/I18nProvider';
 import { Icon } from '@/components/ui/Icon';
 
@@ -14,18 +15,13 @@ export function FloatingActions() {
 
   useMotionValueEvent(scrollY, 'change', (value) => setShowTop(value > 800));
 
-  const toTop = () => {
-    if (window.__lenis) window.__lenis.scrollTo(0, { duration: 1.4 });
-    else window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
-
   return (
     <div className="fixed end-4 bottom-4 z-70 flex flex-col items-center gap-3 sm:end-6 sm:bottom-6">
       <AnimatePresence>
         {showTop && (
           <motion.button
             type="button"
-            onClick={toTop}
+            onClick={scrollToTop}
             aria-label={t('controls.backToTop')}
             title={t('controls.backToTop')}
             initial={{ opacity: 0, scale: 0.7, y: 12 }}

@@ -5,7 +5,7 @@ import { cn } from '@/lib/cn';
 import { profile } from '@/lib/content';
 import { EASE_EXPO } from '@/lib/motion';
 import { SECTIONS, SECTION_IDS } from '@/lib/sections';
-import { scrollToSection } from '@/hooks/useSmoothScroll';
+import { scrollToSection } from '@/lib/scroll';
 import { useActiveSection } from '@/hooks/useActiveSection';
 import { useI18n } from '@/providers/I18nProvider';
 import { Icon } from '@/components/ui/Icon';

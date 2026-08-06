@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 
 import { allSkills, profile, socials } from '@/lib/content';
 import { EASE_EXPO, staggerParent } from '@/lib/motion';
-import { scrollToSection } from '@/hooks/useSmoothScroll';
+import { scrollToSection } from '@/lib/scroll';
 import { useI18n } from '@/providers/I18nProvider';
 import { Badge } from '@/components/ui/Badge';
 import { Button } from '@/components/ui/Button';

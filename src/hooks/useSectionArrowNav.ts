@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 
 import { SECTION_IDS } from '@/lib/sections';
-import { scrollToSection } from './useSmoothScroll';
+import { scrollToSection } from '@/lib/scroll';
 
 /** Elements that legitimately consume arrow keys for their own purposes. */
 const EDITABLE_TAGS = new Set(['INPUT', 'TEXTAREA', 'SELECT']);
@@ -10,11 +10,11 @@ const EDITABLE_TAGS = new Set(['INPUT', 'TEXTAREA', 'SELECT']);
  * The section whose top has most recently crossed the reading line.
  *
  * Derived from `scroll-padding-top` on <html> rather than a guessed
- * percentage of the viewport: that's the exact value Lenis itself already
- * subtracts when landing on a target (see scrollToSection), so the section
- * you just arrow-key'd to is guaranteed to clear this line and register as
- * "current" immediately — otherwise the next press would just re-target the
- * same section instead of advancing.
+ * percentage of the viewport: that's the exact value native scrollIntoView
+ * already subtracts when landing on a target (see scrollToSection), so the
+ * section you just arrow-key'd to is guaranteed to clear this line and
+ * register as "current" immediately — otherwise the next press would just
+ * re-target the same section instead of advancing.
  */
 function currentSectionIndex(): number {
   const scrollPaddingTop = parseFloat(getComputedStyle(document.documentElement).scrollPaddingTop) || 0;

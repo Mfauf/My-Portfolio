@@ -138,9 +138,12 @@
   html {
     -webkit-text-size-adjust: 100%;
     scroll-padding-top: calc(var(--header-height) + 1.5rem);
+    /* Native smooth scrolling for anchor jumps and scrollIntoView calls;
+       turned back off for reduced-motion visitors further down. */
+    scroll-behavior: smooth;
     color-scheme: light;
-    /* `clip` (not `hidden`) so no scroll container is created — Lenis and
-       position: sticky both keep working, but nothing can scroll sideways. */
+    /* `clip` (not `hidden`) so no scroll container is created — position:
+       sticky keeps working, but nothing can scroll sideways. */
     overflow-x: clip;
   }
 
@@ -340,20 +343,8 @@
 }
 
 /* ==========================================================================
-   Third-party + accessibility
+   Accessibility
    ========================================================================== */
-
-/* Lenis smooth scrolling (inlined so we don't ship an extra stylesheet). */
-html.lenis,
-html.lenis body {
-  height: auto;
-}
-.lenis.lenis-smooth {
-  scroll-behavior: auto !important;
-}
-.lenis.lenis-stopped {
-  overflow: clip;
-}
 
 /* Respect the OS "reduce motion" setting everywhere, including Framer Motion
    fallbacks and our own CSS keyframes. */

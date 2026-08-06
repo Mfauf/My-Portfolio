@@ -1,6 +1,6 @@
 import { profile, socials } from '@/lib/content';
 import { SECTIONS } from '@/lib/sections';
-import { scrollToSection } from '@/hooks/useSmoothScroll';
+import { scrollToSection } from '@/lib/scroll';
 import { useI18n } from '@/providers/I18nProvider';
 import { NameParticles } from '@/components/effects/NameParticles';
 import { Icon } from '@/components/ui/Icon';
