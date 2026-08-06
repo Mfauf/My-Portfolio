@@ -20,14 +20,20 @@ export function LanguageToggle({ className }: { className?: string }) {
         className,
       )}
     >
-      <AnimatePresence mode="wait" initial={false}>
+      {/* No `mode="wait"`: that fully unmounts the outgoing label before the
+          incoming one mounts, leaving the button visibly blank for a beat
+          mid-transition. Letting them overlap keeps a label on screen throughout. */}
+      <AnimatePresence initial={false}>
         <motion.span
           key={locale}
           initial={{ y: 12, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           exit={{ y: -12, opacity: 0 }}
           transition={{ duration: 0.24, ease: [0.16, 1, 0.3, 1] }}
-          className={cn('text-sm font-bold', locale === 'en' ? 'font-arabic text-base' : 'tracking-tight')}
+          className={cn(
+            'absolute inset-0 flex items-center justify-center text-sm font-bold',
+            locale === 'en' ? 'font-arabic text-base' : 'tracking-tight',
+          )}
         >
           {t('meta.switchTo')}
         </motion.span>

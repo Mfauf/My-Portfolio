@@ -37,14 +37,17 @@ export function ThemeToggle({ className }: { className?: string }) {
         className,
       )}
     >
-      <AnimatePresence mode="wait" initial={false}>
+      {/* No `mode="wait"`: that fully unmounts the outgoing icon before the
+          incoming one mounts, leaving the button visibly blank for a beat
+          mid-transition. Letting them overlap keeps an icon on screen throughout. */}
+      <AnimatePresence initial={false}>
         <motion.span
           key={choice}
           initial={{ y: 14, opacity: 0, rotate: -35 }}
           animate={{ y: 0, opacity: 1, rotate: 0 }}
           exit={{ y: -14, opacity: 0, rotate: 35 }}
           transition={{ duration: 0.28, ease: [0.16, 1, 0.3, 1] }}
-          className="grid place-items-center"
+          className="absolute inset-0 grid place-items-center"
         >
           <Icon name={ICONS[choice]} className="size-[1.05rem]" />
         </motion.span>

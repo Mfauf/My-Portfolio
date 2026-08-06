@@ -198,16 +198,7 @@ export function Hero() {
               </div>
             </TiltCard>
 
-            {/* Floating credential chips */}
-            <motion.div
-              animate={{ y: [0, -10, 0] }}
-              transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
-              className="glass absolute -start-3 top-8 rounded-2xl px-4 py-3 shadow-lg sm:-start-6"
-            >
-              <p className="text-[0.65rem] font-medium tracking-widest text-faint uppercase">GPA</p>
-              <p className="text-lg font-bold text-gold">3.73</p>
-            </motion.div>
-
+            {/* Floating credential chip */}
             <motion.div
               animate={{ y: [0, 12, 0] }}
               transition={{ duration: 7.5, repeat: Infinity, ease: 'easeInOut', delay: 0.6 }}
