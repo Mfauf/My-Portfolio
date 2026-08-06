@@ -23,7 +23,7 @@ const CATEGORY_ICONS: Record<CertificateCategory, string> = {
 };
 
 /** How many cards show before the visitor has to ask for more. */
-const DEFAULT_VISIBLE = 5;
+const DEFAULT_VISIBLE = 3;
 
 export function Certificates() {
   const { t, pick, formatNumber } = useI18n();

@@ -35,9 +35,9 @@ to be used.
 | `src/data/social.json` | Social links (WhatsApp, LinkedIn, GitHub, email) with their brand colours |
 | `src/data/services.json` | The three service packages: price, delivery time, feature list, live example |
 | `src/data/addons.json` | Paid add-ons, free inclusions, and the working terms |
-| `src/data/skills.json` | Skill groups, their icons and proficiency levels |
+| `src/data/skills.json` | Skill groups and their icons |
 | `src/data/projects.json` | Project showcase: title, description, screenshot, tags, links |
-| `src/data/certificates.json` | Certificates grid and dialog contents |
+| `src/data/certificates.json` | Certificates grid contents |
 | `src/data/experience.json` | Work and volunteering timeline |
 | `src/data/education.json` | Education entries with grades |
 | `src/data/process.json` | The four "how it works" steps |
@@ -66,12 +66,16 @@ Interface labels (nav, buttons, form fields, section headings) live separately i
 }
 ```
 
+Both Projects and Certificates only render the first 3 entries by default, with a "View
+more" button to reveal the rest — the constant to change is `DEFAULT_VISIBLE` at the top of
+`src/sections/Projects.tsx` / `src/sections/Certificates.tsx`.
+
 ### Adding a certificate
 
 Append to `src/data/certificates.json`. `category` must be one of `ai`, `engineering`,
 `academic`, `leadership`, `volunteer`, `quran` — the filter chips are generated from
 whichever categories are actually present. Set `image` to a path under `public/` once you
-have a scan; while it is `null` the dialog shows "available on request" instead.
+have a scan; while it is `null` the card shows "available on request" instead.
 
 ---
 
@@ -87,7 +91,7 @@ src/
   providers/       ThemeProvider (light/dark/system), I18nProvider (en/ar + RTL)
   hooks/           smooth scroll, active section, media queries, count-up
   components/
-    ui/            Section, Button, Card, Badge, Modal, Marquee, Reveal, Icon, …
+    ui/            Section, Button, Card, Badge, Marquee, Reveal, SplitText, Icon, …
     effects/       AuroraBackground, CursorGlow, ScrollProgress, NameParticles
     layout/        Header, Footer, FloatingActions, theme + language toggles
   sections/        Hero, About, Services, Skills, Journey, Projects,
@@ -118,7 +122,6 @@ asked for reduced motion.
 
 - Every animation is transform/opacity based and honours `prefers-reduced-motion`; Lenis
   smooth scrolling is skipped entirely for those visitors.
-- The certificate dialog traps focus, closes on `Escape`, and restores focus on close.
 - There is a skip link, visible focus rings, and the nav marks the current section with
   `aria-current`.
 

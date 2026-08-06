@@ -1,4 +1,5 @@
-import { motion } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
+import { useState } from 'react';
 
 import { cn } from '@/lib/cn';
 import { projects } from '@/lib/content';
@@ -11,6 +12,9 @@ import { Icon } from '@/components/ui/Icon';
 import { Reveal } from '@/components/ui/Reveal';
 import { Section, SectionHeading } from '@/components/ui/Section';
 import { TiltCard } from '@/components/ui/TiltCard';
+
+/** How many projects show before the visitor has to ask for more. */
+const DEFAULT_VISIBLE = 3;
 
 function ProjectRow({ project, index }: { project: Project; index: number }) {
   const { t, pick } = useI18n();
@@ -126,7 +130,11 @@ function ProjectRow({ project, index }: { project: Project; index: number }) {
 }
 
 export function Projects() {
-  const { t } = useI18n();
+  const { t, formatNumber } = useI18n();
+  const [expanded, setExpanded] = useState(false);
+
+  const visible = expanded ? projects : projects.slice(0, DEFAULT_VISIBLE);
+  const remaining = projects.length - visible.length;
 
   return (
     <Section id="projects" grid>
@@ -137,10 +145,35 @@ export function Projects() {
       />
 
       <div className="mt-14 flex flex-col gap-16 lg:mt-24 lg:gap-28">
-        {projects.map((project, index) => (
-          <ProjectRow key={project.id} project={project} index={index} />
-        ))}
+        <AnimatePresence>
+          {visible.map((project, index) => (
+            <motion.div
+              key={project.id}
+              initial={false}
+              animate={{ opacity: 1, height: 'auto' }}
+              exit={{ opacity: 0, height: 0 }}
+              transition={{ duration: 0.5, ease: EASE_EXPO }}
+              style={{ overflow: 'hidden' }}
+            >
+              <ProjectRow project={project} index={index} />
+            </motion.div>
+          ))}
+        </AnimatePresence>
       </div>
+
+      {/* View more --------------------------------------------------------- */}
+      {remaining > 0 && (
+        <motion.div
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.4, ease: EASE_EXPO }}
+          className="mt-16 flex justify-center"
+        >
+          <Button variant="outline" onClick={() => setExpanded(true)} trailingIcon="chevron-down">
+            {t('projects.viewMore')} ({formatNumber(remaining)})
+          </Button>
+        </motion.div>
+      )}
 
       <Reveal from="up" className="mt-16">
         <div className="hairline" />
