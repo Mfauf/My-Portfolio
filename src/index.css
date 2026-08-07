@@ -248,8 +248,11 @@
 @utility glass {
   background-color: var(--glass-bg);
   border: 1px solid var(--glass-border);
-  backdrop-filter: blur(16px) saturate(140%);
+  /* Lightning CSS's minifier drops whichever of this pair comes first when
+     both declare the same value — prefixed first, standard last, so the
+     standard property (the one that actually matters) survives. */
   -webkit-backdrop-filter: blur(16px) saturate(140%);
+  backdrop-filter: blur(16px) saturate(140%);
 }
 
 @utility text-gradient-gold {
