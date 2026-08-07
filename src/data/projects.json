@@ -108,6 +108,42 @@
         "en": "Landing Page",
         "ar": "صفحة هبوط"
       }
+    },
+    {
+      "id": "GlobalArchitectLogistics",
+      "title": {
+        "en": "Global Architect Logistics",
+        "ar": "الخدمات اللوجستية للمهندس المعماري العالمي"
+      },
+      "tagline": {},
+      "description": {},
+      "image": "/projects/items/4/image.png",
+      "url": "https://stitch.withgoogle.com/preview/7744900056873526934?node-id=5bd81722ffba4d6bac4b2d000f444919&raw=1",
+      "year": 2026,
+      "featured": false,
+      "tags": [],
+      "category": {
+        "en": "Landing Page",
+        "ar": "صفحة هبوط"
+      }
+    },
+    {
+      "id": "ghostchat",
+      "title": {
+        "en": "Ghost Chat",
+        "ar": "محادثة الأشباح"
+      },
+      "tagline": {},
+      "description": {},
+      "image": "/projects/items/5/image.png",
+      "url": "https://ghost.mmfauf.com/",
+      "year": 2025,
+      "featured": false,
+      "tags": [],
+      "category": {
+        "en": "Frontend App",
+        "ar": "تطبيق واجهة أمامية"
+      }
     }
   ]
 }
