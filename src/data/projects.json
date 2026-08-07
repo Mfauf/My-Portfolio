@@ -40,7 +40,7 @@
         "en": "The site you're on — rebuilt with React, TypeScript and Tailwind CSS. Fully bilingual with RTL mirroring, light and dark themes that follow your system, and a content layer that lives in plain JSON files.",
         "ar": "الموقع الذي تتصفّحه الآن — أُعيد بناؤه بـ React وTypeScript وTailwind CSS. ثنائي اللغة بالكامل مع دعم الكتابة من اليمين لليسار، وسمتان فاتحة وداكنة تتبعان نظامك، ومحتوى يعيش في ملفات JSON بسيطة."
       },
-      "image": "/projects/portfolio.webp",
+      "image": "/projects/portfolio.png",
       "url": "https://www.mmfauf.com/",
       "repo": "https://github.com/Mfauf/Portoflio",
       "year": 2026,

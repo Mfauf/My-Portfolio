@@ -64,19 +64,6 @@
       },
       "image": "/certificates/qu-cert3.webp",
       "url": ""
-    },
-    {
-      "id": "",
-      "title": { "en": "", "ar": "" },
-      "issuer": { "en": "", "ar": "" },
-      "year": 2024,
-      "category": "leadership",
-      "description": {
-        "en": "Leadership and community programme run by the Ministry of Islamic Affairs.",
-        "ar": "برنامج قيادي ومجتمعي تنظّمه وزارة الأوقاف والشؤون الإسلامية."
-      },
-      "image": "",
-      "url": ""
     }
   ]
 }
