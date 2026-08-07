@@ -43,10 +43,12 @@
     "id": "ai",
     "title": { "en": "AI & Workflows", "ar": "الذكاء الاصطناعي وسير العمل" },
     "items": [
-      { "name": "Claude", "icon": "/tech/ai_tools.svg" },
-      { "name": "Gemini", "icon": "/tech/ai_tools.svg" },
-      { "name": "Google AI Studio", "icon": "/tech/ai_tools.svg" },
-      { "name": "NotebookLM", "icon": "/tech/ai_tools.svg" }
+      { "name": "Claude", "icon": "/tech/claude.svg" },
+      { "name": "Gemini", "icon": "/tech/gemini.svg" },
+      { "name": "Google AI Studio", "icon": "/tech/aistudio.svg" },
+      { "name": "NotebookLM", "icon": "/tech/notebooklm.svg" },
+      { "name": "Google Stitch", "icon": "/tech/ai_tools.svg" }
+
     ]
   }
 ]

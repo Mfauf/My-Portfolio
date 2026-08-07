@@ -65,79 +65,14 @@
     "url": null
   },
   {
-    "id": "huawei-hcia-ai",
-    "title": { "en": "HCIA — Artificial Intelligence", "ar": "HCIA — الذكاء الاصطناعي" },
-    "issuer": { "en": "Huawei (self-study coursework)", "ar": "هواوي (دراسة ذاتية)" },
-    "year": 2025,
-    "category": "ai",
-    "description": {
-      "en": "Machine learning fundamentals, deep learning basics, neural networks and AI workflow design.",
-      "ar": "أساسيات تعلّم الآلة، مبادئ التعلّم العميق، الشبكات العصبية، وتصميم سير عمل الذكاء الاصطناعي."
-    },
-    "image": null,
-    "url": null
-  },
-  {
-    "id": "tamkeen",
-    "title": { "en": "Tamkeen Program", "ar": "برنامج تمكين" },
-    "issuer": { "en": "Ministry of Islamic Affairs, Qatar", "ar": "وزارة الأوقاف والشؤون الإسلامية — قطر" },
+    "id": "",
+    "title": { "en": "", "ar": "" },
+    "issuer": { "en": "", "ar": "" },
     "year": 2024,
     "category": "leadership",
     "description": {
       "en": "Leadership and community programme run by the Ministry of Islamic Affairs.",
       "ar": "برنامج قيادي ومجتمعي تنظّمه وزارة الأوقاف والشؤون الإسلامية."
-    },
-    "image": null,
-    "url": null
-  },
-  {
-    "id": "class-administration",
-    "title": { "en": "Skills Improvement in Class Administration", "ar": "تطوير مهارات إدارة الحلقات" },
-    "issuer": { "en": "Jana Academy", "ar": "أكاديمية جنى" },
-    "year": 2023,
-    "category": "leadership",
-    "description": {
-      "en": "Classroom management, teaching delivery and student engagement techniques.",
-      "ar": "إدارة الحلقة التعليمية وأساليب التدريس وتحفيز الطلاب."
-    },
-    "image": null,
-    "url": null
-  },
-  {
-    "id": "itqan-workshop",
-    "title": { "en": "Itqan Center Training Workshop — 40 hours", "ar": "ورشة مركز إتقان التدريبية — ٤٠ ساعة" },
-    "issuer": { "en": "Hamad Medical Corporation", "ar": "مؤسسة حمد الطبية" },
-    "year": 2024,
-    "category": "volunteer",
-    "description": {
-      "en": "Forty volunteered hours supporting training workshops at Hamad Hospital's Itqan Center.",
-      "ar": "أربعون ساعة تطوّع في دعم الورش التدريبية بمركز إتقان في مستشفى حمد."
-    },
-    "image": null,
-    "url": null
-  },
-  {
-    "id": "ibdaa-alfurqan",
-    "title": { "en": "Certificate of Appreciation", "ar": "شهادة تقدير" },
-    "issuer": { "en": "Ibda'a Al-Furqan Club", "ar": "نادي إبداع الفرقان" },
-    "year": 2022,
-    "category": "volunteer",
-    "description": {
-      "en": "Recognition for contribution to the club's youth programmes.",
-      "ar": "تقديراً للمساهمة في برامج النادي الشبابية."
-    },
-    "image": null,
-    "url": null
-  },
-  {
-    "id": "stem-hour-of-code",
-    "title": { "en": "STEM Summer Camp & Hour of Code", "ar": "معسكر STEM الصيفي وساعة برمجة" },
-    "issuer": { "en": "STEM Qatar / Code.org", "ar": "STEM قطر / Code.org" },
-    "year": 2022,
-    "category": "engineering",
-    "description": {
-      "en": "Early hands-on programming and engineering exposure.",
-      "ar": "أول تجربة عملية في البرمجة والهندسة."
     },
     "image": null,
     "url": null
