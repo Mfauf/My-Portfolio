@@ -2,68 +2,108 @@
   "items": [
     {
       "id": "claude-101",
-      "title": { "en": "Claude 101", "ar": "شهادة Claude 101" },
-      "issuer": { "en": "Anthropic", "ar": "أنثروبيك" },
+      "title": {
+        "en": "Claude 101",
+        "ar": "شهادة Claude 101"
+      },
+      "issuer": {
+        "en": "Anthropic",
+        "ar": "أنثروبيك"
+      },
       "year": 2025,
       "category": "ai",
       "description": {
         "en": "Claude capabilities, prompting techniques and AI-assisted development workflows.",
         "ar": "قدرات Claude وتقنيات كتابة التوجيهات وسير العمل البرمجي المدعوم بالذكاء الاصطناعي."
       },
-      "image": "/certificates/claude-101.webp",
-      "url": ""
+      "image": "/certificates/items/0/image.webp"
     },
     {
       "id": "aipm",
-      "title": { "en": "AI in Project Management (AIPM)", "ar": "الذكاء الاصطناعي في إدارة المشاريع" },
-      "issuer": { "en": "Ajnee Institute for Training and Innovation", "ar": "معهد أجني للتدريب والابتكار" },
+      "title": {
+        "en": "AI in Project Management (AIPM)",
+        "ar": "الذكاء الاصطناعي في إدارة المشاريع"
+      },
+      "issuer": {
+        "en": "Ajnee Institute for Training and Innovation",
+        "ar": "معهد أجني للتدريب والابتكار"
+      },
       "year": 2025,
       "category": "ai",
       "description": {
         "en": "Applying AI tooling to planning, tracking and delivery of technical projects.",
         "ar": "توظيف أدوات الذكاء الاصطناعي في تخطيط المشاريع التقنية ومتابعتها وتسليمها."
       },
-      "image": "/certificates/aipm.webp",
-      "url": ""
+      "image": "/certificates/items/1/image.webp"
     },
     {
       "id": "qu-cert1",
-      "title": { "en": "ENGL 202 – Paraphrasing & Argumentative Essay _Workshop II", "ar": "ENGL 202 – إعادة الصياغة والمقال النقدي _ورشة II" },
-      "issuer": { "en": "Qatar University - SLSC", "ar": "جامعة قطر - مركز دعم تعلم الطلاب" },
+      "title": {
+        "en": "ENGL 202 – Paraphrasing & Argumentative Essay _Workshop II",
+        "ar": "ENGL 202 – إعادة الصياغة والمقال النقدي _ورشة II"
+      },
+      "issuer": {
+        "en": "Qatar University - SLSC",
+        "ar": "جامعة قطر - مركز دعم تعلم الطلاب"
+      },
       "year": 2025,
       "category": "academic",
       "description": {
         "en": "Workshop on paraphrasing and argumentative essay writing.",
         "ar": "ورشة عمل حول إعادة الصياغة والمقال النقدي."
       },
-      "image": "/certificates/qu-cert1.jpg",
-      "url": ""
+      "image": "/certificates/items/2/image.jpg"
     },
     {
       "id": "qu-cert2",
-      "title": { "en": "Start Your Academic Journey Right", "ar": "ابدأ مسيرتك الجامعية صح" },
-      "issuer": { "en": "Qatar University - SLSC", "ar": "جامعة قطر - مركز دعم تعلم الطلاب" },
+      "title": {
+        "en": "Start Your Academic Journey Right",
+        "ar": "ابدأ مسيرتك الجامعية صح"
+      },
+      "issuer": {
+        "en": "Qatar University - SLSC",
+        "ar": "جامعة قطر - مركز دعم تعلم الطلاب"
+      },
       "year": 2025,
       "category": "academic",
       "description": {
         "en": "Workshop on academic writing, research and study skills.",
         "ar": "ورشة عمل حول الكتابة الجامعية والبحث والمهارات الدراسية."
       },
-      "image": "/certificates/qu-cert2.webp",
-      "url": ""
+      "image": "/certificates/items/3/image.webp"
     },
     {
       "id": "qu-cert3",
-      "title": { "en": "Prioritization and Time Management", "ar": "ترتيب الأولويات وإدارة وقت الدراسة" },
-      "issuer": { "en": "Qatar University - SLSC", "ar": "جامعة قطر - مركز دعم تعلم الطلاب" },
+      "title": {
+        "en": "Prioritization and Time Management",
+        "ar": "ترتيب الأولويات وإدارة وقت الدراسة"
+      },
+      "issuer": {
+        "en": "Qatar University - SLSC",
+        "ar": "جامعة قطر - مركز دعم تعلم الطلاب"
+      },
       "year": 2025,
       "category": "academic",
       "description": {
         "en": "Workshop on prioritization and time management for academic success.",
         "ar": "ورشة عمل حول ترتيب الأولويات وإدارة وقت الدراسة لنجاح أكاديمي."
       },
-      "image": "/certificates/qu-cert3.webp",
-      "url": ""
+      "image": "/certificates/items/4/image.webp"
+    },
+    {
+      "id": "alsirajalmunir",
+      "title": {
+        "en": "Al Siraj Al Munir Program",
+        "ar": "برنامج السراج المنير"
+      },
+      "issuer": {
+        "en": "Ayat Center",
+        "ar": "مركز آيات"
+      },
+      "year": 2024,
+      "category": "quran",
+      "description": {},
+      "image": "/certificates/items/5/image.jpg"
     }
   ]
 }
