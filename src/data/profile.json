@@ -12,7 +12,7 @@
     "ar": "مهندس حاسوب ومطور ويب"
   },
   "greeting": {
-    "en": "Assalamu alaikum, I'm",
+    "en": "Assalamu Alaikum, I'm",
     "ar": "السلام عليكم، أنا"
   },
   "rotatingRoles": [
@@ -136,7 +136,6 @@
     },
     {
       "value": 3.73,
-      "suffix": "",
       "decimals": 2,
       "label": {
         "en": "University GPA",
