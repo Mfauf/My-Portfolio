@@ -1,0 +1,97 @@
+{
+  "paid": [
+    {
+      "id": "extra-language",
+      "icon": "globe",
+      "title": { "en": "Extra language support", "ar": "دعم لغة إضافية" },
+      "note": { "en": "Includes full RTL / LTR layout mirroring.", "ar": "يشمل ضبط التصميم من اليمين لليسار والعكس." },
+      "price": 100
+    },
+    {
+      "id": "pwa",
+      "icon": "smartphone",
+      "title": { "en": "PWA build", "ar": "بناء الموقع بتقنية PWA" },
+      "note": { "en": "Installable as an app on desktop and phone.", "ar": "قابل للتحميل كتطبيق على الحواسيب والهواتف." },
+      "price": 150
+    },
+    {
+      "id": "api",
+      "icon": "plug",
+      "title": { "en": "Third-party API integration", "ar": "ربط مع خدمات خارجية (API)" },
+      "note": { "en": "Per service. Excludes the external service's own fees.", "ar": "لكل خدمة، ولا يشمل رسوم الخدمة الخارجية نفسها." },
+      "price": 100
+    },
+    {
+      "id": "seo",
+      "icon": "search",
+      "title": { "en": "SEO optimisation", "ar": "تحسين محركات البحث SEO" },
+      "note": { "en": "Metadata, structured data, sitemap and performance.", "ar": "بيانات وصفية، بيانات منظّمة، خريطة موقع، وأداء." },
+      "price": 50
+    },
+    {
+      "id": "android",
+      "icon": "package",
+      "title": { "en": "Android app (APK)", "ar": "بناء تطبيق أندرويد (APK)" },
+      "note": { "en": "Google Play listing fees paid by the client.", "ar": "يتحمّل العميل تكلفة رفعه على جوجل بلاي." },
+      "price": 400
+    }
+  ],
+  "free": [
+    {
+      "id": "hosting",
+      "icon": "cloud",
+      "title": { "en": "Hosting & cloud setup", "ar": "إدارة الاستضافة والسحاب" },
+      "note": { "en": "Supabase and Cloudflare accounts created in your name.", "ar": "إعداد حسابات Supabase وCloudflare باسم العميل." }
+    },
+    {
+      "id": "ssl",
+      "icon": "shield",
+      "title": { "en": "SSL certificate", "ar": "شهادة الأمان SSL" },
+      "note": { "en": "Your site secured over HTTPS.", "ar": "تأمين الموقع ببروتوكول HTTPS." }
+    },
+    {
+      "id": "training",
+      "icon": "book",
+      "title": { "en": "Technical training", "ar": "التدريب التقني" },
+      "note": { "en": "A guide explaining how to run the system yourself.", "ar": "دليل يشرح كيفية التعامل مع النظام." }
+    },
+    {
+      "id": "support",
+      "icon": "lifebuoy",
+      "title": { "en": "30 days of bug support", "ar": "دعم فني ٣٠ يوماً" },
+      "note": { "en": "Free bug fixes for 30 days after delivery.", "ar": "إصلاح الأخطاء التقنية مجاناً لمدة ٣٠ يوماً من التسليم." }
+    },
+    {
+      "id": "scalability",
+      "icon": "trending",
+      "title": { "en": "Built to scale", "ar": "قابلية التوسّع" },
+      "note": { "en": "Architected so growth doesn't mean a rewrite.", "ar": "مبني ليكون قابلاً للتوسّع دون إعادة كتابة الكود." }
+    }
+  ],
+  "terms": [
+    {
+      "id": "payment",
+      "title": { "en": "Payment", "ar": "آلية الدفع" },
+      "body": {
+        "en": "50% upfront to start, 50% on completion before ownership transfers.",
+        "ar": "٥٠٪ مقدّم عند بدء العمل، و٥٠٪ عند انتهاء المشروع وقبل نقل الملكية."
+      }
+    },
+    {
+      "id": "third-party",
+      "title": { "en": "Third-party costs", "ar": "التكاليف الخارجية" },
+      "body": {
+        "en": "Server, domain and external API subscriptions are covered by the client.",
+        "ar": "رسوم اشتراكات السيرفرات والدومين وأي خدمات خارجية يتحمّلها العميل."
+      }
+    },
+    {
+      "id": "ownership",
+      "title": { "en": "Ownership", "ar": "الملكية" },
+      "body": {
+        "en": "Source code and all accounts transfer fully to the client once payment is complete.",
+        "ar": "بعد سداد كامل المستحقات تنتقل ملكية الكود المصدري والحسابات بالكامل للعميل."
+      }
+    }
+  ]
+}

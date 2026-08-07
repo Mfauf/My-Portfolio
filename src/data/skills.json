@@ -1,0 +1,55 @@
+{
+  "items": [
+    {
+      "id": "languages",
+      "title": { "en": "Languages & Markup", "ar": "لغات البرمجة والترميز" },
+      "items": [
+        { "name": "HTML5", "icon": "/tech/html5.svg" },
+        { "name": "CSS3", "icon": "/tech/css.svg" },
+        { "name": "JavaScript", "icon": "/tech/javascript.svg" },
+        { "name": "TypeScript", "icon": "/tech/typescript.svg" },
+        { "name": "Python", "icon": "/tech/python.svg" }
+      ]
+    },
+    {
+      "id": "frameworks",
+      "title": { "en": "Frameworks & Styling", "ar": "أطر العمل والتنسيق" },
+      "items": [
+        { "name": "React", "icon": "/tech/react.svg" },
+        { "name": "Tailwind CSS", "icon": "/tech/tailwindcss.svg" },
+        { "name": "Vite", "icon": "/tech/vite.svg" }
+      ]
+    },
+    {
+      "id": "backend",
+      "title": { "en": "Backend & Cloud", "ar": "الواجهة الخلفية والسحابة" },
+      "items": [
+        { "name": "Supabase", "icon": "/tech/supabase.svg" },
+        { "name": "PostgreSQL", "icon": "/tech/postgresql.svg" },
+        { "name": "Firebase", "icon": "/tech/firebase.svg" },
+        { "name": "Cloudflare", "icon": "/tech/cloudflare.svg" }
+      ]
+    },
+    {
+      "id": "tools",
+      "title": { "en": "Tools & Design", "ar": "الأدوات والتصميم" },
+      "items": [
+        { "name": "Git & GitHub", "icon": "/tech/github.svg" },
+        { "name": "VS Code", "icon": "/tech/vscode.svg" },
+        { "name": "Adobe Illustrator", "icon": "/tech/adobe-illustrator.svg" },
+        { "name": "MS Office / M365", "icon": "/tech/office.svg" }
+      ]
+    },
+    {
+      "id": "ai",
+      "title": { "en": "AI & Workflows", "ar": "الذكاء الاصطناعي وسير العمل" },
+      "items": [
+        { "name": "Claude", "icon": "/tech/claude.svg" },
+        { "name": "Gemini", "icon": "/tech/gemini.svg" },
+        { "name": "Google AI Studio", "icon": "/tech/aistudio.svg" },
+        { "name": "NotebookLM", "icon": "/tech/notebooklm.svg" },
+        { "name": "Google Stitch", "icon": "/tech/ai_tools.svg" }
+      ]
+    }
+  ]
+}

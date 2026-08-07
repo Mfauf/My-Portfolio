@@ -1,0 +1,107 @@
+/* ==========================================================================
+   Design tokens
+   --------------------------------------------------------------------------
+   Two palettes — gold on near-black navy (dark) and gold on warm ivory
+   (light). Every colour lives in a CSS custom property so that switching
+   themes is a single class change on <html>, with no re-render required.
+
+   Tailwind maps these through `@theme inline` further down, which is what
+   makes utilities like `bg-surface` or `text-gold` theme-aware.
+   ========================================================================== */
+
+:root {
+  /* --- Gold ramp: shared by both themes, the brand constant -------------- */
+  --gold-50: #fbf4e3;
+  --gold-100: #f6e8c4;
+  --gold-200: #efd89d;
+  --gold-300: #e6c572;
+  --gold-400: #d9ae4a;
+  --gold-500: #c99a32;
+  --gold-600: #a87c25;
+  --gold-700: #82601d;
+  --gold-800: #5c4315;
+  --gold-900: #3a2a0d;
+
+  /* --- Ink ramp: very dark blue trending to black ------------------------ */
+  --ink-950: #05070f;
+  --ink-900: #080c18;
+  --ink-850: #0b1120;
+  --ink-800: #0f1728;
+  --ink-700: #16203a;
+  --ink-600: #1f2c4d;
+  --ink-500: #2c3d66;
+
+  /* --- Motion & shape ---------------------------------------------------- */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-out-quint: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --radius-card: 1.5rem;
+  --header-height: 4.5rem;
+}
+
+/* --- Light theme (default when `.dark` is absent) ------------------------ */
+:root {
+  --bg: #f6f4ef;
+  --bg-deep: #efece4;
+  --surface: #ffffff;
+  --surface-2: #faf8f4;
+  --surface-raised: #ffffff;
+
+  --text: #0b1120;
+  --text-strong: #05070f;
+  --text-muted: #54607a;
+  /* Darker than the dark-theme equivalent so small meta text still clears
+     4.5:1 against the ivory background. */
+  --text-faint: #69748b;
+
+  --border: rgb(11 17 32 / 0.1);
+  --border-strong: rgb(11 17 32 / 0.18);
+
+  /* Deeper than the raw gold ramp: gold-600 only reaches ~4.3:1 on ivory,
+     which fails for the small bold eyebrow labels. */
+  --accent: #8f6a1e;
+  --accent-hover: var(--gold-700);
+  --accent-soft: var(--gold-500);
+  --on-accent: #ffffff;
+
+  --glass-bg: rgb(255 255 255 / 0.7);
+  --glass-border: rgb(11 17 32 / 0.08);
+  --shadow-color: 11 17 32;
+
+  --glow-1: rgb(201 154 50 / 0.22);
+  --glow-2: rgb(31 44 77 / 0.14);
+  --grid-line: rgb(11 17 32 / 0.045);
+  --noise-opacity: 0.03;
+}
+
+/* --- Dark theme ---------------------------------------------------------- */
+.dark {
+  --bg: #05070f;
+  --bg-deep: #03050a;
+  --surface: #0a0f1c;
+  --surface-2: #0d1424;
+  --surface-raised: #111a2e;
+
+  --text: #e7ecf7;
+  --text-strong: #ffffff;
+  --text-muted: #98a3ba;
+  --text-faint: #6a7590;
+
+  --border: rgb(255 255 255 / 0.09);
+  --border-strong: rgb(255 255 255 / 0.16);
+
+  /* Brighter gold reads better against near-black. */
+  --accent: var(--gold-300);
+  --accent-hover: var(--gold-200);
+  --accent-soft: var(--gold-400);
+  --on-accent: #05070f;
+
+  --glass-bg: rgb(255 255 255 / 0.04);
+  --glass-border: rgb(255 255 255 / 0.1);
+  --shadow-color: 0 0 0;
+
+  --glow-1: rgb(230 197 114 / 0.16);
+  --glow-2: rgb(31 44 77 / 0.55);
+  --grid-line: rgb(255 255 255 / 0.035);
+  --noise-opacity: 0.05;
+}
