@@ -132,9 +132,17 @@ underlying JSON stores that list under an `"items"` key.
   custom domains do). If that ever changes, add `"routes": [{ "pattern": "cms.mmfauf.com",
   "custom_domain": true }]` to `cms/wrangler.jsonc` and redeploy.
 
-Image and file paths (avatars, project screenshots, certificate scans, tech icons) are
-edited as plain text paths into `public/`, e.g. `/projects/example.webp` — the CMS does not
-upload or manage those files for you.
+Images and files (avatar, logo, project screenshots, certificate scans, tech icons, resume,
+services deck) are uploaded directly through the CMS — each of those fields is a file picker,
+not a text path. Keystatic writes the uploaded file into the matching `public/` subfolder
+(e.g. `public/projects/`) and stores the resulting `/projects/example.webp`-style path in the
+JSON for you, in the same commit as the rest of the entry.
+
+Since these singletons have no per-entry slug, uploads land directly in their shared
+directory under the **original filename** — two uploads with the same filename (e.g. two
+photos both named `screenshot.png`) will overwrite each other. Rename files to something
+descriptive and unique before uploading (the existing assets already follow this convention,
+e.g. `qfl-dashboard.webp`, `qu-cert1.jpg`).
 
 ---
 

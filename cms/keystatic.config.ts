@@ -50,8 +50,16 @@ export default config({
         tagline: localizedMultiline('Tagline'),
         bio: localizedMultiline('Bio'),
         bioSecondary: localizedMultiline('Secondary bio'),
-        avatar: fields.text({ label: 'Avatar image path', description: 'e.g. /profile.jpg' }),
-        logo: fields.text({ label: 'Logo image path', description: 'e.g. /logo.png' }),
+        avatar: fields.image({
+          label: 'Avatar image',
+          directory: 'public',
+          publicPath: '/',
+        }),
+        logo: fields.image({
+          label: 'Logo image',
+          directory: 'public',
+          publicPath: '/',
+        }),
         location: localized('Location'),
         availability: fields.object({
           open: fields.checkbox({ label: 'Open for freelance work' }),
@@ -64,11 +72,19 @@ export default config({
           whatsapp: fields.text({ label: 'WhatsApp number (digits only)' }),
         }),
         resume: fields.object({
-          url: fields.text({ label: 'Resume file path', description: 'e.g. /docs/cv.pdf' }),
+          url: fields.file({
+            label: 'Resume file',
+            directory: 'public/docs',
+            publicPath: '/docs/',
+          }),
           label: localized('Resume link label'),
         }),
         servicesDeck: fields.object({
-          url: fields.text({ label: 'Services deck file path' }),
+          url: fields.file({
+            label: 'Services deck file',
+            directory: 'public/docs',
+            publicPath: '/docs/',
+          }),
           label: localized('Services deck link label'),
         }),
         languages: fields.array(
@@ -150,9 +166,11 @@ export default config({
               defaultValue: 'academic',
             }),
             description: localizedMultiline('Description'),
-            image: fields.text({
-              label: 'Scan image path',
-              description: 'e.g. /certificates/example.webp — leave blank for none',
+            image: fields.image({
+              label: 'Scan image',
+              description: 'Leave blank for none',
+              directory: 'public/certificates',
+              publicPath: '/certificates/',
             }),
             url: fields.text({ label: 'Verification URL', description: 'Leave blank for none' }),
           }),
@@ -248,7 +266,11 @@ export default config({
             title: localized('Title'),
             tagline: localized('Tagline'),
             description: localizedMultiline('Description'),
-            image: fields.text({ label: 'Image path', description: 'e.g. /projects/example.webp' }),
+            image: fields.image({
+              label: 'Screenshot image',
+              directory: 'public/projects',
+              publicPath: '/projects/',
+            }),
             url: fields.text({ label: 'Live URL', description: 'Leave blank for none' }),
             repo: fields.text({ label: 'Repo URL', description: 'Leave blank for none' }),
             year: fields.integer({ label: 'Year', defaultValue: new Date().getFullYear() }),
@@ -307,7 +329,12 @@ export default config({
             items: fields.array(
               fields.object({
                 name: fields.text({ label: 'Name' }),
-                icon: fields.text({ label: 'Icon path', description: 'e.g. /tech/react.svg' }),
+                icon: fields.image({
+                  label: 'Icon',
+                  description: 'SVG or image icon for this skill',
+                  directory: 'public/tech',
+                  publicPath: '/tech/',
+                }),
               }),
               { label: 'Skills', itemLabel: (p) => p.fields.name.value || 'Untitled' }
             ),
