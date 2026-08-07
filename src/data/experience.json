@@ -1,94 +1,96 @@
-[
-  {
-    "id": "freelance",
-    "type": "work",
-    "role": { "en": "Freelance Web Developer", "ar": "مطوّر ويب مستقل" },
-    "organisation": { "en": "Self-employed", "ar": "عمل حر" },
-    "location": { "en": "Doha, Qatar", "ar": "الدوحة، قطر" },
-    "start": "2023",
-    "end": null,
-    "current": true,
-    "highlights": [
-      {
-        "en": "Design and build responsive web applications using modern frontend practices (HTML5, CSS3, JavaScript, React) and cloud infrastructure (Supabase, Cloudflare).",
-        "ar": "تصميم وبناء تطبيقات ويب متجاوبة بأحدث ممارسات الواجهات الأمامية (HTML5، CSS3، JavaScript، React) وبنية سحابية (Supabase، Cloudflare)."
-      },
-      {
-        "en": "Leverage AI-assisted workflows (Claude, Gemini) to accelerate prototyping, code refactoring and feature deployment.",
-        "ar": "توظيف سير عمل مدعوم بالذكاء الاصطناعي (Claude، Gemini) لتسريع النماذج الأولية وإعادة هيكلة الكود ونشر الميزات."
-      },
-      {
-        "en": "Deliver end-to-end: scoping, design, build, deployment, and 30 days of post-launch support.",
-        "ar": "تسليم متكامل: تحديد النطاق، التصميم، البناء، النشر، ودعم ٣٠ يوماً بعد الإطلاق."
-      }
-    ]
-  },
-  {
-    "id": "janadan-it",
-    "type": "work",
-    "role": { "en": "IT Officer", "ar": "مسؤول تقنية المعلومات" },
-    "organisation": { "en": "JanaDan Quran Academy", "ar": "أكاديمية جنى الدان للقرآن" },
-    "location": { "en": "Qatar", "ar": "قطر" },
-    "start": "2020",
-    "end": null,
-    "current": true,
-    "highlights": [
-      {
-        "en": "Run day-to-day IT operations for the academy: systems, accounts, devices and digital classroom tooling.",
-        "ar": "إدارة العمليات التقنية اليومية للأكاديمية: الأنظمة والحسابات والأجهزة وأدوات الفصول الرقمية."
-      },
-      {
-        "en": "Train staff on Microsoft 365 and Google Workspace, and produce the guides they use day to day.",
-        "ar": "تدريب الطاقم على Microsoft 365 وGoogle Workspace، وإعداد الأدلة التي يستخدمونها يومياً."
-      }
-    ]
-  },
-  {
-    "id": "albinaa",
-    "type": "volunteer",
-    "role": { "en": "Volunteer", "ar": "متطوّع" },
-    "organisation": { "en": "Al-Bina'a Al-Manhaji", "ar": "البناء المنهجي" },
-    "location": { "en": "Qatar", "ar": "قطر" },
-    "start": "2024",
-    "end": null,
-    "current": true,
-    "highlights": [
-      {
-        "en": "Ongoing participation in a structured knowledge-building programme.",
-        "ar": "مشاركة مستمرة في برنامج بناء علمي منهجي."
-      }
-    ]
-  },
-  {
-    "id": "itqan",
-    "type": "volunteer",
-    "role": { "en": "Training Workshop Volunteer", "ar": "متطوّع في الورش التدريبية" },
-    "organisation": { "en": "Hamad Hospital — Itqan Center", "ar": "مستشفى حمد — مركز إتقان" },
-    "location": { "en": "Doha, Qatar", "ar": "الدوحة، قطر" },
-    "start": "2024",
-    "end": "2024",
-    "current": false,
-    "highlights": [
-      {
-        "en": "Volunteered 40 hours supporting the delivery of training workshops.",
-        "ar": "تطوّع بأربعين ساعة في دعم تنفيذ الورش التدريبية."
-      }
-    ]
-  },
-  {
-    "id": "ayat",
-    "type": "volunteer",
-    "role": { "en": "Al-Siraj Al-Muneer Program", "ar": "برنامج السراج المنير" },
-    "organisation": { "en": "Ayat Center", "ar": "مركز آيات" },
-    "location": { "en": "Qatar", "ar": "قطر" },
-    "start": "2022",
-    "end": "2023",
-    "current": false,
-    "highlights": [
-      {
-        "en": "Eighteen months of continuous participation in the centre's programme.",
-        "ar": "سنة ونصف من المشاركة المستمرة في برنامج المركز."
-      }
-    ]
-  }
-]
+{
+  "items": [
+    {
+      "id": "freelance",
+      "type": "work",
+      "role": { "en": "Freelance Web Developer", "ar": "مطوّر ويب مستقل" },
+      "organisation": { "en": "Self-employed", "ar": "عمل حر" },
+      "location": { "en": "Doha, Qatar", "ar": "الدوحة، قطر" },
+      "start": "2023",
+      "end": "",
+      "current": true,
+      "highlights": [
+        {
+          "en": "Design and build responsive web applications using modern frontend practices (HTML5, CSS3, JavaScript, React) and cloud infrastructure (Supabase, Cloudflare).",
+          "ar": "تصميم وبناء تطبيقات ويب متجاوبة بأحدث ممارسات الواجهات الأمامية (HTML5، CSS3، JavaScript، React) وبنية سحابية (Supabase، Cloudflare)."
+        },
+        {
+          "en": "Leverage AI-assisted workflows (Claude, Gemini) to accelerate prototyping, code refactoring and feature deployment.",
+          "ar": "توظيف سير عمل مدعوم بالذكاء الاصطناعي (Claude، Gemini) لتسريع النماذج الأولية وإعادة هيكلة الكود ونشر الميزات."
+        },
+        {
+          "en": "Deliver end-to-end: scoping, design, build, deployment, and 30 days of post-launch support.",
+          "ar": "تسليم متكامل: تحديد النطاق، التصميم، البناء، النشر، ودعم ٣٠ يوماً بعد الإطلاق."
+        }
+      ]
+    },
+    {
+      "id": "janadan-it",
+      "type": "work",
+      "role": { "en": "IT Officer", "ar": "مسؤول تقنية المعلومات" },
+      "organisation": { "en": "JanaDan Quran Academy", "ar": "أكاديمية جنى الدان للقرآن" },
+      "location": { "en": "Qatar", "ar": "قطر" },
+      "start": "2020",
+      "end": "",
+      "current": true,
+      "highlights": [
+        {
+          "en": "Run day-to-day IT operations for the academy: systems, accounts, devices and digital classroom tooling.",
+          "ar": "إدارة العمليات التقنية اليومية للأكاديمية: الأنظمة والحسابات والأجهزة وأدوات الفصول الرقمية."
+        },
+        {
+          "en": "Train staff on Microsoft 365 and Google Workspace, and produce the guides they use day to day.",
+          "ar": "تدريب الطاقم على Microsoft 365 وGoogle Workspace، وإعداد الأدلة التي يستخدمونها يومياً."
+        }
+      ]
+    },
+    {
+      "id": "albinaa",
+      "type": "volunteer",
+      "role": { "en": "Volunteer", "ar": "متطوّع" },
+      "organisation": { "en": "Al-Bina'a Al-Manhaji", "ar": "البناء المنهجي" },
+      "location": { "en": "Qatar", "ar": "قطر" },
+      "start": "2024",
+      "end": "",
+      "current": true,
+      "highlights": [
+        {
+          "en": "Ongoing participation in a structured knowledge-building programme.",
+          "ar": "مشاركة مستمرة في برنامج بناء علمي منهجي."
+        }
+      ]
+    },
+    {
+      "id": "itqan",
+      "type": "volunteer",
+      "role": { "en": "Training Workshop Volunteer", "ar": "متطوّع في الورش التدريبية" },
+      "organisation": { "en": "Hamad Hospital — Itqan Center", "ar": "مستشفى حمد — مركز إتقان" },
+      "location": { "en": "Doha, Qatar", "ar": "الدوحة، قطر" },
+      "start": "2024",
+      "end": "2024",
+      "current": false,
+      "highlights": [
+        {
+          "en": "Volunteered 40 hours supporting the delivery of training workshops.",
+          "ar": "تطوّع بأربعين ساعة في دعم تنفيذ الورش التدريبية."
+        }
+      ]
+    },
+    {
+      "id": "ayat",
+      "type": "volunteer",
+      "role": { "en": "Al-Siraj Al-Muneer Program", "ar": "برنامج السراج المنير" },
+      "organisation": { "en": "Ayat Center", "ar": "مركز آيات" },
+      "location": { "en": "Qatar", "ar": "قطر" },
+      "start": "2022",
+      "end": "2023",
+      "current": false,
+      "highlights": [
+        {
+          "en": "Eighteen months of continuous participation in the centre's programme.",
+          "ar": "سنة ونصف من المشاركة المستمرة في برنامج المركز."
+        }
+      ]
+    }
+  ]
+}

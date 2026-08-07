@@ -1,50 +1,52 @@
-[
-  {
-    "id": "qfl-dashboard",
-    "title": { "en": "QFL Dashboard", "ar": "لوحة تحكم العمل الحر" },
-    "tagline": { "en": "Freelance operations, in one screen", "ar": "إدارة العمل الحر في شاشة واحدة" },
-    "description": {
-      "en": "A freelancing management dashboard that tracks projects, clients and payments in one place — with a clear pipeline view so nothing slips between an enquiry and an invoice.",
-      "ar": "لوحة تحكم لإدارة العمل الحر تتبّع المشاريع والعملاء والمدفوعات في مكان واحد — بعرض واضح لمسار العمل حتى لا يضيع شيء بين الاستفسار والفاتورة."
+{
+  "items": [
+    {
+      "id": "qfl-dashboard",
+      "title": { "en": "QFL Dashboard", "ar": "لوحة تحكم العمل الحر" },
+      "tagline": { "en": "Freelance operations, in one screen", "ar": "إدارة العمل الحر في شاشة واحدة" },
+      "description": {
+        "en": "A freelancing management dashboard that tracks projects, clients and payments in one place — with a clear pipeline view so nothing slips between an enquiry and an invoice.",
+        "ar": "لوحة تحكم لإدارة العمل الحر تتبّع المشاريع والعملاء والمدفوعات في مكان واحد — بعرض واضح لمسار العمل حتى لا يضيع شيء بين الاستفسار والفاتورة."
+      },
+      "image": "/projects/qfl-dashboard.webp",
+      "url": "https://qfl.mmfauf.com/",
+      "repo": "",
+      "year": 2025,
+      "featured": true,
+      "tags": ["JavaScript", "Tailwind CSS", "Supabase", "Cloudflare"],
+      "category": { "en": "Web App", "ar": "تطبيق ويب" }
     },
-    "image": "/projects/qfl-dashboard.webp",
-    "url": "https://qfl.mmfauf.com/",
-    "repo": null,
-    "year": 2025,
-    "featured": true,
-    "tags": ["JavaScript", "Tailwind CSS", "Supabase", "Cloudflare"],
-    "category": { "en": "Web App", "ar": "تطبيق ويب" }
-  },
-  {
-    "id": "rafeeq-ai",
-    "title": { "en": "Rafeeq AI", "ar": "رفيق — ذكاء اصطناعي" },
-    "tagline": { "en": "A conversational assistant in Arabic", "ar": "مساعد محادثة بالعربية" },
-    "description": {
-      "en": "An AI-powered assistant built to hold genuinely useful conversations, with an interface designed Arabic-first rather than translated after the fact.",
-      "ar": "مساعد مدعوم بالذكاء الاصطناعي بُني ليقدّم محادثات مفيدة فعلاً، بواجهة صُمّمت بالعربية أولاً لا مترجمة لاحقاً."
+    {
+      "id": "rafeeq-ai",
+      "title": { "en": "Rafeeq AI", "ar": "رفيق — ذكاء اصطناعي" },
+      "tagline": { "en": "A conversational assistant in Arabic", "ar": "مساعد محادثة بالعربية" },
+      "description": {
+        "en": "An AI-powered assistant built to hold genuinely useful conversations, with an interface designed Arabic-first rather than translated after the fact.",
+        "ar": "مساعد مدعوم بالذكاء الاصطناعي بُني ليقدّم محادثات مفيدة فعلاً، بواجهة صُمّمت بالعربية أولاً لا مترجمة لاحقاً."
+      },
+      "image": "/projects/rafeeq-ai.webp",
+      "url": "https://rafeeq-ai.web.app/",
+      "repo": "",
+      "year": 2025,
+      "featured": true,
+      "tags": ["JavaScript", "Firebase", "AI API"],
+      "category": { "en": "AI Product", "ar": "منتج ذكاء اصطناعي" }
     },
-    "image": "/projects/rafeeq-ai.webp",
-    "url": "https://rafeeq-ai.web.app/",
-    "repo": null,
-    "year": 2025,
-    "featured": true,
-    "tags": ["JavaScript", "Firebase", "AI API"],
-    "category": { "en": "AI Product", "ar": "منتج ذكاء اصطناعي" }
-  },
-  {
-    "id": "portfolio",
-    "title": { "en": "This Portfolio", "ar": "هذه الصفحة الشخصية" },
-    "tagline": { "en": "Bilingual, themed, animated", "ar": "ثنائية اللغة، بسمتين، ومتحركة" },
-    "description": {
-      "en": "The site you're on — rebuilt with React, TypeScript and Tailwind CSS. Fully bilingual with RTL mirroring, light and dark themes that follow your system, and a content layer that lives in plain JSON files.",
-      "ar": "الموقع الذي تتصفّحه الآن — أُعيد بناؤه بـ React وTypeScript وTailwind CSS. ثنائي اللغة بالكامل مع دعم الكتابة من اليمين لليسار، وسمتان فاتحة وداكنة تتبعان نظامك، ومحتوى يعيش في ملفات JSON بسيطة."
-    },
-    "image": "/projects/portfolio.webp",
-    "url": "https://www.mmfauf.com/",
-    "repo": "https://github.com/Mfauf/Portoflio",
-    "year": 2026,
-    "featured": true,
-    "tags": ["React", "TypeScript", "Tailwind CSS", "Framer Motion"],
-    "category": { "en": "Portfolio", "ar": "صفحة شخصية" }
-  }
-]
+    {
+      "id": "portfolio",
+      "title": { "en": "This Portfolio", "ar": "هذه الصفحة الشخصية" },
+      "tagline": { "en": "Bilingual, themed, animated", "ar": "ثنائية اللغة، بسمتين، ومتحركة" },
+      "description": {
+        "en": "The site you're on — rebuilt with React, TypeScript and Tailwind CSS. Fully bilingual with RTL mirroring, light and dark themes that follow your system, and a content layer that lives in plain JSON files.",
+        "ar": "الموقع الذي تتصفّحه الآن — أُعيد بناؤه بـ React وTypeScript وTailwind CSS. ثنائي اللغة بالكامل مع دعم الكتابة من اليمين لليسار، وسمتان فاتحة وداكنة تتبعان نظامك، ومحتوى يعيش في ملفات JSON بسيطة."
+      },
+      "image": "/projects/portfolio.webp",
+      "url": "https://www.mmfauf.com/",
+      "repo": "https://github.com/Mfauf/Portoflio",
+      "year": 2026,
+      "featured": true,
+      "tags": ["React", "TypeScript", "Tailwind CSS", "Framer Motion"],
+      "category": { "en": "Portfolio", "ar": "صفحة شخصية" }
+    }
+  ]
+}

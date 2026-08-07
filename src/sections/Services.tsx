@@ -81,7 +81,7 @@ export function Services() {
               </ul>
 
               <div className="mt-auto pt-7">
-                {service.example && (
+                {service.example.label && (
                   <a
                     href={service.example.url}
                     target="_blank"

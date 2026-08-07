@@ -1,26 +1,28 @@
-[
-  {
-    "id": "qu",
-    "degree": { "en": "BSc Computer Engineering", "ar": "بكالوريوس هندسة الحاسوب" },
-    "institution": { "en": "Qatar University — College of Engineering", "ar": "جامعة قطر — كلية الهندسة" },
-    "start": "2025",
-    "end": null,
-    "current": true,
-    "score": { "label": { "en": "GPA", "ar": "المعدل" }, "value": "3.73 / 4.00" },
-    "notes": [
-      { "en": "Calculus — Grade A", "ar": "التفاضل والتكامل — تقدير A" },
-      { "en": "Programming Concepts — Grade A", "ar": "مفاهيم البرمجة — تقدير A" },
-      { "en": "Physics — Grade B+", "ar": "الفيزياء — تقدير B+" }
-    ]
-  },
-  {
-    "id": "highschool",
-    "degree": { "en": "High School Diploma", "ar": "الثانوية العامة" },
-    "institution": { "en": "Qatar", "ar": "قطر" },
-    "start": "2022",
-    "end": "2025",
-    "current": false,
-    "score": { "label": { "en": "Grade", "ar": "النسبة" }, "value": "99.25%" },
-    "notes": []
-  }
-]
+{
+  "items": [
+    {
+      "id": "qu",
+      "degree": { "en": "BSc Computer Engineering", "ar": "بكالوريوس هندسة الحاسوب" },
+      "institution": { "en": "Qatar University — College of Engineering", "ar": "جامعة قطر — كلية الهندسة" },
+      "start": "2025",
+      "end": "",
+      "current": true,
+      "score": { "label": { "en": "GPA", "ar": "المعدل" }, "value": "3.73 / 4.00" },
+      "notes": [
+        { "en": "Calculus — Grade A", "ar": "التفاضل والتكامل — تقدير A" },
+        { "en": "Programming Concepts — Grade A", "ar": "مفاهيم البرمجة — تقدير A" },
+        { "en": "Physics — Grade B+", "ar": "الفيزياء — تقدير B+" }
+      ]
+    },
+    {
+      "id": "highschool",
+      "degree": { "en": "High School Diploma", "ar": "الثانوية العامة" },
+      "institution": { "en": "Qatar", "ar": "قطر" },
+      "start": "2022",
+      "end": "2025",
+      "current": false,
+      "score": { "label": { "en": "Grade", "ar": "النسبة" }, "value": "99.25%" },
+      "notes": []
+    }
+  ]
+}

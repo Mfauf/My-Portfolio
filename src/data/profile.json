@@ -1,85 +1,155 @@
 {
-  "name": { "en": "Muhammad Auf", "ar": "محمد عوف" },
-  "shortName": { "en": "Muhammad", "ar": "محمد" },
-  "role": { "en": "Computer Engineer & Web Developer", "ar": "مهندس حاسوب ومطور ويب" },
-  "greeting": { "en": "Assalamu alaikum, I'm", "ar": "السلام عليكم، أنا" },
-
+  "name": {
+    "en": "Muhammad Auf",
+    "ar": "محمد عوف"
+  },
+  "shortName": {
+    "en": "Muhammad",
+    "ar": "محمد"
+  },
+  "role": {
+    "en": "Computer Engineer & Web Developer",
+    "ar": "مهندس حاسوب ومطور ويب"
+  },
+  "greeting": {
+    "en": "Assalamu alaikum, I'm",
+    "ar": "السلام عليكم، أنا"
+  },
   "rotatingRoles": [
-    { "en": "Frontend Developer", "ar": "مطور واجهات أمامية" },
-    { "en": "Full-Stack Builder", "ar": "مطور تطبيقات متكاملة" },
-    { "en": "Computer Engineering Student", "ar": "طالب هندسة حاسوب" },
-    { "en": "AI-Assisted Workflow Nerd", "ar": "مهووس بالذكاء الاصطناعي" },
-    { "en": "UI/UX Enthusiast", "ar": "مهتم بتجربة المستخدم" }
+    {
+      "en": "Frontend Developer",
+      "ar": "مطور واجهات أمامية"
+    },
+    {
+      "en": "Full-Stack Builder",
+      "ar": "مطور تطبيقات متكاملة"
+    },
+    {
+      "en": "Computer Engineering Student",
+      "ar": "طالب هندسة حاسوب"
+    },
+    {
+      "en": "AI-Assisted Workflow Nerd",
+      "ar": "مهووس بالذكاء الاصطناعي"
+    },
+    {
+      "en": "UI/UX Enthusiast",
+      "ar": "مهتم بتجربة المستخدم"
+    }
   ],
-
   "tagline": {
     "en": "I design and build fast, bilingual web experiences — from conversion-focused landing pages to full-stack platforms.",
     "ar": "أصمّم وأبني تجارب ويب سريعة وثنائية اللغة — من صفحات الهبوط التي تركّز على التحويل إلى المنصّات المتكاملة."
   },
-
   "bio": {
     "en": "I'm Muhammad Auf, a Computer Engineering student at Qatar University and a freelance web developer based in Doha. I build responsive web applications with modern frontend practices and cloud infrastructure like Supabase and Cloudflare, and I lean on AI-assisted workflows to prototype, refactor and ship faster without cutting corners on quality.",
     "ar": "أنا محمد عوف، طالب هندسة حاسوب في جامعة قطر ومطوّر ويب مستقل مقيم في الدوحة. أبني تطبيقات ويب متجاوبة باستخدام أحدث ممارسات الواجهات الأمامية والبنية السحابية مثل Supabase وCloudflare، وأستعين بسير عمل مدعوم بالذكاء الاصطناعي لتسريع النماذج الأولية وإعادة هيكلة الكود والنشر دون التنازل عن الجودة."
   },
-
   "bioSecondary": {
     "en": "Beyond code, I've served as IT officer at JanaDan Quran Academy since 2020 and volunteer with community programs across Qatar — which is where I learned that the best systems are the ones real people can actually use.",
     "ar": "وخارج البرمجة، أعمل مسؤول تقنية المعلومات في أكاديمية جنى الدان للقرآن منذ 2020، وأتطوّع في برامج مجتمعية في قطر — ومن هناك تعلّمت أن أفضل الأنظمة هي التي يستطيع الناس استخدامها فعلاً."
   },
-
   "avatar": "/profile.jpg",
   "logo": "/logo.png",
-
-  "location": { "en": "Doha, Qatar", "ar": "الدوحة، قطر" },
+  "location": {
+    "en": "Doha, Qatar",
+    "ar": "الدوحة، قطر"
+  },
   "availability": {
     "open": true,
-    "label": { "en": "Available for freelance work", "ar": "متاح للعمل الحر" }
+    "label": {
+      "en": "Available for freelance work",
+      "ar": "متاح للعمل الحر"
+    }
   },
-
   "contact": {
     "email": "mmfauf@gmail.com",
     "phone": "+974 3300 5113",
     "phoneHref": "+97433005113",
-    "whatsapp": "97433005113"
+    "whatsapp": "0097433005113"
   },
-
   "resume": {
     "url": "/docs/cv.pdf",
-    "label": { "en": "Download CV", "ar": "تحميل السيرة الذاتية" }
+    "label": {
+      "en": "Download CV",
+      "ar": "تحميل السيرة الذاتية"
+    }
   },
-
   "servicesDeck": {
     "url": "/docs/services.pdf",
-    "label": { "en": "Full services & pricing", "ar": "قائمة الخدمات والأسعار" }
+    "label": {
+      "en": "Full services & pricing",
+      "ar": "قائمة الخدمات والأسعار"
+    }
   },
-
   "languages": [
-    { "name": { "en": "Arabic", "ar": "العربية" }, "level": { "en": "Native", "ar": "اللغة الأم" }, "value": 100 },
-    { "name": { "en": "English", "ar": "الإنجليزية" }, "level": { "en": "Intermediate — IELTS 5.5", "ar": "متوسط — آيلتس ٥٫٥" }, "value": 65 },
-    { "name": { "en": "Japanese", "ar": "اليابانية" }, "level": { "en": "Beginner — currently studying", "ar": "مبتدئ — قيد الدراسة" }, "value": 20 }
+    {
+      "name": {
+        "en": "Arabic",
+        "ar": "العربية"
+      },
+      "level": {
+        "en": "Native",
+        "ar": "اللغة الأم"
+      },
+      "value": 100
+    },
+    {
+      "name": {
+        "en": "English",
+        "ar": "الإنجليزية"
+      },
+      "level": {
+        "en": "Intermediate — IELTS 5.5",
+        "ar": "متوسط — آيلتس ٥٫٥"
+      },
+      "value": 65
+    },
+    {
+      "name": {
+        "en": "Japanese",
+        "ar": "اليابانية"
+      },
+      "level": {
+        "en": "Beginner — currently studying",
+        "ar": "مبتدئ — قيد الدراسة"
+      },
+      "value": 20
+    }
   ],
-
   "stats": [
     {
       "value": 5,
       "suffix": "+",
-      "label": { "en": "Years in IT & web", "ar": "سنوات في التقنية والويب" }
+      "label": {
+        "en": "Years in IT & web",
+        "ar": "سنوات في التقنية والويب"
+      }
     },
     {
       "value": 3,
       "suffix": "+",
-      "label": { "en": "Projects shipped", "ar": "مشاريع منشورة" }
+      "label": {
+        "en": "Projects shipped",
+        "ar": "مشاريع منشورة"
+      }
     },
     {
       "value": 3.73,
       "suffix": "",
       "decimals": 2,
-      "label": { "en": "University GPA", "ar": "المعدل الجامعي" }
+      "label": {
+        "en": "University GPA",
+        "ar": "المعدل الجامعي"
+      }
     },
     {
       "value": 40,
       "suffix": "+",
-      "label": { "en": "Volunteer hours", "ar": "ساعة تطوّع" }
+      "label": {
+        "en": "Volunteer hours",
+        "ar": "ساعة تطوّع"
+      }
     }
   ]
 }

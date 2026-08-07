@@ -12,6 +12,7 @@ npm install
 npm run dev      # http://localhost:5173
 npm run build    # type-check + production build into dist/
 npm run preview  # serve the production build locally
+npm run cms      # Keystatic admin UI — http://localhost:3000/keystatic
 ```
 
 ---
@@ -25,9 +26,9 @@ in `src/data/*.json`. Each file is plain JSON, and every visible string is a pai
 { "en": "English text", "ar": "النص العربي" }
 ```
 
-Edit the JSON, save, and the page updates. Types for every file live in
-`src/types/content.ts` — if you add a field there, TypeScript will tell you where it needs
-to be used.
+Edit the JSON by hand, or through the **Keystatic CMS** (see below) — either way, save and
+the page updates. Types for every file live in `src/types/content.ts` — if you add a field
+there, TypeScript will tell you where it needs to be used.
 
 | File | What it controls |
 | --- | --- |
@@ -58,7 +59,7 @@ Interface labels (nav, buttons, form fields, section headings) live separately i
   "description": { "en": "…", "ar": "…" },
   "image": "/projects/your-screenshot.png",
   "url": "https://example.com",
-  "repo": null,
+  "repo": "",
   "year": 2026,
   "featured": true,
   "tags": ["React", "Supabase"],
@@ -75,13 +76,72 @@ more" button to reveal the rest — the constant to change is `DEFAULT_VISIBLE` 
 Append to `src/data/certificates.json`. `category` must be one of `ai`, `engineering`,
 `academic`, `leadership`, `volunteer`, `quran` — the filter chips are generated from
 whichever categories are actually present. Set `image` to a path under `public/` once you
-have a scan; while it is `null` the card shows "available on request" instead.
+have a scan; entries with an empty `image` sit out of the gallery entirely until they do.
+
+---
+
+## Content CMS (Keystatic)
+
+`cms/` is a small [Keystatic](https://keystatic.com) admin — a form UI over the exact same
+`src/data/*.json` files described above. It's a fully separate Next.js project (own
+`package.json`, `node_modules`, `tsconfig.json`) kept isolated from the Vite app on purpose,
+and it's deployed independently too — as its own Cloudflare Worker, not bundled with the
+static site build.
+
+**Production:** [https://mmfauf-cms.mmfauf.workers.dev](https://mmfauf-cms.mmfauf.workers.dev)
+— log in with GitHub, edit, save. Every save commits straight to this repo over the GitHub
+API (`storage: { kind: 'github' }` in `cms/keystatic.config.ts`), which triggers the
+portfolio's existing Cloudflare Pages build automatically — no local checkout, no manual
+git push required.
+
+**Local dev**, for previewing changes before they go live:
+
+```bash
+npm run cms   # http://localhost:3000/keystatic — also commits to GitHub, same as production
+```
+
+Each JSON file appears as a "singleton" in the sidebar — `profile`, `addons`,
+`certificates`, `education`, `experience`, `process`, `projects`, `services`, `skills`,
+`social` — matching the table above one-to-one. Array-shaped files (certificates, projects,
+experience, …) show up as a repeater list you can add, remove, reorder and edit inline; the
+underlying JSON stores that list under an `"items"` key.
+
+### How it's wired up
+
+- **GitHub App**: [github.com/apps/mauf-keystatic](https://github.com/apps/mauf-keystatic)
+  handles authentication and grants write access to `Mfauf/Portoflio`. Its Client ID/Secret
+  and the `KEYSTATIC_SECRET` session key live in `cms/.env` locally (gitignored — copy
+  `cms/.env.example` and fill in real values, or re-run the "Create GitHub App" flow from
+  `/keystatic` if you need fresh ones) and as Worker secrets in production.
+- **Cloudflare Worker**: deployed with [`@opennextjs/cloudflare`](https://opennext.js.org/cloudflare),
+  configured in `cms/wrangler.jsonc`. To redeploy after code changes:
+  ```bash
+  cd cms
+  npm run deploy
+  ```
+- **Worker secrets** (`KEYSTATIC_GITHUB_CLIENT_ID`, `KEYSTATIC_GITHUB_CLIENT_SECRET`,
+  `KEYSTATIC_SECRET`, `NEXT_PUBLIC_KEYSTATIC_GITHUB_APP_SLUG`) are set via
+  `wrangler secret put <NAME>` from inside `cms/`, one at a time — **not** in the Cloudflare
+  dashboard's Pages project for the portfolio site itself. Those are two separate Cloudflare
+  projects; the portfolio's Pages project only ever serves the static `dist/` build and has
+  no use for Keystatic's env vars.
+- **Domain**: currently the default `*.workers.dev` URL. A `cms.mmfauf.com` custom domain
+  needs `mmfauf.com`'s nameservers pointed at Cloudflare first (`mmfauf.com` isn't a
+  Cloudflare zone today — the existing `www.mmfauf.com` / `qfl.mmfauf.com` subdomains work
+  via Cloudflare Pages' external-DNS custom domains, which don't require that; Workers
+  custom domains do). If that ever changes, add `"routes": [{ "pattern": "cms.mmfauf.com",
+  "custom_domain": true }]` to `cms/wrangler.jsonc` and redeploy.
+
+Image and file paths (avatars, project screenshots, certificate scans, tech icons) are
+edited as plain text paths into `public/`, e.g. `/projects/example.webp` — the CMS does not
+upload or manage those files for you.
 
 ---
 
 ## Project structure
 
 ```
+cms/               Keystatic admin UI — a separate Next.js project, see "Content CMS" above
 public/            Static assets served as-is (images, tech icons, CV + services PDFs)
 src/
   data/            ← all site content, plain JSON

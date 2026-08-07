@@ -113,7 +113,7 @@ export function About() {
                     <p className="mt-0.5 text-xs text-muted">{pick(entry.institution)}</p>
                     <p className="mt-1.5 flex flex-wrap items-center gap-x-2 gap-y-1 text-xs text-faint">
                       <span>
-                        {entry.start} — {entry.end ?? t('journey.present')}
+                        {entry.start} — {entry.end || t('journey.present')}
                       </span>
                       <span aria-hidden="true">•</span>
                       <span className="font-medium text-gold">

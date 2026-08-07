@@ -31,15 +31,15 @@ import type {
 } from '@/types/content';
 
 export const profile = profileJson as Profile;
-export const socials = socialJson as SocialLink[];
-export const services = servicesJson as Service[];
+export const socials = socialJson.items as SocialLink[];
+export const services = servicesJson.items as Service[];
 export const addons = addonsJson as Addons;
-export const skillGroups = skillsJson as SkillGroup[];
-export const projects = projectsJson as Project[];
-export const certificates = certificatesJson as Certificate[];
-export const experience = experienceJson as ExperienceEntry[];
-export const education = educationJson as EducationEntry[];
-export const processSteps = processJson as ProcessStep[];
+export const skillGroups = skillsJson.items as SkillGroup[];
+export const projects = projectsJson.items as Project[];
+export const certificates = certificatesJson.items as Certificate[];
+export const experience = experienceJson.items as ExperienceEntry[];
+export const education = educationJson.items as EducationEntry[];
+export const processSteps = processJson.items as ProcessStep[];
 
 /** Work history only — volunteer entries render in their own track. */
 export const workExperience = experience.filter((entry) => entry.type === 'work');

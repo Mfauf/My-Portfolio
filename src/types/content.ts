@@ -51,7 +51,8 @@ export interface Service {
   price: { amount: number; from: boolean };
   duration: Localized;
   features: Localized[];
-  example: { label: string; url: string } | null;
+  /** Empty label means no live example is set. */
+  example: { label: string; url: string };
   featured: boolean;
 }
 
@@ -74,7 +75,8 @@ export interface Project {
   description: Localized;
   image: string;
   url: string | null;
-  repo: string | null;
+  /** Empty string means no public repo. */
+  repo: string;
   year: number;
   featured: boolean;
   tags: string[];
@@ -96,10 +98,10 @@ export interface Certificate {
   year: number;
   category: CertificateCategory;
   description: Localized;
-  /** Optional scan of the certificate — falls back to a generated card. */
-  image: string | null;
-  /** Optional public verification link. */
-  url: string | null;
+  /** Empty string falls back to a generated card. */
+  image: string;
+  /** Empty string means no public verification link. */
+  url: string;
 }
 
 export interface ExperienceEntry {
@@ -109,7 +111,8 @@ export interface ExperienceEntry {
   organisation: Localized;
   location: Localized;
   start: string;
-  end: string | null;
+  /** Empty string means ongoing. */
+  end: string;
   current: boolean;
   highlights: Localized[];
 }
@@ -119,7 +122,8 @@ export interface EducationEntry {
   degree: Localized;
   institution: Localized;
   start: string;
-  end: string | null;
+  /** Empty string means ongoing. */
+  end: string;
   current: boolean;
   score: { label: Localized; value: string };
   notes: Localized[];

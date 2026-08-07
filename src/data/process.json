@@ -1,38 +1,52 @@
-[
-  {
-    "id": "discover",
-    "icon": "compass",
-    "title": { "en": "Discover", "ar": "الاستكشاف" },
-    "body": {
-      "en": "We talk through what you're building, who it's for, and what success actually looks like — before a single line of code.",
-      "ar": "نتحدّث عمّا تبنيه، ولمن، وكيف يبدو النجاح فعلاً — قبل كتابة سطر واحد من الكود."
+{
+  "items": [
+    {
+      "id": "discover",
+      "icon": "compass",
+      "title": {
+        "en": "Discover",
+        "ar": "الاستكشاف"
+      },
+      "body": {
+        "en": "We talk through what you're building, who it's for, and what success actually looks like — before a single line of code.",
+        "ar": "نتحدّث عمّا تبنيه، ولمن، وكيف يبدو النجاح فعلاً — قبل كتابة سطر واحد من الكود."
+      }
+    },
+    {
+      "id": "design",
+      "icon": "pen",
+      "title": {
+        "en": "Design",
+        "ar": "التصميم"
+      },
+      "body": {
+        "en": "Layout, type and colour come together into a interface you can react to early, while changes are still cheap.",
+        "ar": "يجتمع التخطيط والخطوط والألوان في واجهة يمكنك التفاعل معها مبكّراً، حين يكون التعديل ما يزال سهلاً."
+      }
+    },
+    {
+      "id": "build",
+      "icon": "code",
+      "title": {
+        "en": "Build",
+        "ar": "التنفيذ"
+      },
+      "body": {
+        "en": "Clean, componentised, responsive code — mobile-first, accessible, and fast on the phones people actually own.",
+        "ar": "كود نظيف ومقسّم ومتجاوب — يبدأ من الهاتف، ومتاح للجميع، وسريع على الأجهزة الحقيقية."
+      }
+    },
+    {
+      "id": "launch",
+      "icon": "rocket",
+      "title": {
+        "en": "Launch & Support",
+        "ar": "الإطلاق والدعم"
+      },
+      "body": {
+        "en": "Deployment, SSL, a handover guide written for humans, and 30 days of free bug fixes after you go live.",
+        "ar": "النشر، وشهادة الأمان، ودليل تسليم مكتوب بلغة مفهومة، و٣٠ يوماً من إصلاح الأخطاء مجاناً بعد الإطلاق."
+      }
     }
-  },
-  {
-    "id": "design",
-    "icon": "pen",
-    "title": { "en": "Design", "ar": "التصميم" },
-    "body": {
-      "en": "Layout, type and colour come together into a interface you can react to early, while changes are still cheap.",
-      "ar": "يجتمع التخطيط والخطوط والألوان في واجهة يمكنك التفاعل معها مبكّراً، حين يكون التعديل ما يزال سهلاً."
-    }
-  },
-  {
-    "id": "build",
-    "icon": "code",
-    "title": { "en": "Build", "ar": "التنفيذ" },
-    "body": {
-      "en": "Clean, componentised, responsive code — mobile-first, accessible, and fast on the phones people actually own.",
-      "ar": "كود نظيف ومقسّم ومتجاوب — يبدأ من الهاتف، ومتاح للجميع، وسريع على الأجهزة الحقيقية."
-    }
-  },
-  {
-    "id": "launch",
-    "icon": "rocket",
-    "title": { "en": "Launch & Support", "ar": "الإطلاق والدعم" },
-    "body": {
-      "en": "Deployment, SSL, a handover guide written for humans, and 30 days of free bug fixes after you go live.",
-      "ar": "النشر، وشهادة الأمان، ودليل تسليم مكتوب بلغة مفهومة، و٣٠ يوماً من إصلاح الأخطاء مجاناً بعد الإطلاق."
-    }
-  }
-]
+  ]
+}
