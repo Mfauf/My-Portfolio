@@ -2,115 +2,148 @@
   "items": [
     {
       "id": "qfl-dashboard",
-      "title": { "en": "QFL Dashboard", "ar": "لوحة تحكم العمل الحر" },
-      "tagline": { "en": "Freelance operations, in one screen", "ar": "إدارة العمل الحر في شاشة واحدة" },
+      "title": {
+        "en": "QFL Dashboard",
+        "ar": "لوحة تحكم العمل الحر"
+      },
+      "tagline": {
+        "en": "Freelance operations, in one screen",
+        "ar": "إدارة العمل الحر في شاشة واحدة"
+      },
       "description": {
         "en": "A freelancing management dashboard that tracks projects, clients and payments in one place — with a clear pipeline view so nothing slips between an enquiry and an invoice.",
         "ar": "لوحة تحكم لإدارة العمل الحر تتبّع المشاريع والعملاء والمدفوعات في مكان واحد — بعرض واضح لمسار العمل حتى لا يضيع شيء بين الاستفسار والفاتورة."
       },
-      "image": "/projects/qfl-dashboard.webp",
+      "image": "/projects/items/0/image.webp",
       "url": "https://qfl.mmfauf.com/",
-      "repo": "",
       "year": 2025,
       "featured": true,
-      "tags": ["JavaScript", "Tailwind CSS", "Supabase", "Cloudflare"],
-      "category": { "en": "Web App", "ar": "تطبيق ويب" }
+      "tags": [
+        "JavaScript",
+        "Tailwind CSS",
+        "Supabase",
+        "Cloudflare"
+      ],
+      "category": {
+        "en": "Web App",
+        "ar": "تطبيق ويب"
+      }
     },
     {
       "id": "rafeeq-ai",
-      "title": { "en": "Rafeeq AI", "ar": "رفيق — ذكاء اصطناعي" },
-      "tagline": { "en": "A conversational assistant in Arabic", "ar": "مساعد محادثة بالعربية" },
+      "title": {
+        "en": "Rafeeq AI",
+        "ar": "رفيق — ذكاء اصطناعي"
+      },
+      "tagline": {
+        "en": "A conversational assistant in Arabic",
+        "ar": "مساعد محادثة بالعربية"
+      },
       "description": {
         "en": "An AI-powered assistant built to hold genuinely useful conversations, with an interface designed Arabic-first rather than translated after the fact.",
         "ar": "مساعد مدعوم بالذكاء الاصطناعي بُني ليقدّم محادثات مفيدة فعلاً، بواجهة صُمّمت بالعربية أولاً لا مترجمة لاحقاً."
       },
-      "image": "/projects/rafeeq-ai.webp",
+      "image": "/projects/items/1/image.webp",
       "url": "https://rafeeq-ai.web.app/",
-      "repo": "",
       "year": 2025,
-      "featured": false,
-      "tags": ["JavaScript", "Firebase", "AI API"],
-      "category": { "en": "AI Product", "ar": "منتج ذكاء اصطناعي" }
+      "featured": true,
+      "tags": [
+        "JavaScript",
+        "Firebase",
+        "AI API"
+      ],
+      "category": {
+        "en": "AI Product",
+        "ar": "منتج ذكاء اصطناعي"
+      }
     },
     {
       "id": "portfolio",
-      "title": { "en": "This Portfolio", "ar": "هذه الصفحة الشخصية" },
-      "tagline": { "en": "Bilingual, themed, animated", "ar": "ثنائية اللغة، بسمتين، ومتحركة" },
+      "title": {
+        "en": "This Portfolio",
+        "ar": "هذه الصفحة الشخصية"
+      },
+      "tagline": {
+        "en": "Bilingual, themed, animated",
+        "ar": "ثنائية اللغة، بسمتين، ومتحركة"
+      },
       "description": {
         "en": "The site you're on — rebuilt with React, TypeScript and Tailwind CSS. Fully bilingual with RTL mirroring, light and dark themes that follow your system, and a content layer that lives in plain JSON files.",
         "ar": "الموقع الذي تتصفّحه الآن — أُعيد بناؤه بـ React وTypeScript وTailwind CSS. ثنائي اللغة بالكامل مع دعم الكتابة من اليمين لليسار، وسمتان فاتحة وداكنة تتبعان نظامك، ومحتوى يعيش في ملفات JSON بسيطة."
       },
-      "image": "/projects/portfolio.png",
+      "image": "/projects/items/2/image.png",
       "url": "https://www.mmfauf.com/",
       "repo": "https://github.com/Mfauf/Portoflio",
       "year": 2026,
       "featured": true,
-      "tags": ["React", "TypeScript", "Tailwind CSS", "Framer Motion"],
-      "category": { "en": "Portfolio", "ar": "صفحة شخصية" }
+      "tags": [
+        "React",
+        "TypeScript",
+        "Tailwind CSS",
+        "Framer Motion"
+      ],
+      "category": {
+        "en": "Portfolio",
+        "ar": "صفحة شخصية"
+      }
     },
     {
-      "id": "janaacademy.uk",
-      "title": { "en": "Jana Academy", "ar": "أكاديمية جنى" },
-      "tagline": { "en": "A modern, responsive website", "ar": "موقع حديث ومتجاوب" },
-      "description": {  
-        "en": "A modern, responsive website for a UK-based educational academy, built with React and Tailwind CSS.",
-        "ar": "موقع حديث ومتجاوب لأكاديمية تعليمية مقرها المملكة المتحدة، بُني باستخدام React وTailwind CSS."
+      "id": "jana_academy",
+      "title": {
+        "en": "Jana Academy",
+        "ar": "أكاديمية جنى"
       },
-      "image": "/projects/janaacademyuk.png",
+      "tagline": {},
+      "description": {},
+      "image": "/projects/items/3/image.png",
       "url": "https://janaacademy.uk/",
-      "repo": "",
       "year": 2026,
       "featured": true,
-      "tags": ["React", "Tailwind CSS"],
-      "category": { "en": "Educational Website", "ar": "موقع تعليمي" }
+      "tags": [
+        "React",
+        "Typescript",
+        "TailwindCSS"
+      ],
+      "category": {
+        "en": "Landing Page",
+        "ar": "صفحة هبوط"
+      }
     },
     {
-      "id": "the-archetic-of-global-trade",
-      "title": { "en": "The Archetic of Global Trade", "ar": "أركيتيك التجارة العالمية" },
-      "tagline": { "en": "A book website for a global audience", "ar": "موقع كتاب لجمهور عالمي" },
-      "description": {
-        "en": "A website for a book that explores the architecture of global trade, designed to be accessible and engaging for readers worldwide.",
-        "ar": "موقع لكتاب يستكشف هندسة التجارة العالمية، صُمّم ليكون متاحًا وجذابًا للقراء في جميع أنحاء العالم."
+      "id": "GlobalArchitectLogistics",
+      "title": {
+        "en": "Global Architect Logistics",
+        "ar": "الخدمات اللوجستية للمهندس المعماري العالمي"
       },
-      "image": "/projects/archetic.png",
-      "url": "",
-      "repo": "",
+      "tagline": {},
+      "description": {},
+      "image": "/projects/items/4/image.png",
+      "url": "https://stitch.withgoogle.com/preview/7744900056873526934?node-id=5bd81722ffba4d6bac4b2d000f444919&raw=1",
       "year": 2026,
       "featured": false,
-      "tags": ["HTML", "Tailwind CSS"],
-      "category": { "en": "Landing Page", "ar": "صفحة هبوط" }      
+      "tags": [],
+      "category": {
+        "en": "Landing Page",
+        "ar": "صفحة هبوط"
+      }
     },
     {
-      "id": "ghost-chat",
-      "title": { "en": "Ghost Chat", "ar": "دردشة الشبح" },
-      "tagline": { "en": "Peer-to-peer chat with privacy in mind", "ar": "دردشة من نظير إلى نظير مع التركيز على الخصوصية" },
-      "description": {
-        "en": "A peer-to-peer chat application that uses WebRTC for real-time communication, designed with privacy and security as top priorities.",
-        "ar": "تطبيق دردشة من نظير إلى نظير يستخدم WebRTC للتواصل في الوقت الفعلي، صُمّم مع التركيز على الخصوصية والأمان."
+      "id": "ghostchat",
+      "title": {
+        "en": "Ghost Chat",
+        "ar": "محادثة الأشباح"
       },
-      "image": "/projects/ghost-chat.png",
-      "url": "",
-      "repo": "",
-      "year": 2026,
+      "tagline": {},
+      "description": {},
+      "image": "/projects/items/5/image.png",
+      "url": "https://ghost.mmfauf.com/",
+      "year": 2025,
       "featured": false,
-      "tags": ["JavaScript", "WebRTC", "Privacy"],
-      "category": { "en": "Chat Application", "ar": "تطبيق دردشة" }
-    },
-    {
-      "id": "janatech",
-      "title": { "en": "JanaTech", "ar": "جنى تك" },
-      "tagline": { "en": "A tech company landing page", "ar": "صفحة هبوط لشركة تقنية" },
-      "description": {
-        "en": "A landing page for a technology company, built with React and Tailwind CSS, showcasing their services and products.",
-        "ar": "صفحة هبوط لشركة تقنية، بُنيت باستخدام React وTailwind CSS، تعرض خدماتهم ومنتجاتهم."
-      },
-      "image": "/projects/janatech.png",
-      "url": "https://janatech.net",
-      "repo": "",
-      "year": 2026,
-      "featured": false,
-      "tags": ["React", "Tailwind CSS"],
-      "category": { "en": "Landing Page", "ar": "صفحة هبوط" }
+      "tags": [],
+      "category": {
+        "en": "Frontend App",
+        "ar": "تطبيق واجهة أمامية"
+      }
     }
   ]
 }
