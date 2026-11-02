@@ -93,20 +93,25 @@
         "en": "Jana Academy",
         "ar": "أكاديمية جنى"
       },
-      "tagline": {},
-      "description": {},
+      "tagline": {
+        "en": "A modern, responsive website",
+        "ar": "موقع حديث ومتجاوب"
+      },
+      "description": {
+        "en": "A modern, responsive website for a UK-based educational academy, built with React and Tailwind CSS.",
+        "ar": "موقع حديث ومتجاوب لأكاديمية تعليمية مقرها المملكة المتحدة، بُني باستخدام React وTailwind CSS."
+      },
       "image": "/projects/items/3/image.png",
       "url": "https://janaacademy.uk/",
       "year": 2026,
       "featured": true,
       "tags": [
         "React",
-        "Typescript",
-        "TailwindCSS"
+        "Tailwind CSS"
       ],
       "category": {
-        "en": "Landing Page",
-        "ar": "صفحة هبوط"
+        "en": "Educational Website",
+        "ar": "موقع تعليمي"
       }
     },
     {
@@ -115,13 +120,22 @@
         "en": "Global Architect Logistics",
         "ar": "الخدمات اللوجستية للمهندس المعماري العالمي"
       },
-      "tagline": {},
-      "description": {},
+      "tagline": {
+        "en": "A book website for a global audience",
+        "ar": "موقع كتاب لجمهور عالمي"
+      },
+      "description": {
+        "en": "A website for a book that explores the architecture of global trade, designed to be accessible and engaging for readers worldwide.",
+        "ar": "موقع لكتاب يستكشف هندسة التجارة العالمية، صُمّم ليكون متاحًا وجذابًا للقراء في جميع أنحاء العالم."
+      },
       "image": "/projects/items/4/image.png",
       "url": "https://stitch.withgoogle.com/preview/7744900056873526934?node-id=5bd81722ffba4d6bac4b2d000f444919&raw=1",
       "year": 2026,
       "featured": false,
-      "tags": [],
+      "tags": [
+        "HTML",
+        "Tailwind CSS"
+      ],
       "category": {
         "en": "Landing Page",
         "ar": "صفحة هبوط"
@@ -133,16 +147,53 @@
         "en": "Ghost Chat",
         "ar": "محادثة الأشباح"
       },
-      "tagline": {},
-      "description": {},
+      "tagline": {
+        "en": "Peer-to-peer chat with privacy in mind",
+        "ar": "دردشة من نظير إلى نظير مع التركيز على الخصوصية"
+      },
+      "description": {
+        "en": "A peer-to-peer chat application using PeerJS for real-time communication, designed with privacy and security as top priorities.",
+        "ar": "تطبيق دردشة من نظير إلى نظير يستخدم PeerJS للتواصل في الوقت الفعلي، صُمّم مع التركيز على الخصوصية والأمان."
+      },
       "image": "/projects/items/5/image.png",
       "url": "https://ghost.mmfauf.com/",
       "year": 2025,
       "featured": false,
-      "tags": [],
+      "tags": [
+        "JavaScript",
+        "PeerJS",
+        "Privacy"
+      ],
       "category": {
         "en": "Frontend App",
         "ar": "تطبيق واجهة أمامية"
+      }
+    },
+    {
+      "id": "janatech",
+      "title": {
+        "en": "JanaTech",
+        "ar": "جنى تك"
+      },
+      "tagline": {
+        "en": "A tech company landing page",
+        "ar": "صفحة هبوط لشركة تقنية"
+      },
+      "description": {
+        "en": "A landing page for a technology company, built with React and Tailwind CSS, showcasing their services and products.",
+        "ar": "صفحة هبوط لشركة تقنية، بُنيت باستخدام React وTailwind CSS، تعرض خدماتهم ومنتجاتهم."
+      },
+      "image": "/projects/janatech.png",
+      "url": "https://janatech.net",
+      "year": 2026,
+      "featured": false,
+      "tags": [
+        "React",
+        "Tailwind CSS"
+      ],
+      "category": {
+        "en": "Landing Page",
+        "ar": "صفحة هبوط"
       }
     }
   ]
