@@ -36,9 +36,13 @@ function TimelineItem({ entry }: { entry: ExperienceEntry }) {
           </div>
 
           <div className="flex shrink-0 flex-col items-end gap-1.5">
-            <span className="text-xs text-faint tabular-nums">
-              {entry.start} — {entry.end || t('journey.present')}
-            </span>
+            {entry.start && (
+              <span className="text-xs text-faint tabular-nums">
+                {entry.start === entry.end
+                  ? entry.start
+                  : `${entry.start} — ${entry.end || t('journey.present')}`}
+              </span>
+            )}
             {entry.current && <Badge tone="live">{t('journey.current')}</Badge>}
           </div>
         </div>

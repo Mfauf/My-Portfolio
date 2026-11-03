@@ -7,7 +7,6 @@
   "nav": {
     "home": "الرئيسية",
     "about": "عنّي",
-    "services": "الخدمات",
     "skills": "المهارات",
     "journey": "المسيرة",
     "projects": "المشاريع",
@@ -44,24 +43,6 @@
       "تطبيقات مدعومة سحابياً على Supabase وCloudflare",
       "سير عمل بالذكاء الاصطناعي يسرّع التسليم لا يقلّل الجودة"
     ]
-  },
-  "services": {
-    "eyebrow": "الخدمات",
-    "title": "ما الذي يمكنني بناؤه لك",
-    "subtitle": "ثلاث باقات تغطّي معظم ما يُطلب منّي — ومجموعة إضافات لكل ما عدا ذلك.",
-    "popular": "الأكثر طلباً",
-    "startingFrom": "تبدأ من",
-    "delivery": "مدة التنفيذ",
-    "liveExample": "مثال مباشر",
-    "includes": "تشمل الخدمة",
-    "requestCta": "اطلب هذه الباقة",
-    "addonsTitle": "إضافات اختيارية",
-    "addonsSubtitle": "يمكن إضافتها إلى أي باقة.",
-    "freeTitle": "مجاناً مع كل مشروع",
-    "freeSubtitle": "بدون أي رسوم إضافية، مع كل باقة.",
-    "termsTitle": "شروط العمل",
-    "deckCta": "قائمة الخدمات والأسعار (PDF)",
-    "priceNote": "الأسعار المذكورة إرشادية وقابلة للزيادة أو النقصان حسب حجم المشروع وساعات العمل والتقنيات المستخدمة."
   },
   "skills": {
     "eyebrow": "أدواتي",
@@ -125,12 +106,7 @@
     "emailPlaceholder": "you@example.com",
     "phone": "رقم الجوال",
     "phonePlaceholder": "+974 XXXX XXXX",
-    "service": "الخدمة",
-    "servicePlaceholder": "اختر خدمة",
-    "serviceOther": "خدمة أخرى",
-    "budget": "الميزانية (اختياري)",
-    "budgetPlaceholder": "اختر نطاقاً",
-    "details": "تفاصيل المشروع",
+    "details": "التفاصيل",
     "detailsPlaceholder": "ما الذي تبنيه، ولمن، ومتى تحتاجه؟",
     "submit": "إرسال الطلب",
     "submitting": "جارٍ الإرسال…",

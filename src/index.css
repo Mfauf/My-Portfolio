@@ -251,8 +251,12 @@
   /* Lightning CSS's minifier drops whichever of this pair comes first when
      both declare the same value — prefixed first, standard last, so the
      standard property (the one that actually matters) survives. */
-  -webkit-backdrop-filter: blur(16px) saturate(140%);
-  backdrop-filter: blur(16px) saturate(140%);
+  /* Blur only on large, hover-capable screens: backdrop-filter on dozens of
+     cards is the costliest thing a phone GPU has to do while scrolling. */
+  @media (min-width: 1024px) and (hover: hover) {
+    -webkit-backdrop-filter: blur(12px) saturate(140%);
+    backdrop-filter: blur(12px) saturate(140%);
+  }
 }
 
 @utility text-gradient-gold {

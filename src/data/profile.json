@@ -46,8 +46,8 @@
     "ar": "أنا محمد عوف، طالب هندسة حاسوب في جامعة قطر ومطوّر ويب مستقل مقيم في الدوحة. أبني تطبيقات ويب متجاوبة باستخدام أحدث ممارسات الواجهات الأمامية والبنية السحابية مثل Supabase وCloudflare، وأستعين بسير عمل مدعوم بالذكاء الاصطناعي لتسريع النماذج الأولية وإعادة هيكلة الكود والنشر دون التنازل عن الجودة."
   },
   "bioSecondary": {
-    "en": "Beyond code, I've served as IT officer at JanaDan Quran Academy since 2020 and volunteer with community programs across Qatar — which is where I learned that the best systems are the ones real people can actually use.",
-    "ar": "وخارج البرمجة، أعمل مسؤول تقنية المعلومات في أكاديمية جنى الدان للقرآن منذ 2020، وأتطوّع في برامج مجتمعية في قطر — ومن هناك تعلّمت أن أفضل الأنظمة هي التي يستطيع الناس استخدامها فعلاً."
+    "en": "Beyond code, I work as a Software Engineer at Jana Tech and Jana Academy, served as IT specialist at JanaDan Quran Academy (2020–2025), and volunteer with community programs across Qatar — which is where I learned that the best systems are the ones real people can actually use.",
+    "ar": "وخارج البرمجة، أعمل مهندس برمجيات في جنى تك وأكاديمية جنى، وكنت أخصائي تقنية المعلومات في أكاديمية جنى الدان للقرآن (2020–2025)، وأتطوّع في برامج مجتمعية في قطر — ومن هناك تعلّمت أن أفضل الأنظمة هي التي يستطيع الناس استخدامها فعلاً."
   },
   "avatar": "/profile.jpg",
   "logo": "/logo.png",
@@ -73,13 +73,6 @@
     "label": {
       "en": "Download CV",
       "ar": "تحميل السيرة الذاتية"
-    }
-  },
-  "servicesDeck": {
-    "url": "/docs/services.pdf",
-    "label": {
-      "en": "Full services & pricing",
-      "ar": "قائمة الخدمات والأسعار"
     }
   },
   "languages": [
@@ -119,7 +112,7 @@
   ],
   "stats": [
     {
-      "value": 5,
+      "value": 6,
       "suffix": "+",
       "label": {
         "en": "Years in IT & web",
@@ -135,7 +128,7 @@
       }
     },
     {
-      "value": 3.73,
+      "value": 3.75,
       "decimals": 2,
       "label": {
         "en": "University GPA",

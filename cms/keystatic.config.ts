@@ -79,14 +79,6 @@ export default config({
           }),
           label: localized('Resume link label'),
         }),
-        servicesDeck: fields.object({
-          url: fields.file({
-            label: 'Services deck file',
-            directory: 'public/docs',
-            publicPath: '/docs/',
-          }),
-          label: localized('Services deck link label'),
-        }),
         languages: fields.array(
           fields.object({
             name: localized('Language name'),
@@ -103,41 +95,6 @@ export default config({
             label: localized('Label'),
           }),
           { label: 'Stats', itemLabel: (p) => p.fields.label.fields.en.value || 'Untitled' }
-        ),
-      },
-    }),
-
-    addons: singleton({
-      label: 'Addons & Terms',
-      path: `${DATA_PATH}/addons`,
-      format: { data: 'json' },
-      schema: {
-        paid: fields.array(
-          fields.object({
-            id: fields.text({ label: 'ID' }),
-            icon: fields.text({ label: 'Icon name' }),
-            title: localized('Title'),
-            note: localized('Note'),
-            price: fields.integer({ label: 'Price (QAR)', defaultValue: 0 }),
-          }),
-          { label: 'Paid add-ons', itemLabel: (p) => p.fields.title.fields.en.value || 'Untitled' }
-        ),
-        free: fields.array(
-          fields.object({
-            id: fields.text({ label: 'ID' }),
-            icon: fields.text({ label: 'Icon name' }),
-            title: localized('Title'),
-            note: localized('Note'),
-          }),
-          { label: 'Free add-ons', itemLabel: (p) => p.fields.title.fields.en.value || 'Untitled' }
-        ),
-        terms: fields.array(
-          fields.object({
-            id: fields.text({ label: 'ID' }),
-            title: localized('Title'),
-            body: localizedMultiline('Body'),
-          }),
-          { label: 'Terms', itemLabel: (p) => p.fields.title.fields.en.value || 'Untitled' }
         ),
       },
     }),
@@ -282,37 +239,6 @@ export default config({
             category: localized('Category'),
           }),
           { label: 'Projects', itemLabel: (p) => p.fields.title.fields.en.value || 'Untitled' }
-        ),
-      },
-    }),
-
-    services: singleton({
-      label: 'Services',
-      path: `${DATA_PATH}/services`,
-      format: { data: 'json' },
-      schema: {
-        items: fields.array(
-          fields.object({
-            id: fields.text({ label: 'ID' }),
-            icon: fields.text({ label: 'Icon name' }),
-            title: localized('Title'),
-            summary: localizedMultiline('Summary'),
-            price: fields.object({
-              amount: fields.integer({ label: 'Amount (QAR)', defaultValue: 0 }),
-              from: fields.checkbox({ label: 'Show as "from"' }),
-            }),
-            duration: localized('Duration'),
-            features: fields.array(localized('Feature'), {
-              label: 'Features',
-              itemLabel: (p) => p.fields.en.value || 'Untitled',
-            }),
-            example: fields.object({
-              label: fields.text({ label: 'Example label', description: 'Leave blank for no example' }),
-              url: fields.text({ label: 'Example URL' }),
-            }),
-            featured: fields.checkbox({ label: 'Featured' }),
-          }),
-          { label: 'Services', itemLabel: (p) => p.fields.title.fields.en.value || 'Untitled' }
         ),
       },
     }),

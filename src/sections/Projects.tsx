@@ -37,13 +37,14 @@ function ProjectRow({ project, index }: { project: Project; index: number }) {
             rel="noopener noreferrer"
             tabIndex={project.url ? 0 : -1}
             aria-label={`${pick(project.title)} — ${t('projects.visit')}`}
-            className="group ring-gradient relative block overflow-hidden rounded-[2rem] bg-surface-2/50 p-2 backdrop-blur-sm"
+            className="group ring-gradient relative block overflow-hidden rounded-[2rem] bg-surface-2/50 p-2"
           >
             <div className="relative overflow-hidden rounded-[1.6rem]">
               <img
                 src={project.image}
                 alt={pick(project.title)}
                 loading="lazy"
+                decoding="async"
                 width={1200}
                 height={750}
                 className="aspect-16/10 w-full object-cover object-top transition-transform duration-[900ms] ease-[var(--ease-expo)] group-hover:scale-[1.06]"

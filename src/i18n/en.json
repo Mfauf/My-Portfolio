@@ -7,7 +7,6 @@
   "nav": {
     "home": "Home",
     "about": "About",
-    "services": "Services",
     "skills": "Skills",
     "journey": "Journey",
     "projects": "Projects",
@@ -44,24 +43,6 @@
       "Cloud-backed apps on Supabase and Cloudflare",
       "AI-assisted workflows that speed up delivery, not quality"
     ]
-  },
-  "services": {
-    "eyebrow": "Services",
-    "title": "What I can build for you",
-    "subtitle": "Three packages that cover most of what people ask for — and a set of add-ons for everything else.",
-    "popular": "Most popular",
-    "startingFrom": "From",
-    "delivery": "Delivery",
-    "liveExample": "Live example",
-    "includes": "Includes",
-    "requestCta": "Request this package",
-    "addonsTitle": "Optional add-ons",
-    "addonsSubtitle": "Bolt these onto any package.",
-    "freeTitle": "Included free with every project",
-    "freeSubtitle": "No extra charge, on every package.",
-    "termsTitle": "How we work",
-    "deckCta": "Full services & pricing (PDF)",
-    "priceNote": "Prices are indicative and adjust with project scope, hours and the technologies used."
   },
   "skills": {
     "eyebrow": "Toolkit",
@@ -125,12 +106,7 @@
     "emailPlaceholder": "you@example.com",
     "phone": "Mobile number",
     "phonePlaceholder": "+974 XXXX XXXX",
-    "service": "Service",
-    "servicePlaceholder": "Choose a service",
-    "serviceOther": "Something else",
-    "budget": "Budget (optional)",
-    "budgetPlaceholder": "Choose a range",
-    "details": "Project details",
+    "details": "Details",
     "detailsPlaceholder": "What are you building, who is it for, and when do you need it?",
     "submit": "Send request",
     "submitting": "Sending…",

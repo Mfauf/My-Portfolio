@@ -3,7 +3,7 @@ import { useState } from 'react';
 import type { FormEvent } from 'react';
 
 import { cn } from '@/lib/cn';
-import { profile, services, socials } from '@/lib/content';
+import { profile, socials } from '@/lib/content';
 import { EASE_EXPO } from '@/lib/motion';
 import { useI18n } from '@/providers/I18nProvider';
 import { Button } from '@/components/ui/Button';
@@ -15,8 +15,6 @@ import { Section, SectionHeading } from '@/components/ui/Section';
 /** Web3Forms endpoint — the access key is public by design. */
 const FORM_ENDPOINT = 'https://api.web3forms.com/submit';
 const ACCESS_KEY = 'ffdf188d-04b9-4eef-be5d-1e04b66631d9';
-
-const BUDGETS = ['< $500', '$500 – $1,000', '$1,000 – $2,500', '$2,500+'];
 
 type Status = 'idle' | 'sending' | 'success' | 'error';
 
@@ -154,7 +152,7 @@ export function Contact() {
                   />
                 </label>
 
-                <label className="flex flex-col gap-2">
+                <label className="flex flex-col gap-2 sm:col-span-2">
                   <span className="text-sm font-medium text-ink">{t('contact.phone')}</span>
                   <input
                     type="tel"
@@ -165,34 +163,7 @@ export function Contact() {
                     className={cn(fieldClasses, 'text-start')}
                   />
                 </label>
-
-                <label className="flex flex-col gap-2">
-                  <span className="text-sm font-medium text-ink">{t('contact.service')}</span>
-                  <select name="service" required defaultValue="" className={cn(fieldClasses, 'cursor-pointer')}>
-                    <option value="" disabled>
-                      {t('contact.servicePlaceholder')}
-                    </option>
-                    {services.map((service) => (
-                      <option key={service.id} value={service.title.en}>
-                        {pick(service.title)}
-                      </option>
-                    ))}
-                    <option value="Other">{t('contact.serviceOther')}</option>
-                  </select>
-                </label>
               </div>
-
-              <label className="flex flex-col gap-2">
-                <span className="text-sm font-medium text-ink">{t('contact.budget')}</span>
-                <select name="budget" defaultValue="" className={cn(fieldClasses, 'cursor-pointer')}>
-                  <option value="">{t('contact.budgetPlaceholder')}</option>
-                  {BUDGETS.map((budget) => (
-                    <option key={budget} value={budget}>
-                      {budget}
-                    </option>
-                  ))}
-                </select>
-              </label>
 
               <label className="flex flex-col gap-2">
                 <span className="text-sm font-medium text-ink">{t('contact.details')}</span>

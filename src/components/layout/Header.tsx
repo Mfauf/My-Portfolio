@@ -131,7 +131,7 @@ export function Header() {
             transition={{ duration: 0.25 }}
           >
             <div
-              className="absolute inset-0 bg-navy-950/70 backdrop-blur-xl"
+              className="absolute inset-0 bg-navy-950/85"
               onClick={() => setMenuOpen(false)}
               aria-hidden="true"
             />

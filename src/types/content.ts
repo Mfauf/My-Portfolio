@@ -26,7 +26,6 @@ export interface Profile {
   availability: { open: boolean; label: Localized };
   contact: { email: string; phone: string; phoneHref: string; whatsapp: string };
   resume: { url: string; label: Localized };
-  servicesDeck: { url: string; label: Localized };
   languages: { name: Localized; level: Localized; value: number }[];
   stats: { value: number; suffix: string; decimals?: number; label: Localized }[];
 }
@@ -41,25 +40,6 @@ export interface SocialLink {
   icon: SocialIcon;
   brandColor: string;
   primary: boolean;
-}
-
-export interface Service {
-  id: string;
-  icon: string;
-  title: Localized;
-  summary: Localized;
-  price: { amount: number; from: boolean };
-  duration: Localized;
-  features: Localized[];
-  /** Empty label means no live example is set. */
-  example: { label: string; url: string };
-  featured: boolean;
-}
-
-export interface Addons {
-  paid: { id: string; icon: string; title: Localized; note: Localized; price: number }[];
-  free: { id: string; icon: string; title: Localized; note: Localized }[];
-  terms: { id: string; title: Localized; body: Localized }[];
 }
 
 export interface SkillGroup {

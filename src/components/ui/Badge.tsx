@@ -23,7 +23,7 @@ export function Badge({ children, tone = 'neutral', className, pulse = false }: 
     <span
       className={cn(
         'inline-flex items-center gap-2 rounded-full border px-3.5 py-1.5 text-xs font-medium tracking-wide',
-        'backdrop-blur-sm transition-colors duration-300',
+        'transition-colors duration-300',
         tones[tone],
         className,
       )}

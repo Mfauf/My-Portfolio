@@ -13,7 +13,6 @@ import { Hero } from '@/sections/Hero';
 import { Journey } from '@/sections/Journey';
 import { Process } from '@/sections/Process';
 import { Projects } from '@/sections/Projects';
-import { Services } from '@/sections/Services';
 import { Skills } from '@/sections/Skills';
 
 export default function App() {
@@ -32,7 +31,6 @@ export default function App() {
       <main>
         <Hero />
         <About />
-        <Services />
         <Skills />
         <Journey />
         <Projects />

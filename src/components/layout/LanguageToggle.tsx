@@ -15,7 +15,7 @@ export function LanguageToggle({ className }: { className?: string }) {
       aria-label={t('controls.toggleLanguage')}
       className={cn(
         'relative grid size-10 place-items-center overflow-hidden rounded-full border border-line',
-        'bg-surface-2/70 text-gold backdrop-blur-md transition-colors duration-300',
+        'bg-surface-2/70 text-gold transition-colors duration-300',
         'hover:border-gold/45 hover:bg-gold/10',
         className,
       )}

@@ -32,7 +32,7 @@ export function ThemeToggle({ className }: { className?: string }) {
       aria-label={`${t('controls.toggleTheme')} — ${labels[choice]}`}
       className={cn(
         'relative grid size-10 place-items-center overflow-hidden rounded-full border border-line',
-        'bg-surface-2/70 text-muted backdrop-blur-md transition-colors duration-300',
+        'bg-surface-2/70 text-muted transition-colors duration-300',
         'hover:border-gold/45 hover:text-gold',
         className,
       )}

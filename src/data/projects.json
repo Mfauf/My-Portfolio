@@ -71,7 +71,7 @@
         "en": "The site you're on — rebuilt with React, TypeScript and Tailwind CSS. Fully bilingual with RTL mirroring, light and dark themes that follow your system, and a content layer that lives in plain JSON files.",
         "ar": "الموقع الذي تتصفّحه الآن — أُعيد بناؤه بـ React وTypeScript وTailwind CSS. ثنائي اللغة بالكامل مع دعم الكتابة من اليمين لليسار، وسمتان فاتحة وداكنة تتبعان نظامك، ومحتوى يعيش في ملفات JSON بسيطة."
       },
-      "image": "/projects/items/2/image.png",
+      "image": "/projects/items/2/image.webp",
       "url": "https://www.mmfauf.com/",
       "repo": "https://github.com/Mfauf/Portoflio",
       "year": 2026,
@@ -101,7 +101,7 @@
         "en": "A modern, responsive website for a UK-based educational academy, built with React and Tailwind CSS.",
         "ar": "موقع حديث ومتجاوب لأكاديمية تعليمية مقرها المملكة المتحدة، بُني باستخدام React وTailwind CSS."
       },
-      "image": "/projects/items/3/image.png",
+      "image": "/projects/items/3/image.webp",
       "url": "https://janaacademy.uk/",
       "year": 2026,
       "featured": true,
@@ -128,7 +128,7 @@
         "en": "A website for a book that explores the architecture of global trade, designed to be accessible and engaging for readers worldwide.",
         "ar": "موقع لكتاب يستكشف هندسة التجارة العالمية، صُمّم ليكون متاحًا وجذابًا للقراء في جميع أنحاء العالم."
       },
-      "image": "/projects/items/4/image.png",
+      "image": "/projects/items/4/image.webp",
       "url": "https://stitch.withgoogle.com/preview/7744900056873526934?node-id=5bd81722ffba4d6bac4b2d000f444919&raw=1",
       "year": 2026,
       "featured": false,
@@ -183,7 +183,7 @@
         "en": "A landing page for a technology company, built with React and Tailwind CSS, showcasing their services and products.",
         "ar": "صفحة هبوط لشركة تقنية، بُنيت باستخدام React وTailwind CSS، تعرض خدماتهم ومنتجاتهم."
       },
-      "image": "/projects/janatech.png",
+      "image": "/projects/janatech.webp",
       "url": "https://janatech.net",
       "year": 2026,
       "featured": false,

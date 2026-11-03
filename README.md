@@ -34,8 +34,6 @@ there, TypeScript will tell you where it needs to be used.
 | --- | --- |
 | `src/data/profile.json` | Name, roles in the hero rotator, bio, location, availability pill, contact details, CV link, languages, the four stat counters |
 | `src/data/social.json` | Social links (WhatsApp, LinkedIn, GitHub, email) with their brand colours |
-| `src/data/services.json` | The three service packages: price, delivery time, feature list, live example |
-| `src/data/addons.json` | Paid add-ons, free inclusions, and the working terms |
 | `src/data/skills.json` | Skill groups and their icons |
 | `src/data/projects.json` | Project showcase: title, description, screenshot, tags, links |
 | `src/data/certificates.json` | Certificates grid contents |
@@ -100,8 +98,8 @@ git push required.
 npm run cms   # http://localhost:3000/keystatic — also commits to GitHub, same as production
 ```
 
-Each JSON file appears as a "singleton" in the sidebar — `profile`, `addons`,
-`certificates`, `education`, `experience`, `process`, `projects`, `services`, `skills`,
+Each JSON file appears as a "singleton" in the sidebar — `profile`,
+`certificates`, `education`, `experience`, `process`, `projects`, `skills`,
 `social` — matching the table above one-to-one. Array-shaped files (certificates, projects,
 experience, …) show up as a repeater list you can add, remove, reorder and edit inline; the
 underlying JSON stores that list under an `"items"` key.
@@ -150,7 +148,7 @@ e.g. `qfl-dashboard.webp`, `qu-cert1.jpg`).
 
 ```
 cms/               Keystatic admin UI — a separate Next.js project, see "Content CMS" above
-public/            Static assets served as-is (images, tech icons, CV + services PDFs)
+public/            Static assets served as-is (images, tech icons, CV PDF)
 src/
   data/            ← all site content, plain JSON
   i18n/            ← UI strings per language
@@ -162,7 +160,7 @@ src/
     ui/            Section, Button, Card, Badge, Marquee, Reveal, SplitText, Icon, …
     effects/       AuroraBackground, CursorGlow, ScrollProgress, NameParticles
     layout/        Header, Footer, FloatingActions, theme + language toggles
-  sections/        Hero, About, Services, Skills, Journey, Projects,
+  sections/        Hero, About, Skills, Journey, Projects,
                    Certificates, Process, Contact
 ```
 

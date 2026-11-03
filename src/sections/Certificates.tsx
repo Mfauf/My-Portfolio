@@ -112,6 +112,7 @@ export function Certificates() {
                   src={certificate.image ?? undefined}
                   alt={pick(certificate.title)}
                   loading="lazy"
+                decoding="async"
                   className="aspect-[22/17] w-full object-cover"
                 />
                 <span

@@ -2,7 +2,6 @@
 export const SECTIONS = [
   { id: 'home', labelKey: 'nav.home' },
   { id: 'about', labelKey: 'nav.about' },
-  { id: 'services', labelKey: 'nav.services' },
   { id: 'skills', labelKey: 'nav.skills' },
   { id: 'journey', labelKey: 'nav.journey' },
   { id: 'projects', labelKey: 'nav.projects' },

@@ -21,7 +21,7 @@ export function Section({ id, children, className, grid = false }: SectionProps)
       // (index.css). Adding `scroll-mt-*` here too would stack on top of it —
       // scrollIntoView subtracts scroll-margin and scroll-padding separately,
       // so landing would overshoot past the header twice over.
-      className={cn('relative py-20 sm:py-28 lg:py-36', className)}
+      className={cn('relative py-20 sm:py-28 lg:py-36 [content-visibility:auto] [contain-intrinsic-size:auto_900px]', className)}
     >
       {grid && (
         <div

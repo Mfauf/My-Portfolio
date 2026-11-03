@@ -179,7 +179,7 @@ export function Hero() {
             className="relative mx-auto w-full max-w-sm lg:max-w-none"
           >
             <TiltCard max={6}>
-              <div className="ring-gradient relative overflow-hidden rounded-[2.5rem] bg-surface-2/40 p-2 backdrop-blur-sm">
+              <div className="ring-gradient relative overflow-hidden rounded-[2.5rem] bg-surface-2/40 p-2">
                 <div className="relative overflow-hidden rounded-[2rem]">
                   <img
                     src={profile.avatar}
@@ -230,7 +230,7 @@ export function Hero() {
           {allSkills.map((skill, index) => (
             <span
               key={`${skill.name}-${index}`}
-              className="flex items-center gap-2.5 rounded-full border border-line bg-surface-2/40 px-4 py-2 text-sm whitespace-nowrap text-muted backdrop-blur-sm"
+              className="flex items-center gap-2.5 rounded-full border border-line bg-surface-2/40 px-4 py-2 text-sm whitespace-nowrap text-muted"
             >
               <img src={skill.icon} alt="" width={18} height={18} className="size-[18px] object-contain" />
               {skill.name}

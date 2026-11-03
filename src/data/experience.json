@@ -1,22 +1,81 @@
 {
   "items": [
     {
+      "id": "jana-tech",
+      "type": "work",
+      "role": {
+        "en": "Software Engineer",
+        "ar": "مهندس برمجيات"
+      },
+      "organisation": {
+        "en": "Jana Tech & Jana Academy",
+        "ar": "جنى تك وأكاديمية جنى"
+      },
+      "location": {
+        "en": "Qatar",
+        "ar": "قطر"
+      },
+      "start": "2026",
+      "end": "",
+      "current": true,
+      "highlights": [
+        {
+          "en": "Building and maintaining web platforms for Jana Tech and Jana Academy.",
+          "ar": "بناء وصيانة منصات الويب الخاصة بجنى تك وأكاديمية جنى."
+        }
+      ]
+    },
+    {
+      "id": "qstp-noor",
+      "type": "work",
+      "role": {
+        "en": "QA Tester & UI/UX Designer (Intern)",
+        "ar": "مختبر جودة ومصمم واجهات وتجربة مستخدم (متدرب)"
+      },
+      "organisation": {
+        "en": "QSTP — NOOR",
+        "ar": "واحة قطر للعلوم والتكنولوجيا — نور"
+      },
+      "location": {
+        "en": "Doha, Qatar",
+        "ar": "الدوحة، قطر"
+      },
+      "start": "2026",
+      "end": "2026",
+      "current": false,
+      "highlights": [
+        {
+          "en": "One-month internship working as a QA tester and UI/UX designer.",
+          "ar": "تدريب لمدة شهر عمل خلاله مختبر جودة ومصمم واجهات وتجربة مستخدم."
+        }
+      ]
+    },
+    {
       "id": "freelance",
       "type": "work",
-      "role": { "en": "Freelance Web Developer", "ar": "مطوّر ويب مستقل" },
-      "organisation": { "en": "Self-employed", "ar": "عمل حر" },
-      "location": { "en": "Doha, Qatar", "ar": "الدوحة، قطر" },
+      "role": {
+        "en": "Freelance Web Developer",
+        "ar": "مطوّر ويب مستقل"
+      },
+      "organisation": {
+        "en": "Self-employed",
+        "ar": "عمل حر"
+      },
+      "location": {
+        "en": "Doha, Qatar",
+        "ar": "الدوحة، قطر"
+      },
       "start": "2023",
       "end": "",
       "current": true,
       "highlights": [
         {
-          "en": "Design and build responsive web applications using modern frontend practices (HTML5, CSS3, JavaScript, React) and cloud infrastructure (Supabase, Cloudflare).",
-          "ar": "تصميم وبناء تطبيقات ويب متجاوبة بأحدث ممارسات الواجهات الأمامية (HTML5، CSS3، JavaScript، React) وبنية سحابية (Supabase، Cloudflare)."
+          "en": "Design and build responsive web applications using modern frontend practices (React Vite, Tailwind CSS, TypeScript) and cloud infrastructure (Supabase, Cloudflare).",
+          "ar": "تصميم وبناء تطبيقات ويب متجاوبة بأحدث ممارسات الواجهات الأمامية (React Vite، Tailwind CSS، TypeScript) وبنية سحابية (Supabase، Cloudflare)."
         },
         {
-          "en": "Leverage AI-assisted workflows (Claude, Gemini) to accelerate prototyping, code refactoring and feature deployment.",
-          "ar": "توظيف سير عمل مدعوم بالذكاء الاصطناعي (Claude، Gemini) لتسريع النماذج الأولية وإعادة هيكلة الكود ونشر الميزات."
+          "en": "Leverage AI-assisted workflows (Claude Code) to accelerate prototyping, code refactoring and feature deployment.",
+          "ar": "توظيف سير عمل مدعوم بالذكاء الاصطناعي (Claude Code) لتسريع النماذج الأولية وإعادة هيكلة الكود ونشر الميزات."
         },
         {
           "en": "Deliver end-to-end: scoping, design, build, deployment, and 30 days of post-launch support.",
@@ -27,12 +86,21 @@
     {
       "id": "janadan-it",
       "type": "work",
-      "role": { "en": "IT Officer", "ar": "مسؤول تقنية المعلومات" },
-      "organisation": { "en": "JanaDan Quran Academy", "ar": "أكاديمية جنى الدان للقرآن" },
-      "location": { "en": "Qatar", "ar": "قطر" },
+      "role": {
+        "en": "IT Specialist",
+        "ar": "أخصائي تقنية المعلومات"
+      },
+      "organisation": {
+        "en": "JanaDan Quran Academy",
+        "ar": "أكاديمية جنى الدان للقرآن"
+      },
+      "location": {
+        "en": "Qatar",
+        "ar": "قطر"
+      },
       "start": "2020",
-      "end": "",
-      "current": true,
+      "end": "2025",
+      "current": false,
       "highlights": [
         {
           "en": "Run day-to-day IT operations for the academy: systems, accounts, devices and digital classroom tooling.",
@@ -47,9 +115,18 @@
     {
       "id": "albinaa",
       "type": "volunteer",
-      "role": { "en": "Volunteer", "ar": "متطوّع" },
-      "organisation": { "en": "Al-Bina'a Al-Manhaji", "ar": "البناء المنهجي" },
-      "location": { "en": "Qatar", "ar": "قطر" },
+      "role": {
+        "en": "Volunteer",
+        "ar": "متطوّع"
+      },
+      "organisation": {
+        "en": "Al-Bina'a Al-Manhaji",
+        "ar": "البناء المنهجي"
+      },
+      "location": {
+        "en": "Qatar",
+        "ar": "قطر"
+      },
       "start": "2024",
       "end": "",
       "current": true,
@@ -63,9 +140,18 @@
     {
       "id": "itqan",
       "type": "volunteer",
-      "role": { "en": "Training Workshop Volunteer", "ar": "متطوّع في الورش التدريبية" },
-      "organisation": { "en": "Hamad Hospital — Itqan Center", "ar": "مستشفى حمد — مركز إتقان" },
-      "location": { "en": "Doha, Qatar", "ar": "الدوحة، قطر" },
+      "role": {
+        "en": "Training Workshop Volunteer",
+        "ar": "متطوّع في الورش التدريبية"
+      },
+      "organisation": {
+        "en": "Hamad Hospital — Itqan Center",
+        "ar": "مستشفى حمد — مركز إتقان"
+      },
+      "location": {
+        "en": "Doha, Qatar",
+        "ar": "الدوحة، قطر"
+      },
       "start": "2024",
       "end": "2024",
       "current": false,
@@ -79,9 +165,18 @@
     {
       "id": "ayat",
       "type": "volunteer",
-      "role": { "en": "Al-Siraj Al-Muneer Program", "ar": "برنامج السراج المنير" },
-      "organisation": { "en": "Ayat Center", "ar": "مركز آيات" },
-      "location": { "en": "Qatar", "ar": "قطر" },
+      "role": {
+        "en": "Al-Siraj Al-Muneer Program",
+        "ar": "برنامج السراج المنير"
+      },
+      "organisation": {
+        "en": "Ayat Center",
+        "ar": "مركز آيات"
+      },
+      "location": {
+        "en": "Qatar",
+        "ar": "قطر"
+      },
       "start": "2022",
       "end": "2023",
       "current": false,
@@ -89,6 +184,56 @@
         {
           "en": "Eighteen months of continuous participation in the centre's programme.",
           "ar": "سنة ونصف من المشاركة المستمرة في برنامج المركز."
+        }
+      ]
+    },
+    {
+      "id": "ibdaa",
+      "type": "volunteer",
+      "role": {
+        "en": "Certificate of Appreciation",
+        "ar": "شهادة تقدير"
+      },
+      "organisation": {
+        "en": "Ibda'a Al-Furqan Club",
+        "ar": "نادي إبداع الفرقان"
+      },
+      "location": {
+        "en": "Qatar",
+        "ar": "قطر"
+      },
+      "start": "2022",
+      "end": "2022",
+      "current": false,
+      "highlights": [
+        {
+          "en": "Recognised with a certificate of appreciation for participation and contribution.",
+          "ar": "تكريم بشهادة تقدير على المشاركة والإسهام."
+        }
+      ]
+    },
+    {
+      "id": "uthun-khair",
+      "type": "volunteer",
+      "role": {
+        "en": "Volunteer",
+        "ar": "متطوّع"
+      },
+      "organisation": {
+        "en": "Uthun Khair Institute",
+        "ar": "معهد أذن خير"
+      },
+      "location": {
+        "en": "Qatar",
+        "ar": "قطر"
+      },
+      "start": "",
+      "end": "",
+      "current": false,
+      "highlights": [
+        {
+          "en": "Seven months of volunteer participation.",
+          "ar": "سبعة أشهر من المشاركة التطوعية."
         }
       ]
     }

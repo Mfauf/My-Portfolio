@@ -34,14 +34,14 @@ export function CursorGlow() {
   return (
     <motion.div
       aria-hidden="true"
-      className="pointer-events-none fixed -z-5 size-[26rem] rounded-full opacity-60 blur-[90px]"
+      className="pointer-events-none fixed -z-5 size-[26rem] rounded-full opacity-60 will-change-transform"
       style={{
         x: smoothX,
         y: smoothY,
         translateX: '-50%',
         translateY: '-50%',
         background:
-          'radial-gradient(circle, color-mix(in oklab, var(--accent) 18%, transparent), transparent 66%)',
+          'radial-gradient(circle, color-mix(in oklab, var(--accent) 18%, transparent), transparent 70%)',
       }}
     />
   );
